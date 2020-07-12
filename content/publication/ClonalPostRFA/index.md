@@ -63,6 +63,9 @@ doi = "10.1038/ajg.2013.238"
 # Does this page contain LaTeX math? (true/false)
 math = true
 
+# Is this a featured publication? (true/false)
+featured = true
+
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 [image]

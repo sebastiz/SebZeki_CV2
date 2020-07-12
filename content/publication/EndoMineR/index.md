@@ -29,6 +29,9 @@ abstract_short = ""
 # Is this a selected publication? (true/false)
 selected = false
 
+# Is this a featured publication? (true/false)
+featured = true
+
 # Projects (optional).
 #   Associate this publication with one or more of your projects.
 #   Simply enter your project's folder or file name without extension.

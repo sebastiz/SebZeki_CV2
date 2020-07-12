@@ -29,6 +29,9 @@ abstract_short = "Dietary intervention is effective for the management of eosino
 # Is this a selected publication? (true/false)
 selected = true
 
+# Is this a featured publication? (true/false)
+featured = true
+
 # Projects (optional).
 #   Associate this publication with one or more of your projects.
 #   Simply enter your project's folder or file name without extension.
