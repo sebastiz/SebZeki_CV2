@@ -15,22 +15,45 @@ subtitle = ""
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 
 [[feature]]
+  icon = "user-md"
+  icon_pack = "fas"
+  name = "Gastroenterology"
+  
+  
+[[feature]]
+  icon = "h-square custom"
+  icon_pack = "fa"
+  name = "Endoscopic therapy"
+  
+  
+[[feature]]
+  icon = "stethoscope custom"
+  icon_pack = "fa"
+  name = "Gastrointestinal cancer"
+
+  
+[[feature]]
+  icon = "plus-square custom"
+  icon_pack = "fa"
+  name = "Eosinophilic oesophagitis"
+  
+  
+[[feature]]
+  icon = "stethoscope custom"
+  icon_pack = "fa"
+  name = "Oesophageal physiology"
+  
+  
+[[feature]]
   icon = "r-project"
   icon_pack = "fab"
   name = "R"
-  description = "90%"
+  
   
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
-  name = "Statistics"
-  description = "100%"  
-  
-[[feature]]
-  icon = "camera-retro"
-  icon_pack = "fas"
-  name = "Photography"
-  description = "10%"
+  name = "Gastroenterology data science"
 
 # Uncomment to use emoji icons.
 # [[feature]]

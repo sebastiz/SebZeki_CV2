@@ -9,7 +9,8 @@ active = true  # Activate this widget? true/false
 weight = 80  # Order that this section will appear.
 
 title = "Featured Publications"
-subtitle = ""
+subtitle = "[See all publications](https://scholar.google.co.uk/scholar?hl=en&as_sdt=0%2C5&q=%22Sebastian+Zeki%22&btnG=)"
+
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
