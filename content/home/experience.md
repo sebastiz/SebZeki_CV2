@@ -18,6 +18,13 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
+  title = "Honorary Senior Clinical Lecturer, King's College London"
+  company = "King's College"
+  company_url = "http://gastrods.co.uk/"
+  location = "London"
+  date_start = "2019-10-01"
+  
+[[experience]]
   title = "Co-head of the Gastroenterology Data Sciences Institute"
   company = "Guy's & St Thomas' NHS Trust"
   company_url = "http://gastrods.co.uk/"
@@ -26,7 +33,7 @@ date_format = "Jan 2006"
   
 [[experience]]
   title = "Honorary Senior Clinical Lecturer, Bart's Cancer Institute"
-  company = "Guy's & St Thomas' NHS Trust"
+  company = "Bart's Cancer Institute"
   company_url = "http://gastrods.co.uk/"
   location = "London"
   date_start = "2017-01-01"
