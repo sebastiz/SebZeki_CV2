@@ -1,8 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "EndoMineR- automated extraction of endoscopic metrics from free text reports"
-summary: ""
+title: "EndoMineR"
+summary: "A package written in R to automate extraction of endoscopic metrics from free text reports"
 authors: []
 tags: []
 categories: []
@@ -27,7 +27,7 @@ image:
 #   icon_pack: fab
 #   icon: twitter
 
-url_code: ""
+url_code: "https://github.com/ropensci/EndoMineR"
 url_pdf: ""
 url_slides: ""
 url_video: ""
