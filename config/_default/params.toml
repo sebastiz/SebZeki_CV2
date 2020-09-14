@@ -89,7 +89,7 @@ show_related = {docs = true, page = false, post = true, project = true, publicat
 
 # Enter contact details (optional). To hide a field, clear it to "".
 email = "test@example.org"
-phone = "020 7188 8801"
+phone = "02033014916"
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
@@ -100,14 +100,14 @@ address = {street = "Westminster Bridge Road", city = "London", region = "London
 coordinates = {latitude = "51.499234", longitude = "-0.118801"}
 
 # Directions for visitors to locate you.
-directions = "Enter the Hospital via the main entrance"
+# directions = "Enter the Hospital via the main entrance"
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
-# office_hours = ["Monday 08:00 to 17:00", "Tueday 08:00 to 17:00","Wednesday 08:00 to 17:00","Thursday 08:00 to 17:00","Friday 08:00 to 17:00"]
+ office_hours = ["Tuesday 09:00 to 12:30"]
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
-appointment_url = "https://doctify.com"
+appointment_url = "https://online-booking.heydoc.co.uk/?token=6ea28338c7a08dcdc88cb3d09475a28579d0c4af"
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
