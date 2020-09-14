@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "EndoMineR"
+title: "EndoMineR- automated extraction of endoscopic metrics from free text reports"
 summary: ""
 authors: []
 tags: []
