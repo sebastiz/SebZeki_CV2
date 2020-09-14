@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Improving Lesion Recognition using text"
-summary: ""
+summary: "Health Foundation grant to use endoscopic and pathological free text merge with images to improve lesion recognition in trainees by automating individual metrics"
 authors: []
 tags: []
 categories: []

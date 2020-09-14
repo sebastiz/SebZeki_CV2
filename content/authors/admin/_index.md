@@ -22,13 +22,13 @@ bio: My clinical practice and research interests included upper gastrointestinal
 
 interests:
 - Endoscopic therapy
-- Oesophageal/stomach cancers
+- Oesophageal and stomach cancers/Barrett's oesophagus
 - Oesophageal physiology
+- Heartburn; chest pain; indigestion; bloating; spasm; dyspepsia; irritable bowel syndrome; swallowing disorders; hoarse voice; chronic cough and throat clearing
 - Eosinophilic oesophagitis
-- Genomics of gatrointestinal cancers
-- Natural language programming
-- Machine learning
-- R
+- High quality endoscopy
+- Machine learning/R/Natural language programming
+- Genomics
 
 
 education:

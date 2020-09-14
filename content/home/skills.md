@@ -17,7 +17,7 @@ subtitle = ""
 [[feature]]
   icon = "user-md"
   icon_pack = "fas"
-  name = "Gastroenterology"
+  name = "General Gastroenterology"
   
   
 [[feature]]
@@ -45,15 +45,9 @@ subtitle = ""
   
   
 [[feature]]
-  icon = "r-project"
-  icon_pack = "fab"
-  name = "R"
-  
-  
-[[feature]]
   icon = "chart-line"
   icon_pack = "fas"
-  name = "Gastroenterology data science"
+  name = "Gastroenterology data science/ R / NLP"
 
 # Uncomment to use emoji icons.
 # [[feature]]
