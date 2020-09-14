@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "MiFlo- a single page patient flow manager"
-summary: "An Shiny app that visually represents a patients timeline of investigations with summarised results as well as appointments"
+summary: "A Shiny app that visually represents a patients timeline of investigations with summarised results as well as appointments"
 authors: []
 tags: []
 categories: []
