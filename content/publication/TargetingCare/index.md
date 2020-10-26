@@ -1,6 +1,6 @@
 +++
 title = "Targeting care in Barrett's oesophagus"
-date = 2018-12-07T00:00:00
+date = 2014-12-07T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -23,6 +23,8 @@ publication = "In *Clinical Medicine*, 2014 Dec 1;14(78-83)"
 
 # Abstract and optional shortened version.
 abstract = "Barretts oesophagus represents the most significant risk factor for the development of oesophageal adenocarcinoma (OAC), although the majority of patients will not develop cancer. However, early detection of OAC and its precursors significantly improves outcome and underlines the importance of endoscopic surveillance programmes. Clearly there is a discrepancy between the small number of people who need to undergo surveillance because they are at significant progression risk, and the large number that do. Research is therefore now concentrated on risk stratification. Currently such stratification is currently based on clinical findings, endoscopic diagnosis and histopathological grade. Histopathology can be imperfect and is likely to require molecular confirmation of different grades, thus molecular stratification is becoming more important in this regard and p53 immunohistochemistry is already clinically useful, with other molecular biomarkers likely to prove beneficial in the future. The hope is that non-endoscopic methods, such as the Cytosponge may be able to combine molecular biomarkers with histopathology and therefore perhaps benefit a population screening as well as a surveillance programme."
+
+summary = "Barretts oesophagus represents the most significant risk factor for the development of oesophageal adenocarcinoma (OAC), although the majority of patients will not develop cancer. However, early detection of OAC......"
 
 # Is this a selected publication? (true/false)
 selected = true
