@@ -1,6 +1,6 @@
 +++
 title = "Multidisciplinary approach to the management of adult eosinophilic oesophagitis in the United Kingdom"
-date = 2013-07-01T00:00:00
+date = 2018-12-01T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -25,6 +25,9 @@ publication = "In *Clin Exp Allergy. 2018 Dec;48(12):1752-1756. Epub 2018 Oct 12
 # Abstract and optional shortened version.
 abstract = "Dietary intervention is effective for the management of eosinophilic oesophagitis (EoE) in both adults and children. The majority of research has been conducted in Spain or the United States, with no studies of dietary intervention published in the United Kingdom. Restrictive elimination diets can be challenging and swallowed topical corticosteroids have also been shown to be an effective treatment in adults. Despite their efficacy, disadvantages include risk of candidiasis,3 potential long‐term effects such as adrenal suppression3 and off‐label medication use. Proton pump inhibitors (PPIs) are effective for a proportion of patients  although with both PPIs and corticosteroids, the underlying triggers of this presumed antigen‐mediated condition are not identified and continued use is required to maintain efficacy. A key aspect in the management of any allergic disease is avoidance of relevant allergens.Through a multidisciplinary collaboration between Adult Allergy, Gastroenterology, and Dietetics, we launched a service to provide dietary intervention for adults with EoE in a UK tertiary referral centre. We recently undertook a retrospective evaluation with the aim to describe the clinical phenotype of EoE in our service and to determine the clinico‐pathological response to dietary or medical interventions in this cohort (GSTT service evaluation 6195)."
 abstract_short = "Dietary intervention is effective for the management of eosinophilic oesophagitis (EoE) in both adults and children. The majority of research has been conducted in Spain or the United States, with no studies of dietary intervention published in the United Kingdom. Restrictive elimination diets can be challenging and swallowed topical corticosteroids have also been shown to be an effective treatment in adults. Despite their efficacy, disadvantages include risk of candidiasis,3 potential long‐term effects such as adrenal suppression3 and off‐label medication use. Proton pump inhibitors (PPIs) are effective for a proportion of patients  although with both PPIs and corticosteroids, the underlying triggers of this presumed antigen‐mediated condition are not identified and continued use is required to maintain efficacy. A key aspect in the management of any allergic disease is avoidance of relevant allergens.."
+
+# Summary. An optional shortened abstract.
+summary= "Dietary intervention is effective for the management of eosinophilic oesophagitis (EoE) in both adults and children. The majority of research has been conducted in Spain or the United States, with no studies of dietary intervention published in the United Kingdom. Restrictive elimination diets can be challenging......."
 
 # Is this a selected publication? (true/false)
 selected = true
