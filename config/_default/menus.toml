@@ -14,6 +14,21 @@
   weight = 20
 
 [[main]]
+  name = "Skills"
+  url = "#skills"
+  weight = 20
+
+ [[main]]
+  name = "Interests"
+  url = "#interests"
+  weight = 20
+
+ [[main]]
+  name = "Talks"
+  url = "#talks"
+  weight = 20
+
+[[main]]
   name = "Projects"
   url = "#projects"
   weight = 30
