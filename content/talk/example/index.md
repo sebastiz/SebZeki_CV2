@@ -1,7 +1,7 @@
 ---
-title: Natural language processing of endoscopic and pasthological text
-event: Academic Theme Conference
-event_url: https://example.org
+title: Natural language processing of endoscopic and pathological text
+event: Artificial intelligence in Gastroenterology Vision
+event_url: https://www.bsg.org.uk/event/artificial-intelligence-in-gastroenterology-vision-2020
 
 location: Royal College of Physicians
 address:
@@ -61,5 +61,7 @@ projects:
 math: true
 ---
 
-
 {{< youtube FPqoX4pBYhs >}}
+
+
+
