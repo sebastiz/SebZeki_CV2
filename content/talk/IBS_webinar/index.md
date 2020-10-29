@@ -6,7 +6,7 @@ event_url: https://example.org
 location: Webinar
 
 
-summary: IBS is common and needs a careful and sympathetic approach. Here I outline an approach that incorporates the latest guideline based approach to diagnosis and treatment, with suggesting for empowering and sympathising with this patient group "
+summary: IBS is common and needs a careful and sympathetic approach. Here I outline an approach that incorporates the latest evidence based guidance for diagnosis and treatment, with suggestions for empowering and sympathising with this patient group "
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -56,5 +56,5 @@ projects:
 math: true
 ---
 
+{{< youtube 0vvmTNOfQdU >}}
 
-{{< youtube FPqoX4pBYhs >}}

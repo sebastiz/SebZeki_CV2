@@ -47,7 +47,7 @@ subtitle = ""
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
-  name = "Gastroenterology data science/ R / NLP"
+  name = "Computational endoscopy and Endoinformatics"
 
 # Uncomment to use emoji icons.
 # [[feature]]
