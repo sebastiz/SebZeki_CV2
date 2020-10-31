@@ -1,8 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Reflux studies"
-summary: "Optimising diagnostic accuracy of reflux and its complications using pH impedance and high resolution manometry"
+title: "Acid reflux and reflux related conditions"
+summary: "Reflux can cause a number of worrying symptoms such as heartburn, regurgitation, coughs, sore throats and a hoarse voice"
 authors: []
 tags: []
 categories: []
