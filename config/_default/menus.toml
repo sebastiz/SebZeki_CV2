@@ -32,7 +32,7 @@
   url = "#talks"
   weight = 60
 
-[[main]]
+ [[main]]
   name = "Publications"
   url = "#featured"
   weight = 70
@@ -40,6 +40,11 @@
 [[main]]
   name = "Contact"
   url = "#contact"
+  weight = 80
+
+[[main]]
+  name = "Latest"
+  url = "#twitterFeed"
   weight = 80
 
 # Link to a PDF of your resume/CV from the menu.

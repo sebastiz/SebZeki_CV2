@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Eosinophilic oesophagitis and food allergies"
-summary: "Extended pH monitoring using an endoscopically placed wireless capture device"
+summary: "The increasingly common condition called eosinophilic oesophagitis and its relationship to food"
 authors: []
 tags: []
 categories: []
@@ -39,12 +39,28 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: ""
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+To a gastroenterologist, a swallowing problem means anything that feels abnormal when food travels from the mouth to the stomach. There are many causes but an increasingly common cause is eosinophilic oesophagitis (EoE). It is characterised as the presence of a certain type of immune cell, the eosinophil, accumulating in the oesophagus (food pipe) and can cause the oesophagus to narrow. It is though to be related to a sensitivity in some patients to specific foods and sometimes acid reflux, or both.  This can affect patients of all ages but is most common in younger age groups (30's-40's). It has been fairly recently described but is being detected at an alarming fast rate and can cause a number of problems.
 
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.
 
-Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.
+## So what are the symptoms?
 
-Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.
+Most studies agree that the most common symptom is food getting stuck in the oesophagus, or being aware of the passge of food as it travels into the stomach. Most people with EoE say they feel this on an intermittent basis rather than with every swallow. Sometimes they may feel that they can only swallow certain foods, especially bulky or solid foods such as bread or meat, with liquids. Some people may actually feel that food gets stuck and at its worst, patients may have to come in to hospital to have food removed. 
 
-Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.
+## I've got a swallowing problem. How do I make sure I dont have EoE?
+
+The only way to definitively diagnose EoE is to have a gastroscopy. This is a type of endoscopy where a camera is inserted into the oesophagus through the mouth. It is usually done with sedation and is a comfortable procedure. The endoscopist will take a series of biopsies from the oesophagus and count the eosinophils under the microscope.
+
+## So if I have EoE what is the risk?
+
+EoE is a slowly progressive condition. The main problem is that if left unchecked, the eosinophils can cause scarring in the oesophagus. This results in the oesophagus becoming narrower and it becoming harder and harder to swallow. If this happens, then the oesophagus has to be widened during endoscopy which can be risky procedure and is best avoided in the first place. The risk of developing these narrowings is around 5% per year.
+
+## What can be done to prevent EoE?
+
+In around 50% of people, the eosinophils can be suppressed with anti acid medication. This is possibly a result of an independent immunological effect of this type of medication (proton pump inhibitors) rather than because of acid suppression although both may be important.
+Some patients dont like to take regular medication. In this case trying to ascertain whether the patient is allergic to a food ingredient may be important. This can be done by excluding and then reintroducing foods into the diet and re-biopsying the oesophagus each time the food is reintroduced. The underlying food allergy is determined in around 70% of cases.
+
+Other medications, such as low dose steroids (budesonide or fluticasone) can be used but these have to be taken continuously in order to suppress the eosinophils.
+
+
+
+
