@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "Gastrodatascience"
-summary: "A basic tutorial on data science methods as applied to gastroenterological data"
+summary: "A basic tutorial on data science methods as applied to gastroenterological data. This will explain the basic principles of natural language processing as applied to endoscopy and pathological text to allow information to be extracted in an automated way."
 authors: []
 tags: []
 categories: []

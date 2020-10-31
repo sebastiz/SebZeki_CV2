@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "MiFlo- a single page patient flow manager to help virtual consultations"
-summary: "A Shiny app that visually represents a patients timeline of investigations with summarised results as well as appointments"
+summary: "A Shiny app that visually represents a patients timeline of investigations with summarised results as well as appointments. The excess of information that electronic data has brought with it means that there is now a desperate need to show only data that is needed to make a decision about a patient rather than to drown a clinician in a lot of unnecessary information. MiFlo provides this filter. It was initially developed for gastroenterology but is equally configurable to any clinical environment."
 authors: []
 tags: []
 categories: []

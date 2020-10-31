@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Detection, surveillance and resection of early GI cancers "
+title: "Detection, surveillance and resection of early GI cancers and pre-cancers "
 summary: "Daycase endoscopic removal using mucosal and submucosal dissection"
 authors: []
 tags: []

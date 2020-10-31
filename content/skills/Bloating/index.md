@@ -1,8 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Bravo- extended oesophageal pH monitoring with and endoscopically placed chip"
-summary: "Endoscopic placement of a pH monitoring chip to allow extended monitoring of reflux and diagnosis."
+title: "Bloating, swollen abdomen, vomiting and feeling gassy"
+summary: "Feeling bloated and being gassy can be embarrassing but is usually avoidable with careful investigation and personalised treatment"
 authors: []
 tags: []
 categories: []
