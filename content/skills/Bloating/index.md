@@ -1,8 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Reflux studies"
-summary: "Optimising diagnostic accuracy of reflux and its complications using pH impedance and high resolution manometry"
+title: "Bloating, swollen abdomen, vomiting and feeling gassy"
+summary: "Feeling bloated and being gassy can be embarrassing but is usually avoidable with careful investigation and personalised treatment"
 authors: []
 tags: []
 categories: []

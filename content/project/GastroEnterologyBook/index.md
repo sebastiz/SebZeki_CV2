@@ -1,12 +1,12 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "MiFlo- a single page patient flow manager to help virtual consultations"
-summary: "A Shiny app that visually represents a patients timeline of investigations with summarised results as well as appointments. The excess of information that electronic data has brought with it means that there is now a desperate need to show only data that is needed to make a decision about a patient rather than to drown a clinician in a lot of unnecessary information. MiFlo provides this filter. It was initially developed for gastroenterology but is equally configurable to any clinical environment."
+title: "Gastroenterology book"
+summary: "A visual training manual for Gastroenterologists with automated MCQ's. Gastroenterology training covers a huge number of subjects. The gastroenterology training book was the first online attempt to provide a comprehensive training book where each subject is treated as a single, visually represented page. Each page can automatically generate MCQ's from the page so that there are an unlimited number of MCQs on the site. If you log in (which is free) you can get your performance on the MCQ's as well as your reading metrics so you can discover your knowledge gaps."
 authors: []
 tags: []
 categories: []
-date: 2020-07-14T05:20:05Z
+date: 2014-07-14T05:20:05Z
 
 # Optional external URL for project (replaces project detail page).
 external_link: "https://github.com/GSTT-NHS/MiFlo"
@@ -27,7 +27,7 @@ image:
 #   icon_pack: fab
 #   icon: twitter
 
-url_code: "https://github.com/GSTT-NHS/MiFlo"
+url_code: "http://www.gastroenterologybook.com/"
 url_pdf: ""
 url_slides: ""
 url_video: ""

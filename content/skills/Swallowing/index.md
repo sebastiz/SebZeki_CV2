@@ -1,8 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Radiofrequency ablation "
-summary: "The use of radiofrequency ablation for a range of cancer and non-cancer diagnoses"
+title: "Swallowing problems"
+summary: "The feeling of food getting stuck after swallowing, or choking can be due to a number of different problems from obstructions, to weak or even overactive oesophageal muscles"
 authors: []
 tags: []
 categories: []

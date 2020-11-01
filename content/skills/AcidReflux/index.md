@@ -1,8 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Bravo- extended oesophageal pH monitoring with and endoscopically placed chip"
-summary: "Endoscopic placement of a pH monitoring chip to allow extended monitoring of reflux and diagnosis."
+title: "Acid reflux and reflux related conditions"
+summary: "Reflux can cause a number of worrying symptoms such as heartburn, regurgitation, coughs, sore throats and a hoarse voice"
 authors: []
 tags: []
 categories: []

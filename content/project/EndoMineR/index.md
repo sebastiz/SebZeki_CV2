@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "EndoMineR"
-summary: "A package written in R to automate extraction of endoscopic metrics from free text reports"
+summary: "A package written in R to automate extraction of endoscopic metrics from free text reports. R is a functional programming language and one of the most commonly used. Here it is applied to endoscopic and pathological natural language text. The open source package can execute on any body of text. The package comes with a well developed tutorial and plenty of examples."
 authors: []
 tags: []
 categories: []
