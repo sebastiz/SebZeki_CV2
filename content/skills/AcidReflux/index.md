@@ -40,33 +40,6 @@ url_video: ""
 slides: ""
 ---
 
-Zeki Sebastian
-sign out
-MailInbox  160 results in entire mailbox   Options 
-Find Someone
-
-favourites
-Zeki Sebastian
-Inbox
-Drafts
-Sent Items
-Deleted Items(1)
-Conversation History
-Conversation History
-EndoscopicMDT
-Junk E-Mail[21]
-Notes
-RSS Feeds
-Search Folders
-
-Mail
-Calendar
-Contacts
-Tasks
-Public Folders
-
-(no subject)
-
 
 
 # Acid reflux
