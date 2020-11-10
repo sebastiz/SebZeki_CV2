@@ -41,7 +41,6 @@ slides: ""
 ---
 
 
-
 # Acid reflux
 
 Acid reflux is a very common disorder affecting millions of people. The problem is usually not an overproduction but of stomach acid being in the oesophagus. Normally the gut has mechanisms to protect the oesophagus from acid passing up into it but for a variety of reasons these can fail and cause distressing symptoms
