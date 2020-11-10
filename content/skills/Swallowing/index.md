@@ -39,12 +39,21 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: ""
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
 
-Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.
+# Do you choke on tablets or drink a lot of water to get food down?
 
-Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.
-
-Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.
-
-Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.
+A problem with swallowing (dysphagia) can mean anything from the choking or feeling a fullness when you start to swallow, to the feeling of being aware that food or liquid is passing down, or even getting stuck in, the oesophagus.
+ 
+There are many potential causes of swallowing problems. These can be broadly classified in to problems with the movement of the oesophagus and the co-ordination of the swallow, and problems with obstruction of food or liquid.
+ 
+## What tests do I need to diagnose my swallowing disorder?
+ 
+The main method to diagnose swallowing problems is a gastroscopy. This is a type of endoscopy where a camera is passed through the mouth by the endoscopist, often under sedation. The camera will examine the oesophagus stomach and small bowel. This allows the endoscopist to examine the oesophagus directly. Sometimes it will be necessary to take biopsies from the oesophagus particularly if there is a narrowing.
+ 
+## What other tests might I need if the gastroscopy is normal?
+ 
+If there is no evidence of obstruction to food of liquid and the endoscopy and any biopsies are normal, then the next step is to assess the muscles of the oesophagus. Gravity, and the intrinsic muscles of the oesophagus act together to push the oral intake down in to the stomach. The oesophageal muscles can become both under and over-0active and this can result in problems.
+The best way to diagnose muscular problem is to perform high resolution manometry (HRM). This involves inserting a very thin tube into the nose and passing it in to the oesophagus with a few gulps of water. This is usually comfortable for most patients and is a great tool to diagnose a range of problems. Once HRM is completed and the tube removed, a further very thin tube is passed in to the nose and left inserted for 24 hours whilst the patient continues their normal daily activities. This is called pH impedance and measures acid, belches and other constituents that may be present in the oesophagus and which may be causing symptoms.
+ 
+ 
+Often by this point, the cause of the swallowing problem is apparent. Occasionally, if a patient feels choking, or if there is a problem felt in the neck, a barium swallow, which involves taking X-rays whilst a liquid is swallowed, can be very useful. This is particularly useful at diagnosing swallowing problems resulting from pathologies high up in the oesophagus.
