@@ -27,6 +27,11 @@
   url = "#talks"
   weight = 60
 
+   [[main]]
+  name = "Videos"
+  url = "#videos"
+  weight = 65
+
  [[main]]
   name = "Publications"
   url = "#featured"
@@ -40,7 +45,7 @@
 [[main]]
   name = "Latest"
   url = "#twitterFeed"
-  weight = 80
+  weight = 85
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
