@@ -14,7 +14,6 @@ subtitle = ""
 weight = 92
 +++
 
-
 <iframe id="ytplayer" type="text/html" width="640" height="360"
   src="http://www.youtube.com/embed/videoseries?list=PLpzLzN1ax2RvcJP8Gx7j375fr5qG7LMZ7"
   frameborder="0"></iframe>
