@@ -12,13 +12,11 @@ title = "Endoscopy videos"
 subtitle = ""
 
 # Order that this section will appear in.
-weight = 87
+weight = 100
 +++
   
-{{< youtube w7Ft2ymGmfc >}}
 
-<iframe id="ytplayer" type="text/html" width="100%" height="405"
-src="https://www.youtube.com/embed/?listType=playlist&list=PLpzLzN1ax2RvcJP8Gx7j375fr5qG7LMZ7"
-frameborder="0" allowfullscreen>
+<iframe width='560' height='215' src='http://www.youtube.com/embed/videoseries?list=PLpzLzN1ax2RvcJP8Gx7j375fr5qG7LMZ7'></iframe>
+
 
 
