@@ -15,7 +15,7 @@ subtitle = "Tips and tricks for endoscopists"
 weight = 87
 +++
   
-<iframe id="ytplayer" type="text/html" width="100%" height="405"
+<iframe type="text/html" width="100%" height="405"
 src="https://www.youtube.com/embed/?listType=playlist&list=PLpzLzN1ax2RvcJP8Gx7j375fr5qG7LMZ7"
 frameborder="0" allowfullscreen>
 
