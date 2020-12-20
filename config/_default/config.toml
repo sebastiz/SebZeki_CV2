@@ -23,7 +23,7 @@ copyright = ""
 # Name of Academic theme folder in `themes/`.
 theme = "academic"
 
-googleAnalytics = "UA-140391437-1"
+# googleAnalytics = "256716656"
 
 # Get last modified date for content from Git?
 enableGitInfo = false
