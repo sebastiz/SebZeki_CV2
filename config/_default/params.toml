@@ -107,7 +107,7 @@ coordinates = {latitude = "51.499234", longitude = "-0.118801"}
  office_hours = ["Monday to Saturday evenings (18:00 to 20:00) or Tuesdays 09:00 to 12.30"]
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
-appointment_url = "https://online-booking.heydoc.co.uk/?token=6ea28338c7a08dcdc88cb3d09475a28579d0c4af"
+appointment_url ="https://www.doctify.com/uk/specialist/sebastian-zeki"
 
 # Contact links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
