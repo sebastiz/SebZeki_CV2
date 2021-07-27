@@ -93,7 +93,7 @@ phone = "02033014916"
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "Westminster Bridge Road", city = "London", region = "London", postcode = "SE1 7EH", country = "United Kingdom", country_code = "UK"}
+address = {street = "HCA The Shard,32 St Thomas Street", city = "London", region = "London", postcode = "SE1 9BS", country = "United Kingdom", country_code = "UK"}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
