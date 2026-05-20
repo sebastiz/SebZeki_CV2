@@ -1,10 +1,14 @@
 ---
 title: "Risk factors for severe disease in adults with falciparum malaria"
 authors:
-- Sebastian Zeki
+- Phillips A
+- Bassett P
+- Zeki S
+- Newman S
+- Pasvol G
 date: "2009-01-01T00:00:00Z"
 doi: "10.1086/597258"
-publication: "*Clinical Infectious Diseases*"
+publication: "*Clinical Infectious Diseases*, 48(7):871-878"
 publication_short: ""
 publication_types:
 - "2"

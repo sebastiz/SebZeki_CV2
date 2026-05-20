@@ -1,7 +1,10 @@
 ---
 title: "The Multichannel Intraoesophageal Impedance Transit Concept"
 authors:
-- Sebastian Zeki
+- Miah, Ismail
+- Wong, Terry
+- Zeki, Sebastian
+- Jafari, Jafar
 date: "2024-01-01T00:00:00Z"
 doi: ""
 publication: "*Cureus*"

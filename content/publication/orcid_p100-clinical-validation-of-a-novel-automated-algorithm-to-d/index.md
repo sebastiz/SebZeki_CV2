@@ -1,10 +1,14 @@
 ---
 title: "P100 Clinical validation of a novel automated algorithm to detect patients eligible for hepatocellular carcinoma surveillance from clinical letters"
 authors:
-- Sebastian Zeki
+- Zecevic, Agathe
+- Manaois, Erycar
+- Wong, Terry
+- Wang, Bo
+- Zeki, Sebastian
 date: "2025-01-01T00:00:00Z"
 doi: ""
-publication: "**"
+publication: ""
 publication_short: ""
 publication_types:
 - "2"

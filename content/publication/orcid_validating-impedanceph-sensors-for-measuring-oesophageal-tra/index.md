@@ -1,7 +1,10 @@
 ---
 title: "Validating Impedance/pH Sensors for Measuring Oesophageal Transit: A Study Based on Dysphagia and Barium Swallow"
 authors:
-- Sebastian Zeki
+- Miah, Ismail
+- Wong, Terry
+- Zeki, Sebastian
+- Jafari, Jafar
 date: "2025-01-01T00:00:00Z"
 doi: ""
 publication: "*Sensors*"

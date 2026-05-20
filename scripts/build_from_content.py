@@ -205,13 +205,24 @@ def read_publications() -> list[dict]:
             return m.group(1).strip().strip('"') if m else ""
 
         featured = "featured: true" in fm
+
+        # Parse multi-line authors block
+        authors_match = re.search(r'^authors:\n((?:- .+\n)+)', fm, re.MULTILINE)
+        authors = []
+        if authors_match:
+            for line in authors_match.group(1).splitlines():
+                name = line.strip().lstrip("- ").strip().strip('"')
+                if name:
+                    authors.append(name)
+
         pubs.append({
             "title": _yaml_val("title"),
             "date": _yaml_val("date")[:10],
             "doi": _yaml_val("doi"),
-            "publication": _yaml_val("publication").strip("*"),
+            "publication": _yaml_val("publication"),
             "url": _yaml_val("url_source"),
             "featured": featured,
+            "authors": authors,
         })
 
     pubs.sort(key=lambda p: p["date"], reverse=True)
@@ -365,6 +376,7 @@ CV_CSS = """
   .pub-title  { font-weight: bold; font-size: 10.5pt; }
   .pub-title a { color: #1a237e; text-decoration: none; }
   .pub-title a:hover { text-decoration: underline; }
+  .pub-authors { font-size: 9.5pt; color: #333; margin-top: 0.15rem; }
   .pub-meta   { font-size: 9.5pt; color: #555; margin-top: 0.1rem; }
 
   /* Funding */
@@ -506,13 +518,28 @@ def generate_cv_html(about: dict, experience: list[dict],
         pubs_html_items = ""
         for p in publications:
             year = p["date"][:4] if p["date"] else ""
-            journal = p["publication"].strip("*")
+            # publication field already contains journal + vol/issue/pages e.g. "*npj Digital Medicine*, 7(1)"
+            pub_display = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', _h(p["publication"]))
             doi_link = (f'<a href="{_h(p["url"])}" target="_blank">{_h(p["title"])}</a>'
                         if p["url"] else _h(p["title"]))
+            # Format authors: bold Zeki, truncate after 6
+            raw_authors = p.get("authors", [])
+            if len(raw_authors) > 6:
+                shown = raw_authors[:6]
+                author_str = ", ".join(
+                    f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
+                    for a in shown
+                ) + " et al."
+            else:
+                author_str = ", ".join(
+                    f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
+                    for a in raw_authors
+                )
             pubs_html_items += f"""
         <div class="pub-entry">
           <div class="pub-title">{doi_link}</div>
-          <div class="pub-meta"><em>{_h(journal)}</em>{(', ' + year) if year else ''}</div>
+          <div class="pub-authors">{author_str}</div>
+          <div class="pub-meta">{pub_display}{('. ' + year) if year and year not in p['publication'] else ''}</div>
         </div>"""
         pubs_html = f"""
     <div class="cv-section">

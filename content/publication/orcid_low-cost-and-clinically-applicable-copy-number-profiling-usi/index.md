@@ -1,10 +1,23 @@
 ---
 title: "Low-cost and clinically applicable copy number profiling using repeat DNA"
 authors:
-- Sebastian Zeki
+- Abujudeh S
+- Zeki SS
+- van Lanschot MC
+- Pusung M
+- Weaver JM
+- Li X
+- Noorani A
+- Metz AJ
+- Bornschein J
+- Bower L
+- Miremadi A
+- Fitzgerald RC
+- Morrissey ER
+- Lynch AG
 date: "2022-01-01T00:00:00Z"
 doi: "10.1186/s12864-022-08681-8"
-publication: "*BMC Genomics*"
+publication: "*BMC Genomics*, 23(1)"
 publication_short: ""
 publication_types:
 - "2"

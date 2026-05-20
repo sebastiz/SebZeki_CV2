@@ -1,7 +1,17 @@
 ---
 title: "Prehabilitation of Patients With Oesophageal Malignancy Undergoing Peri-Operative Treatment (Pre-EMPT): Outcomes From a Prospective Controlled Trial"
 authors:
-- Sebastian Zeki
+- Bott, R
+- Zylstra, J
+- Knight, W
+- Whyte, GP
+- Lane, AM
+- Moss, C
+- Browning, M
+- Lagergren, J
+- Van Hemelrijck, M
+- Davies, AR
+- others
 date: "2025-01-01T00:00:00Z"
 doi: ""
 publication: "*Journal of Surgical Oncology*"

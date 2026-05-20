@@ -1,7 +1,10 @@
 ---
 title: "Oesophageal Physiology Clinical Practice: A Case Study and Literature Review"
 authors:
-- Sebastian Zeki
+- Miah, Ismail
+- Wong, Terry
+- Zeki, Sebastian
+- Jafari, Jafar
 date: "2025-01-01T00:00:00Z"
 doi: ""
 publication: "*Cureus*"

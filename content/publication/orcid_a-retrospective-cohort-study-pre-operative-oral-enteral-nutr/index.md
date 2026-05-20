@@ -1,10 +1,29 @@
 ---
 title: "A retrospective cohort study: pre-operative oral enteral nutritional optimisation for Crohnʼs disease in a UK tertiary IBD centre"
 authors:
-- Sebastian Zeki
+- Meade S
+- Patel KV
+- Luber RP
+- O'Hanlon D
+- Caracostea A
+- Pavlidis P
+- Honap S
+- Anandarajah C
+- Griffin N
+- Zeki S
+- Ray S
+- Mawdsley J
+- Samaan MA
+- Anderson SH
+- Darakhshan A
+- Adams K
+- Williams A
+- Sanderson JD
+- Lomer M
+- Irving PM
 date: "2022-01-01T00:00:00Z"
 doi: "10.1111/apt.17055"
-publication: "*Alimentary Pharmacology and Therapeutics*"
+publication: "*Alimentary Pharmacology &amp; Therapeutics*, 56(4):646-663"
 publication_short: ""
 publication_types:
 - "2"

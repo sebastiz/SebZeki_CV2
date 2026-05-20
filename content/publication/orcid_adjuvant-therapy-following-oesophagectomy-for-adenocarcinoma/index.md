@@ -1,7 +1,46 @@
 ---
 title: "Adjuvant therapy following oesophagectomy for adenocarcinoma in patients with a positive resection margin"
 authors:
-- Sebastian Zeki
+- Bott, R.K.
+- Beckmann, K.
+- Zylstra, J.
+- Wilkinson, M.J.
+- Knight, W.R.C.
+- Baker, C.R.
+- Kelly, M.
+- Maisey, N.
+- Qureshi, A.
+- Sevitt, T.
+- Van Hemelrijck, M.
+- Smyth, E.C.
+- Allum, W.H.
+- Lagergren, J.
+- Gossage, J.A.
+- Cunningham, D.
+- Davies, A.R.
+- McEwan, R.
+- Jacques, A.
+- Griffin, N.
+- Goh, V.
+- Ngan, S.
+- Owczarczyk, K.
+- Deere, H.
+- Green, M.
+- Chang, F.
+- Mahadeva, U.
+- Gill-Barman, B.
+- George, S.
+- Meenan, J.
+- Hill, M.
+- Waters, J.
+- Cominos, M.
+- Hynes, O.
+- Coombes, A.
+- Tham, G.
+- Iezzi, C.
+- Reyhani, A.
+- Dunn, J.M.
+- Zeki, S.S.
 date: "2020-01-01T00:00:00Z"
 doi: "10.1002/bjs.11864"
 publication: "*British Journal of Surgery*"

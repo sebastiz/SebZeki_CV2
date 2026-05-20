@@ -1,7 +1,9 @@
 ---
 title: "Field cancerization in Barrett's esophagus."
 authors:
-- Sebastian Zeki
+- Zeki, S.S.
+- McDonald, S.A.
+- Graham, T.A.
 date: "2011-01-01T00:00:00Z"
 doi: ""
 publication: "*Discovery medicine*"

@@ -1,10 +1,36 @@
 ---
 title: "Clonal Diaspora in Metastatic Esophageal Adenocarcinoma Describes a New Model of Cancer Progression"
 authors:
-- Sebastian Zeki
+- Noorani A
+- Goddard M
+- Crawte J
+- Alexandrov LB
+- Secrier M
+- Eldridge MD
+- Bower L
+- Li X
+- Weaver J
+- LaooSirieix P
+- Martincorena I
+- DebirammBeecham I
+- Grehan N
+- MacRae S
+- Malhotra S
+- Miremadi A
+- Thomas T
+- Galbraith S
+- Petersen L
+- Preston SD
+- Gilligan D
+- Hindmarsh A
+- Hardwick RH
+- Consortium O
+- Stratton MR
+- Wedge DC
+- Fitzgerald RC
 date: "2018-01-01T00:00:00Z"
 doi: "10.2139/ssrn.3155893"
-publication: "*SSRN*"
+publication: "*SSRN Electronic Journal*"
 publication_short: ""
 publication_types:
 - "2"

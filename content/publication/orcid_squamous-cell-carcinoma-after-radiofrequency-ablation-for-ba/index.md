@@ -1,10 +1,10 @@
 ---
 title: "Squamous cell carcinoma after radiofrequency ablation for Barrett's dysplasia"
 authors:
-- Sebastian Zeki
+- Zeki SS
 date: "2014-01-01T00:00:00Z"
 doi: "10.3748/wjg.v20.i15.4453"
-publication: "*World Journal of Gastroenterology*"
+publication: "*World Journal of Gastroenterology*, 20(15):4453"
 publication_short: ""
 publication_types:
 - "2"

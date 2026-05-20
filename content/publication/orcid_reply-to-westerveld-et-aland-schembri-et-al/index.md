@@ -1,10 +1,21 @@
 ---
 title: "Reply to Westerveld et aland Schembri et al."
 authors:
-- Sebastian Zeki
+- Zeki S
+- Ooi J
+- Wilson P
+- Walker G
+- Blaker P
+- DeMartino S
+- O’Donohue J
+- Reffitt D
+- Lanaspre E
+- Chang F
+- Meenan J
+- Dunn J
 date: "2017-01-01T00:00:00Z"
 doi: "10.1055/s-0043-118217"
-publication: "*Endoscopy*"
+publication: "*Endoscopy*, 49(11):1115-1115"
 publication_short: ""
 publication_types:
 - "2"
