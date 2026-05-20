@@ -17,39 +17,28 @@
   name = "Skills"
   url = "#skills"
   weight = 40
+
 [[main]]
   name = "Projects"
   url = "#projects"
   weight = 50
 
- [[main]]
-  name = "Talks"
-  url = "#talks"
-  weight = 60
-
-   [[main]]
-  name = "Videos"
-  url = "#videos"
-  weight = 65
-
- [[main]]
+[[main]]
   name = "Publications"
   url = "#featured"
+  weight = 60
+
+[[main]]
+  name = "Talks"
+  url = "#talks"
   weight = 70
+
+[[main]]
+  name = "Funding"
+  url = "#accomplishments"
+  weight = 80
 
 [[main]]
   name = "Contact"
   url = "#contact"
-  weight = 80
-
-[[main]]
-  name = "Latest"
-  url = "#twitterFeed"
-  weight = 85
-
-# Link to a PDF of your resume/CV from the menu.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# [[main]]
-#    name = "CV"
-#    url = "files/cv.pdf"
-#    weight = 70
+  weight = 90
