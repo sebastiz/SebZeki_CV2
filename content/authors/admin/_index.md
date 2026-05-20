@@ -1,25 +1,13 @@
 ---
-# Display name
 title: Sebastian Zeki
-
-# Username (this should match the folder name)
 authors:
 - admin
-
-# Is this the primary user of the site?
 superuser: true
-
-# Role/position
-role: Gastroenterology consultant 
-
-# Organizations/Affiliations
+role: Gastroenterology consultant
 organizations:
 - name: Guy's and St Thomas' NHS Trust
   url: ""
-
-# Short bio (displayed in user profile at end of posts)
-bio: My clinical practice and research interests included upper gastrointestinal pathologies
-
+bio: Dr Sebastian Zeki is a consultant gastroenterologist at St Thomas' Hospital in London. His research interests include upper gastrointestinal physiology, upper gastrointestinal cancer, natural language programming and quality metrics in endoscopy. He co-leads the Gastroenterology data sciences Institute in London.
 interests:
 - Endoscopic therapy
 - Oesophageal and stomach cancers/Barrett's oesophagus
@@ -29,8 +17,6 @@ interests:
 - High quality endoscopy
 - Machine learning/R/Natural language programming
 - Genomics
-
-
 education:
   courses:
   - course: PhD - Genomics of Barrett's related malignancy
@@ -47,11 +33,6 @@ education:
   - course: MA in experimental psychology
     institution: Cambridge University
     year: 1998
-
-# Social/Academic Networking
-# For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
-#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-#   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
 - icon: twitter
   icon_pack: fab
@@ -65,20 +46,10 @@ social:
 - icon: researchgate
   icon_pack: ai
   link: https://www.researchgate.net/profile/Sebastian_Zeki
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
-
-# Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
-
-# Organizational groups that you belong to (for People widget)
-#   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
 - Researchers
 - Visitors
 ---
 
-Dr Sebastian Zeki is a consultant gastroenterologist at St Thomas' Hospital in London. His research interests include upper gastrointestinal physiology, upper gastrointestinal cancer, natural language programming and quality metrics in endoscopy. He co-leads the Gastroenterology data sciences Institute in London
+Dr Sebastian Zeki is a consultant gastroenterologist at St Thomas' Hospital in London. His research interests include upper gastrointestinal physiology, upper gastrointestinal cancer, natural language programming and quality metrics in endoscopy. He co-leads the Gastroenterology data sciences Institute in London.

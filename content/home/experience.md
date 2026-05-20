@@ -1,77 +1,82 @@
 +++
-# Experience widget.
-widget = "experience"  # See https://sourcethemes.com/academic/docs/page-builder/
-headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
-weight = 40  # Order that this section will appear.
+widget = "experience"
+headless = true
+active = true
+weight = 40
 
 title = "Experience"
 subtitle = ""
-
-# Date format for experience
-#   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
 date_format = "Jan 2006"
 
-# Experiences.
-#   Add/remove as many `[[experience]]` blocks below as you like.
-#   Required fields are `title`, `company`, and `date_start`.
-#   Leave `date_end` empty if it's your current employer.
-#   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Honorary Senior Clinical Lecturer, King's College London"
+  title = "Honorary Senior Clinical Lecturer"
   company = "King's College"
   company_url = "http://gastrods.co.uk/"
   location = "London"
   date_start = "2019-10-01"
-  
+  # date_end = ""  # leave empty = current role
+  description = """Research and teaching in gastroenterology data sciences."""
+
 [[experience]]
   title = "Co-head of the Gastroenterology Data Sciences Institute"
   company = "Guy's & St Thomas' NHS Trust"
   company_url = "http://gastrods.co.uk/"
   location = "London"
   date_start = "2017-01-01"
-  
+  # date_end = ""  # leave empty = current role
+  description = """Leading the Gastroenterology Data Sciences Institute."""
+
 [[experience]]
-  title = "Honorary Senior Clinical Lecturer, Bart's Cancer Institute"
+  title = "Honorary Senior Clinical Lecturer"
   company = "Bart's Cancer Institute"
   company_url = "http://gastrods.co.uk/"
   location = "London"
   date_start = "2017-01-01"
-  
+  # date_end = ""  # leave empty = current role
+  description = ""
+
 [[experience]]
   title = "Consultant Gastroenterologist"
   company = "Guy's & St Thomas' NHS Trust"
   company_url = "https://www.guysandstthomas.nhs.uk/our-services/consultant-profiles/gastroenterology/sebastian-zeki.aspx"
   location = "London"
   date_start = "2015-04-01"
+  # date_end = ""  # leave empty = current role
+  description = ""
 
 [[experience]]
   title = "Clinical Lecturer"
   company = "Cambridge University: MRC Hutchison"
   company_url = "http://cambridge.academia.edu/SZeki"
-  location = " Cambridge"
+  location = "London"
   date_start = "2013-06-01"
   date_end = "2015-04-01"
+  description = ""
 
 [[experience]]
-  title = "PhD student"
+  title = "PhD Student"
   company = "Queen Mary University of London"
   company_url = "http://www.researchpublications.qmul.ac.uk/publications/staff/27307.html"
   location = "London"
   date_start = "2010-01-01"
   date_end = "2013-06-01"
+  description = ""
 
 [[experience]]
-  title = "Gastroenterology registrar"
-  company = "North West Thame's Training Rotation"
+  title = "Gastroenterology Registrar"
+  company = "North West Thames Training Rotation"
+  company_url = ""
   location = "London"
   date_start = "2006-06-01"
   date_end = "2016-01-01"
+  description = ""
 
 [[experience]]
-  title = "Postgraduate internal medicine training"
+  title = "Postgraduate Internal Medicine Training"
+  company = "London"
+  company_url = ""
   location = "London"
   date_start = "2001-06-01"
   date_end = "2006-06-01"
-
+  description = ""
 +++

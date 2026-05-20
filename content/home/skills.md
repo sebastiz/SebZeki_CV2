@@ -18,7 +18,7 @@ subtitle = ""
  css_class = ""
 +++
 
-For a full overview of my clinical and academic skills, please visit my professional website.
+For a full overview of my clinical and academic skills, please visit my professional website at <a href="https://www.sebastianzeki.co.uk" target="_blank" rel="noopener">sebastianzeki.co.uk</a>.
 
 <div style="text-align:center; margin-top:1.5rem;">
   <a href="https://www.sebastianzeki.co.uk" target="_blank" rel="noopener"

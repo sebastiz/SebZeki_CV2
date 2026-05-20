@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Build from site_content.md
+        run: python scripts/build_from_content.py
+
       - name: Run ORCID update script
         run: python scripts/update_from_orcid.py
 
