@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Sebastian Zeki</title>
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11pt;
+    color: #1a1a1a;
+    background: #f4f4f4;
+    padding: 2rem 1rem;
+  }
+
+  .cv-page {
+    background: #fff;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 3cm 2.5cm 3cm 2.5cm;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+  }
+
+  /* Print button — hidden when printing */
+  .print-bar {
+    max-width: 820px;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+  .print-bar button {
+    font-family: -apple-system, sans-serif;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .btn-print { background: #1a237e; color: #fff; }
+  .btn-back  { background: #e0e0e0; color: #333; text-decoration: none;
+               display: inline-flex; align-items: center;
+               padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: 600;
+               font-family: -apple-system, sans-serif; font-size: 0.95rem; }
+
+  /* ---- Header ---- */
+  .cv-header { text-align: center; border-bottom: 2.5px solid #1a237e; padding-bottom: 1.2rem; margin-bottom: 1.8rem; }
+  .cv-header h1 { font-size: 26pt; font-weight: bold; letter-spacing: 1px; color: #1a237e; }
+  .cv-header .role { font-size: 13pt; color: #444; margin-top: 0.3rem; }
+  .cv-header .org  { font-size: 11pt; color: #666; margin-top: 0.15rem; }
+  .cv-header .links { margin-top: 0.6rem; font-size: 9.5pt; color: #555; }
+  .cv-header .links a { color: #1a237e; text-decoration: none; margin: 0 0.4rem; }
+
+  /* ---- Sections ---- */
+  .cv-section { margin-bottom: 1.8rem; }
+  .cv-section h2 {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #1a237e;
+    border-bottom: 1px solid #c5cae9;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Biography */
+  .bio-text { line-height: 1.6; }
+
+  /* Interests two-column */
+  .interests-list {
+    columns: 2;
+    column-gap: 2rem;
+    list-style: disc;
+    padding-left: 1.2rem;
+    line-height: 1.7;
+  }
+
+  /* Education table */
+  .edu-table { width: 100%; border-collapse: collapse; }
+  .edu-table td { padding: 0.2rem 0.4rem; vertical-align: top; }
+  .edu-table td:first-child { font-weight: bold; width: 55%; }
+  .edu-table td:last-child  { color: #555; text-align: right; white-space: nowrap; }
+
+  /* Experience */
+  .exp-entry { margin-bottom: 0.9rem; }
+  .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .exp-title  { font-weight: bold; }
+  .exp-dates  { font-size: 9.5pt; color: #666; white-space: nowrap; margin-left: 1rem; }
+  .exp-org    { color: #444; font-style: italic; font-size: 10pt; }
+  .exp-desc   { margin-top: 0.2rem; font-size: 10pt; color: #333; }
+
+  /* Publications */
+  .pub-entry  { margin-bottom: 0.65rem; padding-left: 1rem; border-left: 3px solid #c5cae9; }
+  .pub-title  { font-weight: bold; font-size: 10.5pt; }
+  .pub-title a { color: #1a237e; text-decoration: none; }
+  .pub-title a:hover { text-decoration: underline; }
+  .pub-meta   { font-size: 9.5pt; color: #555; margin-top: 0.1rem; }
+
+  /* Funding */
+  .fund-entry { margin-bottom: 0.75rem; }
+  .fund-header { display: flex; justify-content: space-between; }
+  .fund-title  { font-weight: bold; font-size: 10.5pt; }
+  .fund-org    { font-style: italic; color: #555; font-size: 10pt; }
+  .fund-dates  { font-size: 9.5pt; color: #666; white-space: nowrap; margin-left: 1rem; }
+  .fund-type   { font-size: 9.5pt; color: #888; }
+
+  /* Talks */
+  .talk-entry { margin-bottom: 0.55rem; display: flex; justify-content: space-between; }
+  .talk-title { font-size: 10.5pt; }
+  .talk-date  { font-size: 9.5pt; color: #666; white-space: nowrap; margin-left: 1rem; }
+
+  /* Custom sections */
+  .custom-body { line-height: 1.7; }
+  .custom-body ul { padding-left: 1.2rem; }
+  .custom-body li { margin-bottom: 0.2rem; }
+
+  /* Footer */
+  .cv-footer { text-align: center; margin-top: 2rem; font-size: 9pt; color: #aaa; border-top: 1px solid #eee; padding-top: 0.8rem; }
+
+  /* ===== PRINT STYLES ===== */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .print-bar { display: none !important; }
+    .cv-page { box-shadow: none; max-width: 100%; padding: 1.5cm 1.8cm; }
+    a { color: #1a237e !important; }
+    .cv-section { page-break-inside: avoid; }
+    .pub-entry  { page-break-inside: avoid; }
+    .exp-entry  { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <div class="print-bar">
+    <a class="btn-back" href="/">&larr; Back to site</a>
+    <button class="btn-print" onclick="window.print()">&#128438; Print / Save PDF</button>
+  </div>
+  <div class="cv-page">
+    
+    <div class="cv-header">
+      <h1>Sebastian Zeki</h1>
+      <div class="role">Gastroenterology consultant</div>
+      <div class="org">Guy's and St Thomas' NHS Trust</div>
+      <div class="links">
+        <a href="https://orcid.org/0000-0003-1673-2663">ORCID</a> &middot;
+        <a href="https://scholar.google.co.uk/citations?user=bNKITLsAAAAJ">Google Scholar</a> &middot;
+        <a href="https://github.com/sebastiz">GitHub</a> &middot;
+        <a href="https://www.sebastianzeki.co.uk">sebastianzeki.co.uk</a>
+      </div>
+    </div>
+    
+    <div class="cv-section">
+      <h2>Biography</h2>
+      <p class="bio-text">Dr Sebastian Zeki is a consultant gastroenterologist at St Thomas' Hospital in London. His research interests include upper gastrointestinal physiology, upper gastrointestinal cancer, natural language programming and quality metrics in endoscopy. He co-leads the Gastroenterology data sciences Institute in London.</p>
+    </div>
+    
+    <div class="cv-section">
+      <h2>Research &amp; Clinical Interests</h2>
+      <ul class="interests-list"><li>Endoscopic therapy</li><li>Oesophageal and stomach cancers/Barrett's oesophagus</li><li>Oesophageal physiology</li><li>Heartburn; chest pain; indigestion; bloating; spasm; dyspepsia; irritable bowel syndrome; swallowing disorders; hoarse voice; chronic cough and throat clearing</li><li>Eosinophilic oesophagitis</li><li>High quality endoscopy</li><li>Machine learning/R/Natural language programming</li><li>Genomics</li></ul>
+    </div>
+    
+    <div class="cv-section">
+      <h2>Education &amp; Qualifications</h2>
+      <table class="edu-table"><tbody><tr><td>PhD - Genomics of Barrett's related malignancy</td><td>University of London, 2013</td></tr><tr><td>Member of the Royal College of Physician</td><td>2006</td></tr><tr><td>MSc Health Informatics</td><td>City University, 2003</td></tr><tr><td>MBBS MBChir Medicine</td><td>University College London, 2001</td></tr><tr><td>MA in experimental psychology</td><td>Cambridge University, 1998</td></tr></tbody></table>
+    </div>
+    
+    <div class="cv-section">
+      <h2>Experience</h2>
+      
+        <div class="exp-entry">
+          <div class="exp-header">
+            <span class="exp-title">Honorary Senior Clinical Lecturer</span>
+            <span class="exp-dates">Oct 2019 – Present</span>
+          </div>
+          <div class="exp-org">King's College</div>
+          <div class="exp-desc">Research and teaching in gastroenterology data sciences.</div>
+        </div>
+        <div class="exp-entry">
+          <div class="exp-header">
+            <span class="exp-title">Co-head of the Gastroenterology Data Sciences Institute</span>
+            <span class="exp-dates">Jan 2017 – Present</span>
+          </div>
+          <div class="exp-org">Guy's &amp; St Thomas' NHS Trust</div>
+          <div class="exp-desc">Leading the Gastroenterology Data Sciences Institute.</div>
+        </div>
+        <div class="exp-entry">
+          <div class="exp-header">
+            <span class="exp-title">Honorary Senior Clinical Lecturer</span>
+            <span class="exp-dates">Jan 2017 – Present</span>
+          </div>
+          <div class="exp-org">Bart's Cancer Institute</div>
+          
+        </div>
+        <div class="exp-entry">
+          <div class="exp-header">
+            <span class="exp-title">Consultant Gastroenterologist</span>
+            <span class="exp-dates">Apr 2015 – Present</span>
+          </div>
+          <div class="exp-org">Guy's &amp; St Thomas' NHS Trust</div>
+          
+        </div>
+        <div class="exp-entry">
+          <div class="exp-header">
+            <span class="exp-title">Clinical Lecturer</span>
+            <span class="exp-dates">Jun 2013 – Apr 2015</span>
+          </div>
+          <div class="exp-org">Cambridge University: MRC Hutchison</div>
+          
+        </div>
+        <div class="exp-entry">
+          <div class="exp-header">
+            <span class="exp-title">PhD Student</span>
+            <span class="exp-dates">Jan 2010 – Jun 2013</span>
+          </div>
+          <div class="exp-org">Queen Mary University of London</div>
+          
+        </div>
+        <div class="exp-entry">
+          <div class="exp-header">
+            <span class="exp-title">Gastroenterology Registrar</span>
+            <span class="exp-dates">Jun 2006 – Jan 2016</span>
+          </div>
+          <div class="exp-org">North West Thames Training Rotation</div>
+          
+        </div>
+        <div class="exp-entry">
+          <div class="exp-header">
+            <span class="exp-title">Postgraduate Internal Medicine Training</span>
+            <span class="exp-dates">Jun 2001 – Jun 2006</span>
+          </div>
+          <div class="exp-org">London</div>
+          
+        </div>
+    </div>
+    
+    <div class="cv-section">
+      <h2>Grants &amp; Funding</h2>
+      
+        <div class="fund-entry">
+          <div class="fund-header">
+            <span class="fund-title">Can clinical decision making in Barrett's oesophagus surveillance be automated? A study using natural language processing gastrointestinal endoscopy reports</span>
+            <span class="fund-dates">Sep 2021 – Sep 2024</span>
+          </div>
+          <div class="fund-org">King's College London</div>
+          <div class="fund-type">Grant</div>
+        </div>
+        <div class="fund-entry">
+          <div class="fund-header">
+            <span class="fund-title">Use of Machine Learning to automate decision making in Barrett's oesophagus surveillance</span>
+            <span class="fund-dates">Sep 2021 – Sep 2022</span>
+          </div>
+          <div class="fund-org">London and South East Postgraduate Medical and Dental Education</div>
+          <div class="fund-type">Award</div>
+        </div>
+        <div class="fund-entry">
+          <div class="fund-header">
+            <span class="fund-title">Improving lesion recognition using routinely collected endoscopic and pathology data</span>
+            <span class="fund-dates">Oct 2019 – Feb 2021</span>
+          </div>
+          <div class="fund-org">Health Foundation</div>
+          <div class="fund-type">Grant</div>
+        </div>
+        <div class="fund-entry">
+          <div class="fund-header">
+            <span class="fund-title">Clonal competition and genetic evolution of Barrett’s Oesophagus</span>
+            <span class="fund-dates">Aug 2010 – Aug 2013</span>
+          </div>
+          <div class="fund-org">British Society of Gastroenterology</div>
+          <div class="fund-type">Grant</div>
+        </div>
+    </div>
+    
+    <div class="cv-section">
+      <h2>Publications</h2>
+      
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.17863/cam.125963" target="_blank">Precancerous niche remodelling dictates nascent tumour persistence.</a></div>
+          <div class="pub-meta"><em>Springer Science and Business Media LLC</em>, 2026</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Effectiveness and safety of a haemostatic gel in the treatment of intraprocedural bleeding and prevention of delayed bleeding after advanced endoscopic resection of large and complex gastrointestinal neoplasia: a multicentre prospective observational PuraStat study</div>
+          <div class="pub-meta"><em>Frontline Gastroenterology</em>, 2026</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">216 Feasibility of Routine Symptom Monitoring in Oesophago-Gastric Cancer Patients: Looking Toward Routine Postoperative Monitoring</div>
+          <div class="pub-meta"><em>British Journal of Surgery</em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">ARGENT: Automatic Reference-free Evaluation for Open-Ended Text Generation without Source Inputs</div>
+          <div class="pub-meta"><em>Proceedings of the Fourth Workshop on Generation, Evaluation and Metrics (GEM$^2$)</em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Development of a symptom response to treatment questionnaire for patients in follow-up after oesophago-gastrectomy for cancer</div>
+          <div class="pub-meta"><em>Diseases of the Esophagus</em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Impact of endoscopic pyloric dilatation on symptom relief in delayed gastric emptying after esophageal resection—use of a novel symptom response questionnaire</div>
+          <div class="pub-meta"><em>Diseases of the Esophagus</em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Improving Barrett’s Oesophagus Surveillance Scheduling with Large Language Models: A Structured Extraction Approach</div>
+          <div class="pub-meta"><em>Proceedings of the 24th Workshop on Biomedical Language Processing</em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Oesophageal Physiology Clinical Practice: A Case Study and Literature Review</div>
+          <div class="pub-meta"><em>Cureus</em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P100 Clinical validation of a novel automated algorithm to detect patients eligible for hepatocellular carcinoma surveillance from clinical letters</div>
+          <div class="pub-meta"><em></em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Prehabilitation of Patients With Oesophageal Malignancy Undergoing Peri-Operative Treatment (Pre-EMPT): Outcomes From a Prospective Controlled Trial</div>
+          <div class="pub-meta"><em>Journal of Surgical Oncology</em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Validating Impedance/pH Sensors for Measuring Oesophageal Transit: A Study Based on Dysphagia and Barium Swallow</div>
+          <div class="pub-meta"><em>Sensors</em>, 2025</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.jaip.2023.12.031" target="_blank">Artificial Intelligence Tools for the Diagnosis of Eosinophilic Esophagitis in Adults Reporting Dysphagia: Development, External Validation, and Software Creation for Point-of-Care Use</a></div>
+          <div class="pub-meta"><em>Journal of Allergy and Clinical Immunology: In Practice</em>, 2024</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1038/s41746-024-01302-6" target="_blank">Automated decision making in Barrett’s oesophagus: development and deployment of a natural language processing tool</a></div>
+          <div class="pub-meta"><em>npj Digital Medicine</em>, 2024</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.14309/ajg.0000000000003046" target="_blank">Clinical Characteristics, Endoscopic Findings, and Treatment Outcomes in Lymphocytic Esophagitis Compared to Eosinophilic Esophagitis</a></div>
+          <div class="pub-meta"><em>American Journal of Gastroenterology</em>, 2024</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Generation and Evaluation of Synthetic Endoscopy Free-Text Reports with Differential Privacy</div>
+          <div class="pub-meta"><em>BioNLP 2024 - 23rd Meeting of the ACL Special Interest Group on Biomedical Natural Language Processing, Proceedings of the Workshop and Shared Tasks</em>, 2024</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">REsolution of Symptoms afTer Oesophago-gastric cancer REsection delphi (RESTOREd)—standardizing the definition, investigation and management of gastrointestinal symptoms and conditions after surgery</div>
+          <div class="pub-meta"><em>British Journal of Surgery</em>, 2024</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">The Multichannel Intraoesophageal Impedance Transit Concept</div>
+          <div class="pub-meta"><em>Cureus</em>, 2024</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">The optimal duration of pH monitoring: testing the validity of Lyon 2.0 recommendations for wireless pH measurement</div>
+          <div class="pub-meta"><em>Clinical Gastroenterology and Hepatology</em>, 2024</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.14309/ajg.0000000000002173" target="_blank">Ambulatory pH-Impedance Findings Confirm That Grade B Esophagitis Provides Objective Diagnosis of Gastroesophageal Reflux Disease</a></div>
+          <div class="pub-meta"><em>American Journal of Gastroenterology</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.ejso.2023.05.009" target="_blank">Association of dynamic contrast-enhanced MRI and &lt;sup&gt;18&lt;/sup&gt;F-Fluorodeoxyglucose PET/CT parameters with neoadjuvant therapy response and survival in esophagogastric cancer</a></div>
+          <div class="pub-meta"><em>European Journal of Surgical Oncology</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.5056/jnm22130" target="_blank">Extended Wireless pH Monitoring Significantly Increases Gastroesophageal Reflux Disease Diagnoses in Patients With a Normal pH Impedance Study</a></div>
+          <div class="pub-meta"><em>Journal of Neurogastroenterology and Motility</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1136/flgastro-2022-102309" target="_blank">How achievable are STRIDE-II treatment targets in real-world practice and do they predict long-term treatment outcomes?</a></div>
+          <div class="pub-meta"><em>Frontline Gastroenterology</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Joint Entity and Relation Extraction in Medical Text</div>
+          <div class="pub-meta"><em>CEUR Workshop Proceedings</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1007/s00330-023-09482-7" target="_blank">Metabolic tumour and nodal response to neoadjuvant chemotherapy on FDG PET-CT as a predictor of pathological response and survival in patients with oesophageal adenocarcinoma</a></div>
+          <div class="pub-meta"><em>European Radiology</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1093/dote/doad020" target="_blank">Multiple staging investigations may not change management in patients with high-grade dysplasia or early esophageal adenocarcinoma</a></div>
+          <div class="pub-meta"><em>Diseases of the Esophagus</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1200/JCO.23.00139" target="_blank">Pathologic Lymph Node Regression After Neoadjuvant Chemotherapy Predicts Recurrence and Survival in Esophageal Adenocarcinoma: A Multicenter Study in the United Kingdom</a></div>
+          <div class="pub-meta"><em>Journal of Clinical Oncology</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1136/bmjopen-2023-076661" target="_blank">Single-centre, single-blinded, randomised, parallel group, feasibility study protocol investigating if mandibular advancement device treatment for obstructive sleep apnoea can reduce nocturnal gastro-oesophageal reflux (MAD-Reflux trial)</a></div>
+          <div class="pub-meta"><em>BMJ Open</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.14309/ajg.0000000000002357" target="_blank">Six-Food Elimination Diet Is Less Effective During Pollen Season in Adults With Eosinophilic Esophagitis Sensitized to Pollens</a></div>
+          <div class="pub-meta"><em>American Journal of Gastroenterology</em>, 2023</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1201/9780429091254" target="_blank">The Illustrated MRCP PACES Primer</a></div>
+          <div class="pub-meta"><em></em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1111/apt.17055" target="_blank">A retrospective cohort study: pre-operative oral enteral nutritional optimisation for Crohnʼs disease in a UK tertiary IBD centre</a></div>
+          <div class="pub-meta"><em>Alimentary Pharmacology and Therapeutics</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1245/s10434-021-11252-y" target="_blank">Clinical Relevance of the Tumor Location-Modified Laurén Classification System for Gastric Cancer in a Western Population</a></div>
+          <div class="pub-meta"><em>Annals of Surgical Oncology</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.ejca.2021.12.021" target="_blank">Effect of peri-operative chemotherapy regimen on survival in the treatment of locally advanced oesophago-gastric adenocarcinoma – A comparison of the FLOT and ‘MAGIC’ regimens</a></div>
+          <div class="pub-meta"><em>European Journal of Cancer</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1186/s12864-022-08681-8" target="_blank">Low-cost and clinically applicable copy number profiling using repeat DNA</a></div>
+          <div class="pub-meta"><em>BMC Genomics</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1007/s00520-022-06922-w" target="_blank">Patient perspectives on key symptoms and preferences for follow-up after upper gastro-intestinal cancer surgery</a></div>
+          <div class="pub-meta"><em>Supportive Care in Cancer</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1136/flgastro-2022-102156" target="_blank">Positioning intestinal ultrasound in a UK tertiary centre: Significant estimated clinical role and cost savings</a></div>
+          <div class="pub-meta"><em>Frontline Gastroenterology</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1136/flgastro-2022-102091" target="_blank">Regular feedback to individual endoscopists is associated with improved adenoma detection rate and other key performance indicators for colonoscopy</a></div>
+          <div class="pub-meta"><em>Frontline Gastroenterology</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1093/dote/doab047" target="_blank">Transition from esophagectomy to endoscopic therapy for early esophageal cancer</a></div>
+          <div class="pub-meta"><em>Diseases of the Esophagus</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1136/flgastro-2022-102129" target="_blank">Transnasal endoscopy: Moving from endoscopy to the clinical outpatient-blue sky thinking in oesophageal testing</a></div>
+          <div class="pub-meta"><em>Frontline Gastroenterology</em>, 2022</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1038/s41416-021-01290-4" target="_blank">Does a high Mandard score really define a poor response to chemotherapy in oesophageal adenocarcinoma?</a></div>
+          <div class="pub-meta"><em>British Journal of Cancer</em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1186/s41824-021-00117-y" target="_blank">Initial experience in staging primary oesophageal/gastro-oesophageal cancer with 18F-FDG PET/MRI</a></div>
+          <div class="pub-meta"><em>European Journal of Hybrid Imaging</em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">O32 Defining normal ranges for 96-hour wireless PH monitoring using healthy controls</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">OFR-3 Extended wireless pH monitoring increases GERD diagnoses in patients with a normal pH impedance study</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P-OGC21 Patient perspectives on symptoms of importance and preferences for follow-up after major upper gastro-intestinal cancer surgery</div>
+          <div class="pub-meta"><em>British Journal of Surgery</em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P126 Phenotypic characterisation of suspected small bowel Crohn�s disease with natural language processing of MRE reports</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P229 A novel approach to radiotherapy targeting for oesophageal squamous-cell cancer using lugol�s-solution guided endoclip marking</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P230 Prevalence of cervical inlet patch in patients with and without globus</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P231 An evaluation of the endoscopic, pathologic and radiologic features of 225 patients with eosinophilic oesophagitis</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P237 Accuracy of the PPI test for reflux disease diagnosis: comparison with wireless ph study data</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P44 Regular individual feedback on key performance indicators improves polyp and adenoma detection in colonoscopy</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PMO-26 Intestinal ultrasound instead of endoscopy: large potential role and cost savings</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTH-35 Out-of-hours dedicated trans-nasal endoscopy service--a model for endoscopy recovery during COVID pandemic</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTH-67 Low rate of post-fundoplication dysphagia in patients with pre-operative oesophageal aperistalsis</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTH-68 Schatzki rings are commonly misdiagnosed in patients with eosinophilic oesophagitis</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTH-69 Short segment non dysplastic Barrett’s is often surveyed too early by non-experts</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTH-76 Use of orodispersible budesonide in the treatment of eosinophilic oesophagitis: a single-centre audit</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTU-4 Prospective validation of the edinburgh dysphagia score in South-east London</div>
+          <div class="pub-meta"><em></em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1136/gutjnl-2020-323798" target="_blank">Validation of the Lyon classification for GORD diagnosis: Acid exposure time assessed by prolonged wireless pH monitoring in healthy controls and patients with erosive oesophagitis</a></div>
+          <div class="pub-meta"><em>Gut</em>, 2021</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1002/bjs.11864" target="_blank">Adjuvant therapy following oesophagectomy for adenocarcinoma in patients with a positive resection margin</a></div>
+          <div class="pub-meta"><em>British Journal of Surgery</em>, 2020</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1002/bjs.11461" target="_blank">Machine learning to predict early recurrence after oesophageal cancer surgery</a></div>
+          <div class="pub-meta"><em>British Journal of Surgery</em>, 2020</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">The effects of COVID-19 on IBD prescribing and service provision in a UK tertiary centre</div>
+          <div class="pub-meta"><em>GastroHep</em>, 2020</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1093/dote/doy102" target="_blank">A biomarker panel predicts progression of Barrett's esophagus to esophageal adenocarcinoma</a></div>
+          <div class="pub-meta"><em>Diseases of the Esophagus</em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">O26 QUALITY OF LIFE FOR ACHALASIA PATIENTS IS THE SAME AFTER PER-ORAL ENDOSCOPIC MYOTOMY (POEM) AND HELLER MYOTOMY</div>
+          <div class="pub-meta"><em>Diseases of the Esophagus</em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">OTH-07 Identification of IBD cohorts from linked endoscopy and histology reports using natural language processing</div>
+          <div class="pub-meta"><em>Gut</em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">P27 PERORAL ENDOSCOPIC MYOTOMY (POEM) FOR TREATMENT OF ACHALASIA. CLINICAL OUTCOMES OF A SINGLE-CENTER INSTITUTE IN UK</div>
+          <div class="pub-meta"><em>Diseases of the Esophagus</em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1002/bjs5.50211" target="_blank">Prediction of a positive circumferential resection margin at surgery following neoadjuvant chemotherapy for adenocarcinoma of the oesophagus</a></div>
+          <div class="pub-meta"><em>BJS open</em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTU-047 POEM compares favorably with laparoscopic hellers myotomy as treatment for achalasia</div>
+          <div class="pub-meta"><em></em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTU-105 Automated, algorithm based extraction of Barrett�s surveillance metrics from natural language text is reliable</div>
+          <div class="pub-meta"><em>Gut</em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Su1136--Can Peroral Endoscopic Myotomy (POEM) Become the Treatment of Choice for Achalasia? Results of a Singlecenter Institute in UK</div>
+          <div class="pub-meta"><em>Gastroenterology</em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Transcriptomic profiling reveals three molecular phenotypes of adenocarcinoma at the gastroesophageal junction</div>
+          <div class="pub-meta"><em>International journal of cancer</em>, 2019</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.21105/joss.00701" target="_blank">EndoMineR for the extraction of endoscopic and associated pathology data from medical reports</a></div>
+          <div class="pub-meta"><em>Journal of Open Source Software</em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.2139/ssrn.3155893" target="_blank">Clonal Diaspora in Metastatic Esophageal Adenocarcinoma Describes a New Model of Cancer Progression</a></div>
+          <div class="pub-meta"><em>SSRN</em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.bpg.2018.11.003" target="_blank">Endoscopic management of dysplasia and early oesophageal cancer</a></div>
+          <div class="pub-meta"><em>Best Practice and Research: Clinical Gastroenterology</em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1002/bjs.10900" target="_blank">Lymph node regression and survival following neoadjuvant chemotherapy in oesophageal adenocarcinoma</a></div>
+          <div class="pub-meta"><em>British Journal of Surgery</em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1111/cea.13279" target="_blank">Multidisciplinary approach to the management of adult eosinophilic oesophagitis in the United Kingdom</a></div>
+          <div class="pub-meta"><em>Clinical and Experimental Allergy</em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">OTU-013 Outcomes of 360 HALO express radio-frequency ablation for barrett�s oesophagus related neoplasia</div>
+          <div class="pub-meta"><em></em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">OWE-031 Oesophageal aperistalsis is under investigated in those without achalasia or reflux</div>
+          <div class="pub-meta"><em></em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTH-024 Risk factors for bleeding during endoscopic resection for visible lesions in barrett�s oeosphagus</div>
+          <div class="pub-meta"><em></em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTH-128 Bravo wireless PH monitoring can save time when investigating patients with eosinophilic oesophagitis</div>
+          <div class="pub-meta"><em></em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">PTU-144 Removal of normal and negative phrases from endoscopic semi-structured text for accurate automated endoscopic audit</div>
+          <div class="pub-meta"><em></em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Tu1124-Risk Factors for Bleeding During Endoscopic Resection for Visible Lesions in Barrett's Esophagus</div>
+          <div class="pub-meta"><em>Gastroenterology</em>, 2018</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">A comparative analysis of whole genome sequencing of esophageal adenocarcinoma pre-and post-chemotherapy</div>
+          <div class="pub-meta"><em>Genome research</em>, 2017</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Experienced endoscopists improve Barrett's surveillance outcomes independently of time allocation Reply</div>
+          <div class="pub-meta"><em>ENDOSCOPY</em>, 2017</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1055/s-0043-118217" target="_blank">Reply to Westerveld et aland Schembri et al.</a></div>
+          <div class="pub-meta"><em>Endoscopy</em>, 2017</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1136/bcr-2017-221959" target="_blank">Uvular necrosis following diagnostic gastroscopy</a></div>
+          <div class="pub-meta"><em>BMJ Case Reports</em>, 2017</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1007/978-3-319-41388-4_12" target="_blank">Genomics of esophageal cancer and biomarkers for early detection</a></div>
+          <div class="pub-meta"><em>Advances in Experimental Medicine and Biology</em>, 2016</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">54 evaluation of a minimally-invasive cytosponge esophageal cell collection system in patients with Barrett's esophagus</div>
+          <div class="pub-meta"><em>Gastroenterology</em>, 2015</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.bpg.2014.11.003" target="_blank">The use of molecular markers in predicting dysplasia and guiding treatment</a></div>
+          <div class="pub-meta"><em>Best Practice and Research: Clinical Gastroenterology</em>, 2015</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1038/ng.3013" target="_blank">Ordering of mutations in preinvasive disease stages of esophageal carcinogenesis</a></div>
+          <div class="pub-meta"><em>Nature Genetics</em>, 2014</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.3748/wjg.v20.i15.4453" target="_blank">Squamous cell carcinoma after radiofrequency ablation for Barrett's dysplasia</a></div>
+          <div class="pub-meta"><em>World Journal of Gastroenterology</em>, 2014</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.7861/clinmedicine.14-6-s78" target="_blank">Targeting care in Barrett's oesophagus</a></div>
+          <div class="pub-meta"><em>Clinical medicine (London, England)</em>, 2014</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1136/gutjnl-2013-306508" target="_blank">The stem cell organisation, and the proliferative and gene expression profile of Barrett's epithelium, replicates pyloric-type gastric glands</a></div>
+          <div class="pub-meta"><em>Gut</em>, 2014</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Clonal Interactions in Barrett�s Carcinogenesis.</div>
+          <div class="pub-meta"><em></em>, 2013</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1038/ajg.2013.238" target="_blank">Clonal selection and persistence in dysplastic Barrett's esophagus and intramucosal cancers after failed radiofrequency ablation</a></div>
+          <div class="pub-meta"><em>American Journal of Gastroenterology</em>, 2013</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1002/path.4211" target="_blank">Crypt dysplasia in Barrett's oesophagus shows clonal identity between crypt and surface cells</a></div>
+          <div class="pub-meta"><em>Journal of Pathology</em>, 2013</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Mo1859 Senescent Barrett's Epithelium Causes Proliferation of Neighbouring Non Senescent Epithelium by Paracrine Signalling</div>
+          <div class="pub-meta"><em>Gastroenterology</em>, 2013</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Mo1623 Barretts Related Adenocarcinomas Arise as a Monoclonal Outgrowth From Polyclonal Dysplasia</div>
+          <div class="pub-meta"><em>Gastroenterology</em>, 2012</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.clnu.2011.11.009" target="_blank">Reply - Refeeding hypophosphataemia in patients with malnutrition: Prevention and treatment</a></div>
+          <div class="pub-meta"><em>Clinical Nutrition</em>, 2012</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Tu1116 Recurrence After Radiofrequency Ablation for Barretts Related High Grade Dysplasia is Due to Persistence of Epithelial Mutations</div>
+          <div class="pub-meta"><em>Gastroenterology</em>, 2012</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1007/978-1-61779-980-8_22" target="_blank">Utilizing DNA mutations to trace epithelial cell lineages in human tissues</a></div>
+          <div class="pub-meta"><em>Methods in Molecular Biology</em>, 2012</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">Field cancerization in Barrett's esophagus.</div>
+          <div class="pub-meta"><em>Discovery medicine</em>, 2011</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1016/j.clnu.2010.12.001" target="_blank">Refeeding hypophosphataemia is more common in enteral than parenteral feeding in adult in patients</a></div>
+          <div class="pub-meta"><em>Clinical Nutrition</em>, 2011</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1038/nrgastro.2010.211" target="_blank">Stem cells and their implications for colorectal cancer</a></div>
+          <div class="pub-meta"><em>Nature Reviews Gastroenterology and Hepatology</em>, 2011</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">A deceptive magnetic resonance cholangiopancreatogram?</div>
+          <div class="pub-meta"><em>Grand Rounds</em>, 2010</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">T1322 Colectomy Rates for Patients Treated for CMV Disease in the Context of Ulcerative Colitis do Not Differ From Those Who are Not Treated for CMV Disease</div>
+          <div class="pub-meta"><em>Gastroenterology</em>, 2010</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.3748/wjg.15.877" target="_blank">An obstructing mass in a young ulcerative colitis patient</a></div>
+          <div class="pub-meta"><em>World Journal of Gastroenterology</em>, 2009</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1038/ajg.2009.175" target="_blank">Characterization of inflammatory bowel disease with urinary metabolic profiling</a></div>
+          <div class="pub-meta"><em>American Journal of Gastroenterology</em>, 2009</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1038/ajg.2009.381" target="_blank">Erratum: Characterization of inflammatory bowel disease with urinary metabolic profiling (American Journal of Gastroenterology (2009) 104 (1435-1444) DOI: 10.1038 / ajg.2009.175)</a></div>
+          <div class="pub-meta"><em>American Journal of Gastroenterology</em>, 2009</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title"><a href="https://doi.org/10.1086/597258" target="_blank">Risk factors for severe disease in adults with falciparum malaria</a></div>
+          <div class="pub-meta"><em>Clinical Infectious Diseases</em>, 2009</div>
+        </div>
+        <div class="pub-entry">
+          <div class="pub-title">S1180 Crohn's Disease Is Associated with a Specific Urinary Metabolic Profile</div>
+          <div class="pub-meta"><em>Gastroenterology</em>, 2008</div>
+        </div>
+    </div>
+    
+    <div class="cv-section">
+      <h2>Talks &amp; Presentations</h2>
+      
+        <div class="talk-entry">
+          <span class="talk-title">IBS for general practice- how to approach, how to help and how to treat</span>
+          <span class="talk-date">Jun 2030</span>
+        </div>
+        <div class="talk-entry">
+          <span class="talk-title">Natural language processing of endoscopic and pathological text</span>
+          <span class="talk-date">Jun 2030</span>
+        </div>
+    </div>
+    
+    
+    <div class="cv-footer">
+      Generated 20 May 2026 &middot; Auto-updated from <a href="https://orcid.org/0000-0003-1673-2663">ORCID</a>
+    </div>
+  </div>
+</body>
+</html>
