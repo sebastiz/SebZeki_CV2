@@ -1,0 +1,446 @@
+/*
+ * custom.scss — Professional medical academic theme for Sebastian Zeki CV site
+ * Applied on top of Hugo Academic "minimal" base.
+ */
+
+/* =========================================================
+   1. GOOGLE FONTS — loaded via data/fonts/medical.toml
+      Lora (serif headings) + Source Sans Pro (clean body)
+   ========================================================= */
+
+/* =========================================================
+   2. GLOBAL TYPOGRAPHY
+   ========================================================= */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: #2c2c2c;
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1a3a5c;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p { margin-bottom: 1.1rem; }
+
+a, a:visited {
+  color: #1a3a5c;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: #2a6496;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* =========================================================
+   3. NAVIGATION BAR
+   ========================================================= */
+
+.navbar {
+  background: #1a3a5c !important;
+  box-shadow: 0 2px 12px rgba(26, 58, 92, 0.18);
+  border-bottom: 2px solid #2a6496;
+  height: 64px;
+}
+
+/* Site title in navbar */
+.navbar-brand {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  letter-spacing: 0.02em;
+}
+
+/* Nav links */
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 0.9rem !important;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  border-bottom: 2px solid rgba(255,255,255,0.7);
+}
+
+/* Dark/light mode toggle button */
+.js-dark-toggle i {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+/* =========================================================
+   4. SECTION HEADINGS (home page widgets)
+   ========================================================= */
+
+.home-section {
+  padding: 70px 0;
+}
+
+.home-section:first-of-type {
+  padding-top: 40px;
+}
+
+/* Section title with elegant underline */
+.section-heading h1,
+.section-heading h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: #1a3a5c;
+  position: relative;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading h1::after,
+.section-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #1a3a5c 0%, #2a6496 100%);
+  border-radius: 2px;
+}
+
+.section-heading p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   5. ABOUT / BIOGRAPHY SECTION
+   ========================================================= */
+
+#about .portrait-title h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a3a5c;
+}
+
+#about .portrait-title h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4a6fa5;
+  letter-spacing: 0.02em;
+}
+
+/* Social icons row */
+#about .social-icons a {
+  color: #1a3a5c;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#about .social-icons a:hover {
+  color: #2a6496;
+  transform: translateY(-2px);
+}
+
+/* Bio text */
+#about .article-style {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Interests & Education labels */
+#about .card-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Avatar */
+.avatar {
+  border: 3px solid #1a3a5c;
+  box-shadow: 0 4px 20px rgba(26, 58, 92, 0.15);
+}
+
+.avatar-circle {
+  border-radius: 50%;
+}
+
+/* =========================================================
+   6. PUBLICATION CARDS
+   ========================================================= */
+
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(26, 58, 92, 0.08);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  background: #fff;
+}
+
+.card:hover {
+  box-shadow: 0 6px 24px rgba(26, 58, 92, 0.16);
+  transform: translateY(-3px);
+}
+
+.card .card-body {
+  padding: 1.25rem 1.4rem;
+}
+
+/* Publication type badge */
+.badge-light {
+  background: rgba(26, 58, 92, 0.07);
+  color: #1a3a5c;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+/* Article title in compact/card lists */
+h3.article-title,
+h3.article-title a {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a3a5c;
+  line-height: 1.4;
+}
+
+h3.article-title a:hover {
+  color: #2a6496;
+}
+
+/* Author line */
+.article-metadata {
+  font-size: 0.83rem;
+  color: #6c757d;
+}
+
+/* =========================================================
+   7. EXPERIENCE TIMELINE
+   ========================================================= */
+
+.experience .card {
+  border-left: 4px solid #1a3a5c;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1rem;
+}
+
+.experience .card-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a3a5c;
+  margin-bottom: 0.2rem;
+}
+
+.experience .card-subtitle {
+  font-size: 0.88rem;
+  color: #4a6fa5;
+  font-weight: 600;
+}
+
+/* =========================================================
+   8. ACCOMPLISHMENTS (FUNDING) SECTION
+   ========================================================= */
+
+.accomplishments .card {
+  border-top: 3px solid #1a3a5c;
+}
+
+.accomplishments .card-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a3a5c;
+}
+
+.accomplishments .card-subtitle {
+  color: #4a6fa5;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   9. BUTTONS (CTA, links on publication cards)
+   ========================================================= */
+
+.btn-outline-primary {
+  color: #1a3a5c;
+  border-color: #1a3a5c;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+  background: #1a3a5c;
+  border-color: #1a3a5c;
+  color: #fff;
+}
+
+.btn-primary {
+  background: #1a3a5c;
+  border-color: #1a3a5c;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #2a6496;
+  border-color: #2a6496;
+}
+
+/* =========================================================
+   10. FEATURED PUBLICATIONS SECTION
+   ========================================================= */
+
+#featured .article-title a {
+  color: #1a3a5c;
+}
+
+#featured .article-title a:hover {
+  color: #2a6496;
+}
+
+/* =========================================================
+   11. BLANK WIDGET SECTIONS (Skills, Projects, Talks, custom)
+   ========================================================= */
+
+/* Make H2 subheadings inside blank widgets look clean */
+.home-section .article-style h2,
+.home-section [class*="col"] h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a3a5c;
+  border-bottom: 1px solid #d0dce8;
+  padding-bottom: 0.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.home-section .article-style h2:first-child,
+.home-section [class*="col"] h2:first-child {
+  margin-top: 0;
+}
+
+/* Tighter lists inside blank sections */
+.home-section .article-style ul,
+.home-section [class*="col"] ul {
+  padding-left: 1.2rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   12. CONTACT SECTION
+   ========================================================= */
+
+#contact .contact-widget a {
+  color: #1a3a5c;
+  font-weight: 600;
+}
+
+#contact .contact-widget a:hover {
+  color: #2a6496;
+}
+
+#contact .fa-envelope,
+#contact .fa-phone,
+#contact .fa-map-marker-alt {
+  color: #4a6fa5;
+}
+
+/* =========================================================
+   13. FOOTER
+   ========================================================= */
+
+footer {
+  background: #1a3a5c;
+  margin-top: 0;
+  padding: 1.8rem 0;
+}
+
+footer p,
+footer a {
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: 0.8rem;
+}
+
+footer a:hover {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* =========================================================
+   14. DIVIDERS between sections — subtle rule
+   ========================================================= */
+
+.home-section + .home-section {
+  border-top: 1px solid rgba(26, 58, 92, 0.06);
+}
+
+/* =========================================================
+   15. EVEN SECTION TINT — blue-grey instead of plain grey
+   ========================================================= */
+
+.home-section:nth-of-type(even) {
+  background-color: rgb(246, 248, 251) !important;
+}
+
+/* =========================================================
+   16. RESPONSIVE TWEAKS
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .home-section {
+    padding: 50px 0;
+  }
+
+  .section-heading h1,
+  .section-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    height: auto;
+  }
+}
+
+/* =========================================================
+   17. PRINT BUTTON WIDGET — polish the CV download button
+   ========================================================= */
+
+.home-section .btn[href*="/cv/"] {
+  background: #1a3a5c;
+  border-color: #1a3a5c;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.home-section .btn[href*="/cv/"]:hover {
+  background: #2a6496;
+  border-color: #2a6496;
+}

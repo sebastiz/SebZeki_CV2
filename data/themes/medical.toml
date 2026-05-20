@@ -1,0 +1,18 @@
+# Theme metadata
+name = "Medical"
+
+# Light theme
+light = true
+
+# Deep navy — professional, trustworthy, medical
+primary = "#1a3a5c"
+
+# Navbar — dark navy with white text
+menu_primary = "#1a3a5c"
+menu_text = "rgba(255,255,255,0.85)"
+menu_text_active = "#ffffff"
+menu_title = "#ffffff"
+
+# Alternating sections: crisp white / very light blue-grey
+home_section_odd  = "rgb(255, 255, 255)"
+home_section_even = "rgb(246, 248, 251)"
