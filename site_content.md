@@ -57,13 +57,32 @@ For a full overview of my clinical and academic skills, please visit my professi
 
 # Projects
 
-Projects are managed individually in the content/project/ folder.
-See: EndoMineR, GastroEnterologyBook, Gastrodatascience, HealthFoundationGrant, MiFlo.
+## EndoMineR
+An R package for extracting structured data from free-text endoscopy and pathology reports, linking pathology to procedures and tracking Barrett's surveillance timelines.
+[View on GitHub](https://github.com/sebastiz/EndoMineR)
+
+## Gastrodatascience
+An educational resource for gastroenterology data science, covering R, machine learning, and NLP applied to clinical data.
+[Visit site](https://sebastiz.github.io/gastrodatascience/)
+
+## Gastroenterology Teaching Book
+A free online resource for gastroenterology teaching aimed at medical students and junior doctors.
+[Visit site](http://gastroenterologybook.com/)
+
+## Health Foundation Grant — Improving Lesion Recognition
+Using routinely collected endoscopic and pathology data to improve lesion recognition quality metrics across endoscopy units.
+
+## MiFlo
+Research project exploring minimally invasive flow measurements in gastrointestinal physiology.
 
 
 # Talks
 
-Talks are managed individually in the content/talk/ folder.
+## IBS for General Practice — How to Approach, Help and Treat
+Webinar covering evidence-based guidance for IBS diagnosis and treatment, with approaches for empowering patients.
+
+## Add your next talk title here
+Description of the talk, event name, and date.
 
 
 # Featured Publications

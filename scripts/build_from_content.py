@@ -31,7 +31,7 @@ CONTENT_FILE = REPO / "site_content.md"
 AUTO_SECTIONS = {"featured publications", "funding", "all publications"}
 
 # Sections that are managed per-file in content/ subdirs — skip silently
-NOTE_ONLY_SECTIONS = {"projects", "talks"}
+NOTE_ONLY_SECTIONS: set[str] = set()  # all sections now editable from site_content.md
 
 
 # ---------------------------------------------------------------------------
@@ -797,6 +797,34 @@ subtitle = ""
     print(f"  Wrote {path.relative_to(REPO)}  [new custom section]")
 
 
+def write_simple_section(heading: str, body: str, weight: int, filename: str) -> None:
+    """Write a named home section from free-form markdown content."""
+    slug = re.sub(r"[^\w]+", "-", heading.lower()).strip("-")
+    path = REPO / "content" / "home" / filename
+
+    content = f"""+++
+widget = "blank"
+headless = true
+active = true
+weight = {weight}
+
+title = "{_toml_str(heading)}"
+subtitle = ""
+
+[design]
+  columns = "1"
+
+[advanced]
+ css_style = ""
+ css_class = ""
++++
+
+{body}
+"""
+    path.write_text(content, encoding="utf-8")
+    print(f"  Wrote {path.relative_to(REPO)}")
+
+
 def write_print_cv_button() -> None:
     """Add a 'Print CV' button widget at the very bottom of the home page."""
     content = """+++
@@ -873,6 +901,14 @@ def main() -> None:
         elif key == "skills":
             print("[Skills]")
             write_skills(body)
+
+        elif key == "projects":
+            print("[Projects]")
+            write_simple_section(heading, body, weight=70, filename="projects.md")
+
+        elif key == "talks":
+            print("[Talks]")
+            write_simple_section(heading, body, weight=80, filename="talks.md")
 
         elif any(key.startswith(s) for s in AUTO_SECTIONS):
             print(f"[{heading}] — auto-managed by ORCID script, skipping.")
