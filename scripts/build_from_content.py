@@ -319,6 +319,7 @@ CV_CSS = """
     font-weight: 600;
   }
   .btn-print { background: #1a237e; color: #fff; }
+  .btn-docx  { background: #2e7d32; color: #fff; }
   .btn-back  { background: #e0e0e0; color: #333; text-decoration: none;
                display: inline-flex; align-items: center;
                padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: 600;
@@ -611,13 +612,15 @@ def generate_cv_html(about: dict, experience: list[dict],
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV — Sebastian Zeki</title>
   <style>{CV_CSS}</style>
+  <script src="https://unpkg.com/html-docx-js@0.3.1/dist/html-docx.js"></script>
 </head>
 <body>
   <div class="print-bar">
     <a class="btn-back" href="/">&larr; Back to site</a>
-    <button class="btn-print" onclick="window.print()">&#128438; Print / Save PDF</button>
+    <button class="btn-print" onclick="window.print()">&#128438; Save as PDF</button>
+    <button class="btn-docx" onclick="downloadDocx()">&#128196; Download DOCX</button>
   </div>
-  <div class="cv-page">
+  <div class="cv-page" id="cv-content">
     {header}
     {bio_html}
     {interests_html}
@@ -629,6 +632,19 @@ def generate_cv_html(about: dict, experience: list[dict],
     {custom_html}
     {footer}
   </div>
+  <script>
+    function downloadDocx() {{
+      var cvHtml = document.getElementById('cv-content').innerHTML;
+      var fullHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>' + cvHtml + '</body></html>';
+      var blob = htmlDocx.asBlob(fullHtml);
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Sebastian_Zeki_CV.docx';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }}
+  </script>
 </body>
 </html>
 """
@@ -770,7 +786,7 @@ headless = true
 active = true
 weight = 50
 
-title = "Skills"
+title = "Practice"
 subtitle = ""
 
 [design]
@@ -927,7 +943,7 @@ def write_menus(custom_sections: list[tuple[str, str]]) -> None:
     fixed = [
         ("Home",         "#about",          10),
         ("Posts",        "#experience",     30),
-        ("Skills",       "#skills",         40),
+        ("Practice",     "#skills",         40),
         ("Projects",     "#projects",       50),
         ("Publications", "#featured",       60),
         ("Talks",        "#talks",          70),
@@ -1044,8 +1060,8 @@ def main() -> None:
             print("[Experience]")
             experience_data = write_experience(body)
 
-        elif key == "skills":
-            print("[Skills]")
+        elif key in ("skills", "practice"):
+            print("[Practice]")
             write_skills(body)
 
         elif key == "projects":

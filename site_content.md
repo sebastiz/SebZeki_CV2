@@ -54,9 +54,9 @@ URL: http://www.researchpublications.qmul.ac.uk/publications/staff/27307.html
 ## Gonville and Caius College Cambridge | London | 1995 - 1998
 
 
-# Skills
+# Practice
 
-For a full overview of my clinical and academic skills, please visit my professional website at [sebastianzeki.co.uk](https://www.sebastianzeki.co.uk).
+For a full overview of my clinical and academic practice, please visit my professional website at [sebastianzeki.co.uk](https://www.sebastianzeki.co.uk).
 
 
 # Projects

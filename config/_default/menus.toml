@@ -12,7 +12,7 @@
   weight = 30
 
 [[main]]
-  name = "Skills"
+  name = "Practice"
   url = "#skills"
   weight = 40
 
