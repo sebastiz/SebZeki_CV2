@@ -272,7 +272,7 @@ def authors_from_orcid_work(put_code: str) -> list[str]:
 
 
 def crossref_extra(doi: str) -> dict:
-    result = {"volume": "", "issue": "", "pages": "", "journal": ""}
+    result = {"volume": "", "issue": "", "pages": "", "journal": "", "canonical_doi": ""}
     if not doi:
         return result
     url = f"https://api.crossref.org/works/{doi.strip()}"
@@ -286,6 +286,34 @@ def crossref_extra(doi: str) -> dict:
         result["pages"]   = msg.get("page",   "") or ""
         titles = msg.get("container-title", [])
         result["journal"] = titles[0] if titles else ""
+        result["canonical_doi"] = msg.get("DOI", "") or ""
+    except Exception:
+        pass
+    return result
+
+
+def crossref_search_by_title(title: str) -> dict:
+    """Fallback: search CrossRef by title when a DOI resolves but has no journal name.
+    Returns best match journal, canonical DOI, volume, issue, pages."""
+    result = {"volume": "", "issue": "", "pages": "", "journal": "", "canonical_doi": ""}
+    try:
+        r = requests.get(
+            "https://api.crossref.org/works",
+            params={"query.title": title, "rows": 1, "select": "DOI,container-title,volume,issue,page"},
+            headers=CROSSREF_HDR, timeout=15
+        )
+        if r.status_code != 200:
+            return result
+        items = r.json().get("message", {}).get("items", [])
+        if not items:
+            return result
+        msg = items[0]
+        titles = msg.get("container-title", [])
+        result["journal"]       = titles[0] if titles else ""
+        result["canonical_doi"] = msg.get("DOI", "") or ""
+        result["volume"]        = msg.get("volume", "") or ""
+        result["issue"]         = msg.get("issue", "") or ""
+        result["pages"]         = msg.get("page", "") or ""
     except Exception:
         pass
     return result
@@ -360,6 +388,21 @@ def fetch_works() -> list[dict]:
             extra   = crossref_extra(doi)
             if extra["journal"]:
                 journal = extra["journal"]
+            # If DOI didn't resolve to a known journal (e.g. repository DOI),
+            # fall back to title search to find the canonical journal + DOI
+            if not extra["journal"]:
+                search = crossref_search_by_title(title)
+                if search["journal"]:
+                    journal = search["journal"]
+                if search["canonical_doi"] and search["canonical_doi"] != doi:
+                    doi = search["canonical_doi"]
+                    if not extra["volume"]:
+                        extra["volume"] = search["volume"]
+                    if not extra["issue"]:
+                        extra["issue"] = search["issue"]
+                    if not extra["pages"]:
+                        extra["pages"] = search["pages"]
+                time.sleep(0.12)
             volume = extra["volume"]
             issue  = extra["issue"]
             pages  = extra["pages"]
