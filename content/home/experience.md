@@ -49,7 +49,7 @@ date_format = "Jan 2006"
   description = ""
 
 [[experience]]
-  title = "Clinical Lecturer"
+  title = "NIHR Clinical Lecturer"
   company = "Cambridge University: MRC Hutchison"
   company_url = "http://cambridge.academia.edu/SZeki"
   location = "London"
