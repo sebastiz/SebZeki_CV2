@@ -43,5 +43,5 @@
 
 [[main]]
   name = "All Papers"
-  url = "#allpubs-heading"
+  url = "#allpubs_heading"
   weight = 190
