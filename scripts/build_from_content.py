@@ -852,6 +852,63 @@ subtitle = ""
     print(f"  Wrote {path.relative_to(REPO)}")
 
 
+PUBLICATION_CATEGORIES = [
+    ("Cancer Basic Science",        165),
+    ("Endoscopy",                   166),
+    ("Natural Language Processing", 167),
+    ("Oesophageal Physiology",      168),
+    ("Other",                       169),
+]
+
+
+def write_publication_sections() -> None:
+    """
+    Create one publications widget per category (filtered by tag) and
+    deactivate the old single-widget publications.md.
+    """
+    # Deactivate the legacy catch-all widget
+    legacy = REPO / "content" / "home" / "publications.md"
+    if legacy.exists():
+        txt = legacy.read_text(encoding="utf-8")
+        if "active = true" in txt:
+            txt = txt.replace("active = true", "active = false", 1)
+            legacy.write_text(txt, encoding="utf-8")
+
+    for category, weight in PUBLICATION_CATEGORIES:
+        slug = re.sub(r"[^\w]+", "-", category.lower()).strip("-")
+        filename = f"pub_{slug}.md"
+        path = REPO / "content" / "home" / filename
+
+        content = f"""+++
+widget = "pages"
+headless = true
+active = true
+weight = {weight}
+
+title = "{_toml_str(category)}"
+subtitle = ""
+
+[content]
+  page_type = "publication"
+  count = 0
+  offset = 0
+  order = "desc"
+
+  [content.filters]
+    tag = "{_toml_str(category)}"
+
+[design]
+  view = 2
+
+[advanced]
+ css_style = ""
+ css_class = ""
++++
+"""
+        path.write_text(content, encoding="utf-8")
+        print(f"  Wrote {path.relative_to(REPO)}")
+
+
 def write_menus(custom_sections: list[tuple[str, str]]) -> None:
     """
     Rewrite config/_default/menus.toml to include all known sections
@@ -868,7 +925,9 @@ def write_menus(custom_sections: list[tuple[str, str]]) -> None:
         ("Funding",      "#accomplishments", 80),
     ]
 
-    # Custom sections (Educational Role, etc.) — anchor = #custom-slug
+    # Custom sections (Educational Role, etc.)
+    # Hugo derives the section id from the *filename stem*, which is
+    # "custom_" + hyphen-slug.  e.g. custom_educational-role.md → id="custom_educational-role"
     custom_entries = []
     weight = 90
     seen_names = {name.lower() for name, _, _ in fixed}
@@ -877,7 +936,9 @@ def write_menus(custom_sections: list[tuple[str, str]]) -> None:
             continue
         seen_names.add(heading.lower())
         slug = re.sub(r"[^\w]+", "-", heading.lower()).strip("-")
-        custom_entries.append((heading, f"#custom-{slug}", weight))
+        # Match the actual filename stem Hugo uses as the id
+        anchor = f"#custom_{slug}"
+        custom_entries.append((heading, anchor, weight))
         weight += 10
 
     # Contact always last
@@ -1003,13 +1064,16 @@ def main() -> None:
         "custom_" + re.sub(r"[^\w]+", "-", h.lower()).strip("-") + ".md"
         for h, _ in custom_sections
     }
-    for stale in (REPO / "content" / "home").glob("custom_*.md"):
+    for stale in (REPO / "content" / "home").glob("custom_*.md"):  # type: ignore[assignment]
         if stale.name not in current_slugs:
             # Set active = false rather than deleting
             txt = stale.read_text(encoding="utf-8")
             txt = txt.replace("active = true", "active = false", 1)
             stale.write_text(txt, encoding="utf-8")
             print(f"  Deactivated stale {stale.name}")
+
+    print("\n[Publication sections]")
+    write_publication_sections()
 
     print("\n[Menus]")
     write_menus(custom_sections)

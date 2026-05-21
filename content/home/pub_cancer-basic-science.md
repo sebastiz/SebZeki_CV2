@@ -1,0 +1,25 @@
++++
+widget = "pages"
+headless = true
+active = true
+weight = 165
+
+title = "Cancer Basic Science"
+subtitle = ""
+
+[content]
+  page_type = "publication"
+  count = 0
+  offset = 0
+  order = "desc"
+
+  [content.filters]
+    tag = "Cancer Basic Science"
+
+[design]
+  view = 2
+
+[advanced]
+ css_style = ""
+ css_class = ""
++++
