@@ -14,8 +14,10 @@ date_format = "Jan 2006"
   company_url = "http://gastrods.co.uk/"
   location = "London"
   date_start = "2019-10-01"
-  # date_end = ""  # leave empty = current role
-  description = """Research and teaching in gastroenterology data sciences."""
+  date_end = ""
+  description = """
+  Research and teaching in gastroenterology data sciences.
+  """
 
 [[experience]]
   title = "Co-head of the Gastroenterology Data Sciences Institute"
@@ -23,8 +25,10 @@ date_format = "Jan 2006"
   company_url = "http://gastrods.co.uk/"
   location = "London"
   date_start = "2017-01-01"
-  # date_end = ""  # leave empty = current role
-  description = """Leading the Gastroenterology Data Sciences Institute."""
+  date_end = ""
+  description = """
+  Leading the Gastroenterology Data Sciences Institute.
+  """
 
 [[experience]]
   title = "Honorary Senior Clinical Lecturer"
@@ -32,7 +36,7 @@ date_format = "Jan 2006"
   company_url = "http://gastrods.co.uk/"
   location = "London"
   date_start = "2017-01-01"
-  # date_end = ""  # leave empty = current role
+  date_end = ""
   description = ""
 
 [[experience]]
@@ -41,7 +45,7 @@ date_format = "Jan 2006"
   company_url = "https://www.guysandstthomas.nhs.uk/our-services/consultant-profiles/gastroenterology/sebastian-zeki.aspx"
   location = "London"
   date_start = "2015-04-01"
-  # date_end = ""  # leave empty = current role
+  date_end = ""
   description = ""
 
 [[experience]]

@@ -721,9 +721,11 @@ def write_experience(body: str) -> list[dict]:
 
     blocks = []
     for e in entries:
-        desc_toml = f'  description = """{e["description"]}"""' if e["description"] else '  description = ""'
-        date_end_line = (f'  date_end = "{e["date_end"]}"' if e["date_end"]
-                         else '  # date_end = ""  # leave empty = current role')
+        if e["description"]:
+            desc_toml = f'  description = """\n  {e["description"]}\n  """'
+        else:
+            desc_toml = '  description = ""'
+        date_end_val = e["date_end"] if e["date_end"] else ""
         blocks.append(
             f"""[[experience]]
   title = "{_toml_str(e['title'])}"
@@ -731,7 +733,7 @@ def write_experience(body: str) -> list[dict]:
   company_url = "{e['url']}"
   location = "London"
   date_start = "{e['date_start']}"
-{date_end_line}
+  date_end = "{date_end_val}"
 {desc_toml}
 """
         )
