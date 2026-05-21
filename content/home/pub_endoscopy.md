@@ -2,7 +2,7 @@
 widget = "pages"
 headless = true
 active = true
-weight = 216
+weight = 210
 
 title = "Endoscopy"
 subtitle = ""

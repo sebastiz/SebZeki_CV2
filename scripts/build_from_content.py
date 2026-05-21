@@ -871,13 +871,13 @@ subtitle = ""
 
 
 PUBLICATION_CATEGORIES = [
-    ("Cancer Clinical",             210),
-    ("Cancer Basic Science",        211),
-    ("Eosinophilic Oesophagitis",   212),
-    ("Inflammatory Bowel Disease",  213),
-    ("Natural Language Processing", 214),
-    ("Oesophageal Physiology",      215),
-    ("Endoscopy",                   216),
+    ("Endoscopy",                   210),
+    ("Natural Language Processing", 211),
+    ("Oesophageal Physiology",      212),
+    ("Cancer Basic Science",        213),
+    ("Eosinophilic Oesophagitis",   214),
+    ("Cancer Clinical",             215),
+    ("Inflammatory Bowel Disease",  216),
     ("Other",                       217),
 ]
 
