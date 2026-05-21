@@ -42,6 +42,6 @@
   weight = 80
 
 [[main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 200
+  name = "All Publications"
+  url = "#allpubs-heading"
+  weight = 190
