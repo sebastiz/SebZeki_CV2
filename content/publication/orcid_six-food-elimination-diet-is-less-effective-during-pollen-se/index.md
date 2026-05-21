@@ -20,7 +20,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Eosinophilic Oesophagitis"
 url_pdf: ""
 url_source: "https://doi.org/10.14309/ajg.0000000000002357"
 ---

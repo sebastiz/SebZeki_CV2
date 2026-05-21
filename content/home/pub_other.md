@@ -2,7 +2,7 @@
 widget = "pages"
 headless = true
 active = true
-weight = 169
+weight = 172
 
 title = "Other"
 subtitle = ""

@@ -52,7 +52,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Cancer Clinical"
 url_pdf: ""
 url_source: "https://doi.org/10.1016/j.ejso.2023.05.009"
 ---

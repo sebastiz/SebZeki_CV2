@@ -26,25 +26,50 @@ CROSSREF_HDR = {
 REPO_ROOT      = Path(__file__).parent.parent
 FEATURED_COUNT = 6
 
-# ── Categories (tag written into each publication file) ──────────────────────
+# ── Categories ───────────────────────────────────────────────────────────────
+# Order matters — first match wins in categorize().
 CATEGORIES = [
-    "Natural Language Processing",
+    "Cancer Clinical",
     "Cancer Basic Science",
+    "Eosinophilic Oesophagitis",
+    "Inflammatory Bowel Disease",
+    "Natural Language Processing",
     "Oesophageal Physiology",
     "Endoscopy",
     "Other",
 ]
 
-# Keyword sets — checked against lowercase title.  First match wins.
-_NLP_KW = {
-    "natural language", "machine learning", "artificial intelligence",
-    "language model", "llm", "endominer", "argent", "synthetic report",
-    "entity relation", "information extract", "text extract", "text mining",
-    "automated.*algorithm", "open-ended text", "differential privacy",
-    "generation and evaluation", "structured extraction", "biomedical language",
-    "reference-free evaluation",
+# Keyword sets — matched against the lowercased title via re.search.
+# Cancer Clinical — staging, chemotherapy response, perioperative care, symptoms after surgery
+_CANCER_CLINICAL_KW = {
+    "prehabilitation",
+    "pre-empt",
+    "symptom response to treatment questionnaire",
+    "oesophago-gastrectomy",
+    "resolution of symptoms after",
+    r"\brestored\b",
+    "dynamic contrast-enhanced mri",
+    r"fdg pet",
+    "metabolic tumour",
+    "lymph node regression",
+    "staging investigations",
+    r"laur[eé]n",
+    r"flot.*magic|magic.*flot",
+    "peri-operative chemotherapy regimen",
+    "patient perspectives.*symptoms.*cancer",
+    "patient perspectives.*follow-up.*cancer",
+    r"pet.?mri.*staging|staging.*pet.?mri",
+    "mandard score",
+    "adjuvant therapy.*oesophagectomy",
+    "circumferential resection margin",
+    "neoadjuvant.*adenocarcinoma.*survival|survival.*neoadjuvant.*adenocarcinoma",
+    "neoadjuvant chemotherapy.*predict",
+    "neoadjuvant.*response.*survival",
+    "machine learning.*recurrence.*oesophageal",
 }
-_CANCER_KW = {
+
+# Cancer Basic Science — genomics, clonal dynamics, molecular biology
+_CANCER_BASIC_KW = {
     "clonal", "genomic", "whole genome", "stem cell", "molecular marker",
     "biomarker.*predict", "carcinogenesis", "field cancerization",
     "transcriptomic", "copy number", "dna mutation", "ordering of mutation",
@@ -52,6 +77,33 @@ _CANCER_KW = {
     "monoclonal", "clonal diaspora", "clonal selection", "clonal interaction",
     "senescent barrett", "crypt dysplasia",
 }
+
+# Eosinophilic Oesophagitis
+_EOE_KW = {
+    "eosinophilic oesophagitis", "eosinophilic esophagitis",
+    r"\beoe\b", "eosinophilic", "lymphocytic esophagitis",
+    "six-food elimination", "pollen.*esophagitis",
+}
+
+# Inflammatory Bowel Disease
+_IBD_KW = {
+    "inflammatory bowel disease", r"\bibd\b", "crohn",
+    "ulcerative colitis", r"\bcolitis\b", "stride-ii", "stride ii",
+    "intestinal ultrasound.*ibd|ibd.*intestinal ultrasound",
+    "covid.*ibd|ibd.*covid",
+}
+
+# Natural Language Processing / AI / data science
+_NLP_KW = {
+    "natural language", "machine learning", "artificial intelligence",
+    "language model", r"\bllm\b", "endominer", "argent", "synthetic report",
+    "entity.*relation", "information extract", "text extract", "text mining",
+    "automated.*algorithm", "open-ended text", "differential privacy",
+    "generation and evaluation", "structured extraction", "biomedical language",
+    "reference-free evaluation",
+}
+
+# Oesophageal Physiology
 _PHYSIOLOGY_KW = {
     "ph monitoring", "ph-impedance", "ph impedance", "impedance transit",
     "manometry", r"\bgerd\b", r"\bgord\b", "reflux", "dysphagia",
@@ -60,6 +112,8 @@ _PHYSIOLOGY_KW = {
     "oesophageal transit", "ph sensor", "bravo", "mad-reflux",
     "oesophageal aperistalsis",
 }
+
+# Endoscopy
 _ENDOSCOPY_KW = {
     "endoscopic", "colonoscopy", "adenoma", r"\bpolyp\b", "radiofrequency ablation",
     r"\brfa\b", "barrett.*surveillance", r"\bpoem\b", "haemostatic",
@@ -71,10 +125,10 @@ _ENDOSCOPY_KW = {
 # Abstract title patterns — conference poster/oral abstract codes
 _ABSTRACT_RE = re.compile(
     r"^\s*(?:"
-    r"\d+\s"                           # "216 Feasibility …", "54 evaluation …"
-    r"|[A-Z]{1,4}-[A-Z]?\d+"          # PTH-024, OFR-3, P-OGC21
-    r"|[A-Z]{1,4}\d+"                 # P44, Mo1623, Su1136, Tu1116
-    r"|O\d+"                           # O26, O32
+    r"\d+\s"                                    # "216 Feasibility …", "54 evaluation …"
+    r"|[A-Z]{1,4}-[A-Z]{0,3}\d+"               # PTH-024, OFR-3, P-OGC21
+    r"|[A-Z]{1,4}\d+"                           # P44, Mo1623, Su1136, Tu1116
+    r"|O\d+"                                    # O26, O32
     r")",
     re.IGNORECASE,
 )
@@ -146,11 +200,17 @@ def _kw_match(title: str, kw_set: set) -> bool:
 
 
 def categorize(title: str) -> str:
-    """Return one of the five category strings for a publication title."""
+    """Return one of the eight category strings for a publication title."""
+    if _kw_match(title, _CANCER_CLINICAL_KW):
+        return "Cancer Clinical"
+    if _kw_match(title, _CANCER_BASIC_KW):
+        return "Cancer Basic Science"
+    if _kw_match(title, _EOE_KW):
+        return "Eosinophilic Oesophagitis"
+    if _kw_match(title, _IBD_KW):
+        return "Inflammatory Bowel Disease"
     if _kw_match(title, _NLP_KW):
         return "Natural Language Processing"
-    if _kw_match(title, _CANCER_KW):
-        return "Cancer Basic Science"
     if _kw_match(title, _PHYSIOLOGY_KW):
         return "Oesophageal Physiology"
     if _kw_match(title, _ENDOSCOPY_KW):

@@ -25,7 +25,7 @@ publication_types:
 abstract: ""
 featured: true
 tags:
-- "Natural Language Processing"
+- "Eosinophilic Oesophagitis"
 url_pdf: ""
 url_source: "https://doi.org/10.1016/j.jaip.2023.12.031"
 ---

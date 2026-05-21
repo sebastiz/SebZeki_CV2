@@ -11,7 +11,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Cancer Clinical"
 url_pdf: ""
 url_source: ""
 ---

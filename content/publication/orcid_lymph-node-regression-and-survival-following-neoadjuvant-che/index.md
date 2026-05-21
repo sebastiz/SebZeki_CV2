@@ -45,7 +45,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Cancer Clinical"
 url_pdf: ""
 url_source: "https://doi.org/10.1002/bjs.10900"
 ---

@@ -21,7 +21,7 @@ publication_types:
 abstract: ""
 featured: true
 tags:
-- "Endoscopy"
+- "Eosinophilic Oesophagitis"
 url_pdf: ""
 url_source: "https://doi.org/10.14309/ajg.0000000000003046"
 ---

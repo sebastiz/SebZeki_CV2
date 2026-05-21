@@ -2,9 +2,9 @@
 widget = "pages"
 headless = true
 active = true
-weight = 166
+weight = 165
 
-title = "Cancer Basic Science"
+title = "Cancer Clinical"
 subtitle = ""
 
 [content]
@@ -14,7 +14,7 @@ subtitle = ""
   order = "desc"
 
   [content.filters]
-    tag = "Cancer Basic Science"
+    tag = "Cancer Clinical"
 
 [design]
   view = 2

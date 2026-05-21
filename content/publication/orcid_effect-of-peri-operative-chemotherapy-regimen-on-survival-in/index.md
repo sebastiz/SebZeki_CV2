@@ -48,7 +48,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Cancer Clinical"
 url_pdf: ""
 url_source: "https://doi.org/10.1016/j.ejca.2021.12.021"
 ---

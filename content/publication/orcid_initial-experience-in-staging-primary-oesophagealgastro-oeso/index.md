@@ -47,7 +47,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Cancer Clinical"
 url_pdf: ""
 url_source: "https://doi.org/10.1186/s41824-021-00117-y"
 ---

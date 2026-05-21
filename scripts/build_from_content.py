@@ -853,11 +853,14 @@ subtitle = ""
 
 
 PUBLICATION_CATEGORIES = [
-    ("Cancer Basic Science",        165),
-    ("Endoscopy",                   166),
-    ("Natural Language Processing", 167),
-    ("Oesophageal Physiology",      168),
-    ("Other",                       169),
+    ("Cancer Clinical",             165),
+    ("Cancer Basic Science",        166),
+    ("Eosinophilic Oesophagitis",   167),
+    ("Inflammatory Bowel Disease",  168),
+    ("Natural Language Processing", 169),
+    ("Oesophageal Physiology",      170),
+    ("Endoscopy",                   171),
+    ("Other",                       172),
 ]
 
 
@@ -866,6 +869,10 @@ def write_publication_sections() -> None:
     Create one publications widget per category (filtered by tag) and
     deactivate the old single-widget publications.md.
     """
+    # Remove stale pub_*.md files from previous runs
+    for old in (REPO / "content" / "home").glob("pub_*.md"):
+        old.unlink()
+
     # Deactivate the legacy catch-all widget
     legacy = REPO / "content" / "home" / "publications.md"
     if legacy.exists():

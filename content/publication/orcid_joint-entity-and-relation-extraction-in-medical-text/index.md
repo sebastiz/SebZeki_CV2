@@ -13,7 +13,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Natural Language Processing"
 url_pdf: ""
 url_source: ""
 ---

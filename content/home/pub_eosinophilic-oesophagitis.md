@@ -2,9 +2,9 @@
 widget = "pages"
 headless = true
 active = true
-weight = 166
+weight = 167
 
-title = "Cancer Basic Science"
+title = "Eosinophilic Oesophagitis"
 subtitle = ""
 
 [content]
@@ -14,7 +14,7 @@ subtitle = ""
   order = "desc"
 
   [content.filters]
-    tag = "Cancer Basic Science"
+    tag = "Eosinophilic Oesophagitis"
 
 [design]
   view = 2

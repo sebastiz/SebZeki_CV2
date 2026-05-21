@@ -21,7 +21,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Inflammatory Bowel Disease"
 url_pdf: ""
 url_source: "https://doi.org/10.1136/flgastro-2022-102309"
 ---

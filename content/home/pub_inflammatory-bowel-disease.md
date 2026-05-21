@@ -2,9 +2,9 @@
 widget = "pages"
 headless = true
 active = true
-weight = 166
+weight = 168
 
-title = "Cancer Basic Science"
+title = "Inflammatory Bowel Disease"
 subtitle = ""
 
 [content]
@@ -14,7 +14,7 @@ subtitle = ""
   order = "desc"
 
   [content.filters]
-    tag = "Cancer Basic Science"
+    tag = "Inflammatory Bowel Disease"
 
 [design]
   view = 2

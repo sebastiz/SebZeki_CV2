@@ -97,7 +97,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Natural Language Processing"
+- "Cancer Clinical"
 url_pdf: ""
 url_source: "https://doi.org/10.1002/bjs.11461"
 ---

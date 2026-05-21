@@ -25,7 +25,7 @@ publication_types:
 abstract: ""
 featured: false
 tags:
-- "Other"
+- "Inflammatory Bowel Disease"
 url_pdf: ""
 url_source: "https://doi.org/10.1038/ajg.2009.175"
 ---
