@@ -215,6 +215,15 @@ def read_publications() -> list[dict]:
                 if name:
                     authors.append(name)
 
+        # Parse tags (category)
+        tags_match = re.search(r'^tags:\n((?:- .+\n)+)', fm, re.MULTILINE)
+        tags = []
+        if tags_match:
+            for line in tags_match.group(1).splitlines():
+                tag = line.strip().lstrip("- ").strip().strip('"')
+                if tag:
+                    tags.append(tag)
+
         pubs.append({
             "title": _yaml_val("title"),
             "date": _yaml_val("date")[:10],
@@ -223,6 +232,7 @@ def read_publications() -> list[dict]:
             "url": _yaml_val("url_source"),
             "featured": featured,
             "authors": authors,
+            "tags": tags,
         })
 
     pubs.sort(key=lambda p: p["date"], reverse=True)
@@ -415,24 +425,40 @@ CV_CSS = """
 
 
 def _md_to_html_simple(text: str) -> str:
-    """Convert a small subset of markdown to HTML for the custom sections."""
+    """Convert markdown to HTML for the custom sections, supporting headings and lists."""
     lines = text.splitlines()
     out = []
     in_ul = False
+
+    def close_ul():
+        nonlocal in_ul
+        if in_ul:
+            out.append("</ul>")
+            in_ul = False
+
     for line in lines:
-        if line.startswith("- "):
+        stripped = line.strip()
+        if stripped.startswith("## "):
+            close_ul()
+            heading = _h(stripped[3:].strip())
+            out.append(f'<h3 style="font-size:10.5pt; font-weight:bold; color:#1a237e; '
+                       f'border-bottom:1px solid #c5cae9; padding-bottom:0.2rem; '
+                       f'margin-top:0.9rem; margin-bottom:0.4rem;">{heading}</h3>')
+        elif stripped.startswith("### "):
+            close_ul()
+            heading = _h(stripped[4:].strip())
+            out.append(f'<h4 style="font-size:10pt; font-weight:bold; color:#1a237e; '
+                       f'margin-top:0.6rem; margin-bottom:0.3rem;">{heading}</h4>')
+        elif line.startswith("- "):
             if not in_ul:
                 out.append("<ul>")
                 in_ul = True
             out.append(f"  <li>{_h(line[2:])}</li>")
         else:
-            if in_ul:
-                out.append("</ul>")
-                in_ul = False
-            if line.strip():
+            close_ul()
+            if stripped:
                 out.append(f"<p>{_h(line)}</p>")
-    if in_ul:
-        out.append("</ul>")
+    close_ul()
     return "\n".join(out)
 
 
@@ -445,7 +471,7 @@ def generate_cv_html(about: dict, experience: list[dict],
     # ---- Header ----
     header = f"""
     <div class="cv-header">
-      <h1>{_h("Sebastian Zeki")}</h1>
+      <h1>{_h("Dr Sebastian Zeki")}</h1>
       <div class="role">{_h(about.get('role', ''))}</div>
       <div class="org">{_h(about.get('organisation', ''))}</div>
       <div class="links">
@@ -514,41 +540,65 @@ def generate_cv_html(about: dict, experience: list[dict],
     else:
         exp_html = ""
 
-    # ---- Publications (all, sorted newest first) ----
-    if publications:
-        pubs_html_items = ""
-        for p in publications:
-            year = p["date"][:4] if p["date"] else ""
-            # publication field already contains journal + vol/issue/pages e.g. "*npj Digital Medicine*, 7(1)"
-            pub_display = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', _h(p["publication"]))
-            doi_link = (f'<a href="{_h(p["url"])}" target="_blank">{_h(p["title"])}</a>'
-                        if p["url"] else _h(p["title"]))
-            # Format authors: bold Zeki, truncate after 6
-            raw_authors = p.get("authors", [])
-            if len(raw_authors) > 6:
-                shown = raw_authors[:6]
-                author_str = ", ".join(
-                    f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
-                    for a in shown
-                ) + " et al."
-            else:
-                author_str = ", ".join(
-                    f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
-                    for a in raw_authors
-                )
-            pubs_html_items += f"""
+    # ---- Publication entry helper ----
+    def _pub_entry(p: dict) -> str:
+        year = p["date"][:4] if p["date"] else ""
+        pub_display = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', _h(p["publication"]))
+        doi_link = (f'<a href="{_h(p["url"])}" target="_blank">{_h(p["title"])}</a>'
+                    if p["url"] else _h(p["title"]))
+        raw_authors = p.get("authors", [])
+        if len(raw_authors) > 6:
+            author_str = ", ".join(
+                f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
+                for a in raw_authors[:6]
+            ) + " et al."
+        else:
+            author_str = ", ".join(
+                f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
+                for a in raw_authors
+            )
+        return f"""
         <div class="pub-entry">
           <div class="pub-title">{doi_link}</div>
           <div class="pub-authors">{author_str}</div>
           <div class="pub-meta">{pub_display}{('. ' + year) if year and year not in p['publication'] else ''}</div>
         </div>"""
-        pubs_html = f"""
+
+    # ---- Featured Publications ----
+    featured_pubs = sorted([p for p in publications if p.get("featured")],
+                           key=lambda p: p["date"], reverse=True)
+    if featured_pubs:
+        items = "".join(_pub_entry(p) for p in featured_pubs)
+        featured_pubs_html = f"""
     <div class="cv-section">
-      <h2>Publications</h2>
-      {pubs_html_items}
+      <h2>Featured Publications</h2>
+      {items}
     </div>"""
     else:
-        pubs_html = ""
+        featured_pubs_html = ""
+
+    # ---- All Publications by category ----
+    category_order = [cat for cat, _ in PUBLICATION_CATEGORIES]
+    cat_map: dict[str, list] = {cat: [] for cat in category_order}
+    for p in publications:
+        tag = p.get("tags", ["Other"])[0] if p.get("tags") else "Other"
+        if tag in cat_map:
+            cat_map[tag].append(p)
+        else:
+            cat_map.setdefault("Other", []).append(p)
+
+    all_pubs_html = ""
+    for cat in category_order:
+        cat_pubs = sorted(cat_map.get(cat, []), key=lambda p: p["date"], reverse=True)
+        if cat_pubs:
+            items = "".join(_pub_entry(p) for p in cat_pubs)
+            all_pubs_html += f"""
+    <div class="cv-section">
+      <h2>{_h(cat)}</h2>
+      {items}
+    </div>"""
+
+    pubs_html = featured_pubs_html + all_pubs_html
 
     # ---- Funding ----
     if fundings:
@@ -590,9 +640,11 @@ def generate_cv_html(about: dict, experience: list[dict],
     else:
         talks_html = ""
 
-    # ---- Custom sections ----
+    # ---- Custom sections (exclude Endoscopy Videos) ----
     custom_html = ""
     for heading, body in custom_sections:
+        if heading.lower() == "endoscopy videos":
+            continue
         custom_html += f"""
     <div class="cv-section">
       <h2>{_h(heading)}</h2>
@@ -610,7 +662,7 @@ def generate_cv_html(about: dict, experience: list[dict],
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV — Sebastian Zeki</title>
+  <title>CV — Dr Sebastian Zeki</title>
   <style>{CV_CSS}</style>
   <script src="https://unpkg.com/html-docx-js@0.3.1/dist/html-docx.js"></script>
 </head>
@@ -626,10 +678,11 @@ def generate_cv_html(about: dict, experience: list[dict],
     {interests_html}
     {edu_html}
     {exp_html}
+    {featured_pubs_html}
     {fund_html}
-    {pubs_html}
     {talks_html}
     {custom_html}
+    {all_pubs_html}
     {footer}
   </div>
   <script>
@@ -690,7 +743,7 @@ def write_about(body: str) -> dict:
     org_entry = f"- name: {organisation}\n  url: \"\"" if organisation else ""
 
     content = f"""---
-title: Sebastian Zeki
+title: Dr Sebastian Zeki
 authors:
 - admin
 superuser: true
@@ -977,6 +1030,12 @@ def write_menus(custom_sections: list[tuple[str, str]]) -> None:
     custom_entries = []
     weight = 70
     seen_names = {name.lower() for name, _, _ in fixed}
+    # Shorten headings for nav display
+    NAV_NAME_OVERRIDES = {
+        "educational role": "Educational",
+        "endoscopy videos": "Videos",
+    }
+
     for heading, _ in custom_sections:
         if heading.lower() in seen_names:
             continue
@@ -984,11 +1043,12 @@ def write_menus(custom_sections: list[tuple[str, str]]) -> None:
         slug = re.sub(r"[^\w]+", "-", heading.lower()).strip("-")
         # Match the actual filename stem Hugo uses as the id
         anchor = f"#custom_{slug}"
-        custom_entries.append((heading, anchor, weight))
+        nav_name = NAV_NAME_OVERRIDES.get(heading.lower(), heading)
+        custom_entries.append((nav_name, anchor, weight))
         weight += 10
 
-    # All Publications after custom sections, no Contact
-    all_entries = fixed + custom_entries + [("All Publications", "#allpubs-heading", 190)]
+    # All Papers after custom sections, no Contact
+    all_entries = fixed + custom_entries + [("All Papers", "#allpubs-heading", 190)]
 
     lines = [
         "# Navigation Links — auto-generated by build_from_content.py",

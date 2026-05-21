@@ -32,16 +32,16 @@
   weight = 60
 
 [[main]]
-  name = "Educational Role"
+  name = "Educational"
   url = "#custom_educational-role"
   weight = 70
 
 [[main]]
-  name = "Endoscopy Videos"
+  name = "Videos"
   url = "#custom_endoscopy-videos"
   weight = 80
 
 [[main]]
-  name = "All Publications"
+  name = "All Papers"
   url = "#allpubs-heading"
   weight = 190

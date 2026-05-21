@@ -52,6 +52,18 @@ a:hover, a:focus {
   box-shadow: 0 2px 12px rgba(26, 58, 92, 0.18);
   border-bottom: 2px solid #2a6496;
   height: 64px;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar .navbar-collapse,
+.navbar .navbar-nav {
+  align-items: center;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  line-height: 1;
 }
 
 /* Site title in navbar */

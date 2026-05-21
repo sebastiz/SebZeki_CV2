@@ -1,5 +1,5 @@
 ---
-title: Sebastian Zeki
+title: Dr Sebastian Zeki
 authors:
 - admin
 superuser: true
