@@ -3,7 +3,7 @@
 widget = "accomplishments"
 headless = true
 active = true
-weight = 90
+weight = 40
 
 title = "Funding"
 subtitle = "Research grants and awards"

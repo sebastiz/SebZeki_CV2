@@ -2,7 +2,7 @@
 widget = "pages"
 headless = true
 active = true
-weight = 165
+weight = 210
 
 title = "Cancer Clinical"
 subtitle = ""

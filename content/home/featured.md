@@ -6,7 +6,7 @@
 widget = "featured"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 80  # Order that this section will appear.
+weight = 30  # Order that this section will appear.
 
 title = "Featured Publications"
 subtitle = "[See all publications](https://scholar.google.co.uk/scholar?hl=en&as_sdt=0%2C5&q=%22Sebastian+Zeki%22&btnG=)"

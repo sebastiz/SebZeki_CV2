@@ -2,7 +2,7 @@
 widget = "pages"
 headless = true
 active = true
-weight = 170
+weight = 215
 
 title = "Oesophageal Physiology"
 subtitle = ""

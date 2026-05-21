@@ -759,7 +759,7 @@ def write_experience(body: str) -> list[dict]:
         'widget = "experience"\n'
         "headless = true\n"
         "active = true\n"
-        "weight = 40\n\n"
+        "weight = 20\n\n"
         'title = "Experience"\n'
         'subtitle = ""\n'
         'date_format = "Jan 2006"\n\n'
@@ -783,7 +783,7 @@ def write_skills(body: str) -> None:
     content = f"""+++
 widget = "blank"
 headless = true
-active = true
+active = false
 weight = 50
 
 title = "Practice"
@@ -871,14 +871,14 @@ subtitle = ""
 
 
 PUBLICATION_CATEGORIES = [
-    ("Cancer Clinical",             165),
-    ("Cancer Basic Science",        166),
-    ("Eosinophilic Oesophagitis",   167),
-    ("Inflammatory Bowel Disease",  168),
-    ("Natural Language Processing", 169),
-    ("Oesophageal Physiology",      170),
-    ("Endoscopy",                   171),
-    ("Other",                       172),
+    ("Cancer Clinical",             210),
+    ("Cancer Basic Science",        211),
+    ("Eosinophilic Oesophagitis",   212),
+    ("Inflammatory Bowel Disease",  213),
+    ("Natural Language Processing", 214),
+    ("Oesophageal Physiology",      215),
+    ("Endoscopy",                   216),
+    ("Other",                       217),
 ]
 
 
@@ -942,19 +942,18 @@ def write_menus(custom_sections: list[tuple[str, str]]) -> None:
     # Fixed entries — name, url anchor, weight
     fixed = [
         ("Home",         "#about",          10),
-        ("Posts",        "#experience",     30),
-        ("Practice",     "#skills",         40),
-        ("Projects",     "#projects",       50),
-        ("Publications", "#featured",       60),
-        ("Talks",        "#talks",          70),
-        ("Funding",      "#accomplishments", 80),
+        ("Experience",   "#experience",     20),
+        ("Publications", "#featured",       30),
+        ("Funding",      "#accomplishments", 40),
+        ("Talks",        "#talks",          50),
+        ("Software",     "#projects",       60),
     ]
 
-    # Custom sections (Educational Role, etc.)
+    # Custom sections (Educational Role, Endoscopy Videos, etc.)
     # Hugo derives the section id from the *filename stem*, which is
     # "custom_" + hyphen-slug.  e.g. custom_educational-role.md → id="custom_educational-role"
     custom_entries = []
-    weight = 90
+    weight = 70
     seen_names = {name.lower() for name, _, _ in fixed}
     for heading, _ in custom_sections:
         if heading.lower() in seen_names:
@@ -1021,6 +1020,7 @@ subtitle = ""
   </p>
 </div>
 """
+    content = content.replace("weight = 200\n", "weight = 190\n", 1)
     path = REPO / "content" / "home" / "cv_button.md"
     path.write_text(content, encoding="utf-8")
     print(f"  Wrote {path.relative_to(REPO)}")
@@ -1044,7 +1044,7 @@ def main() -> None:
 
     print(f"=== build_from_content: {len(sections)} sections found ===\n")
 
-    custom_weight = 120
+    custom_weight = 70
     about_data: dict = {}
     experience_data: list[dict] = []
     custom_sections: list[tuple[str, str]] = []
@@ -1064,13 +1064,13 @@ def main() -> None:
             print("[Practice]")
             write_skills(body)
 
-        elif key == "projects":
-            print("[Projects]")
-            write_simple_section(heading, body, weight=70, filename="projects.md")
+        elif key in ("projects", "software"):
+            print("[Software]")
+            write_simple_section("Software", body, weight=60, filename="projects.md")
 
         elif key == "talks":
             print("[Talks]")
-            write_simple_section(heading, body, weight=85, filename="talks.md")
+            write_simple_section(heading, body, weight=50, filename="talks.md")
 
         elif any(key.startswith(s) for s in AUTO_SECTIONS):
             print(f"[{heading}] — auto-managed by ORCID script, skipping.")

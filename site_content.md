@@ -59,7 +59,7 @@ URL: http://www.researchpublications.qmul.ac.uk/publications/staff/27307.html
 For a full overview of my clinical and academic practice, please visit my professional website at [sebastianzeki.co.uk](https://www.sebastianzeki.co.uk).
 
 
-# Projects
+# Software
 
 ## EndoMineR
 An R package for extracting structured data from free-text endoscopy and pathology reports, linking pathology to procedures and tracking Barrett's surveillance timelines.
@@ -139,6 +139,11 @@ I contribute across the KCL–GSTT academic pathway: undergraduate, postgraduate
 - Performance optimisation done with EndoMineR. 
 - Contribution to Nocgca submission as national audit.
 - Development of automated adenoma detection rates for colonoscopy with demonstration (Regular feedback to individual endoscopists is associated with improved adenoma detection rate and other key performance indicators for colonoscopy.Lim S, Tritto G, Zeki S, DeMartino S.Frontline Gastroenterol. 2022 May 6;13(6):509-516. doi: 10.1136/flgastro-2022-102091. eCollection 2022)
+
+
+# Endoscopy Videos
+
+Videos of endoscopic procedures and techniques. Coming soon.
 
 
 # Featured Publications

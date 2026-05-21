@@ -2,7 +2,7 @@
 widget = "blank"
 headless = true
 active = true
-weight = 200
+weight = 190
 
 title = ""
 subtitle = ""

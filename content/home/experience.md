@@ -2,7 +2,7 @@
 widget = "experience"
 headless = true
 active = true
-weight = 40
+weight = 20
 
 title = "Experience"
 subtitle = ""

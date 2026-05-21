@@ -2,9 +2,9 @@
 widget = "blank"
 headless = true
 active = true
-weight = 70
+weight = 60
 
-title = "Projects"
+title = "Software"
 subtitle = ""
 
 [design]

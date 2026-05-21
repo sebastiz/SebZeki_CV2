@@ -486,7 +486,7 @@ def update_funding_widget(fundings: list) -> None:
         'widget = "accomplishments"\n'
         "headless = true\n"
         "active = true\n"
-        "weight = 90\n\n"
+        "weight = 40\n\n"
         'title = "Funding"\n'
         'subtitle = "Research grants and awards"\n\n'
         'date_format = "Jan 2006"\n'

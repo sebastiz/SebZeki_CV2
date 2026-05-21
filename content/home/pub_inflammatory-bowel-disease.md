@@ -2,7 +2,7 @@
 widget = "pages"
 headless = true
 active = true
-weight = 168
+weight = 213
 
 title = "Inflammatory Bowel Disease"
 subtitle = ""

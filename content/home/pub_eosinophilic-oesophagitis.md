@@ -2,7 +2,7 @@
 widget = "pages"
 headless = true
 active = true
-weight = 167
+weight = 212
 
 title = "Eosinophilic Oesophagitis"
 subtitle = ""
