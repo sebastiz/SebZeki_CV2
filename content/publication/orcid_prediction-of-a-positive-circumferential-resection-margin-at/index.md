@@ -1,36 +1,36 @@
 ---
 title: "Prediction of a positive circumferential resection margin at surgery following neoadjuvant chemotherapy for adenocarcinoma of the oesophagus"
 authors:
-- Knight WRC
-- Yip C
-- Wulaningsih W
-- Jacques A
-- Griffin N
-- Zylstra J
-- Van Hemelrijck M
-- Maisey N
-- Gaya A
-- Baker CR
-- Kelly M
-- Gossage JA
-- Lagergren J
-- Landau D
-- Goh V
-- Davies AR
-- Ngan S
-- Qureshi A
-- Deere H
-- Green M
-- Chang F
-- Mahadeva U
-- Gill‐Barman B
-- George S
-- Dunn J
-- Zeki S
-- Meenan J
-- Hynes O
-- Tham G
-- Iezzi C
+- "Knight WRC"
+- "Yip C"
+- "Wulaningsih W"
+- "Jacques A"
+- "Griffin N"
+- "Zylstra J"
+- "Van Hemelrijck M"
+- "Maisey N"
+- "Gaya A"
+- "Baker CR"
+- "Kelly M"
+- "Gossage JA"
+- "Lagergren J"
+- "Landau D"
+- "Goh V"
+- "Davies AR"
+- "Ngan S"
+- "Qureshi A"
+- "Deere H"
+- "Green M"
+- "Chang F"
+- "Mahadeva U"
+- "Gill‐Barman B"
+- "George S"
+- "Dunn J"
+- "Zeki S"
+- "Meenan J"
+- "Hynes O"
+- "Tham G"
+- "Iezzi C"
 date: "2019-01-01T00:00:00Z"
 doi: "10.1002/bjs5.50211"
 publication: "*BJS Open*, 3(6):767-776"
@@ -39,7 +39,8 @@ publication_types:
 - "2"
 abstract: ""
 featured: false
-tags: []
+tags:
+- "Other"
 url_pdf: ""
 url_source: "https://doi.org/10.1002/bjs5.50211"
 ---

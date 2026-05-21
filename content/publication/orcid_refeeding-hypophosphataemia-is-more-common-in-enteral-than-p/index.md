@@ -1,10 +1,10 @@
 ---
 title: "Refeeding hypophosphataemia is more common in enteral than parenteral feeding in adult in patients"
 authors:
-- Zeki S
-- Culkin A
-- Gabe SM
-- Nightingale JM
+- "Zeki S"
+- "Culkin A"
+- "Gabe SM"
+- "Nightingale JM"
 date: "2011-01-01T00:00:00Z"
 doi: "10.1016/j.clnu.2010.12.001"
 publication: "*Clinical Nutrition*, 30(3):365-368"
@@ -13,7 +13,8 @@ publication_types:
 - "2"
 abstract: ""
 featured: false
-tags: []
+tags:
+- "Other"
 url_pdf: ""
 url_source: "https://doi.org/10.1016/j.clnu.2010.12.001"
 ---

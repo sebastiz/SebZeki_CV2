@@ -1,43 +1,43 @@
 ---
 title: "Initial experience in staging primary oesophageal/gastro-oesophageal cancer with 18F-FDG PET/MRI"
 authors:
-- Sharkey AR
-- Sah B
-- Withey SJ
-- Bhuva S
-- Neji R
-- Jeljeli S
-- Green A
-- Cook GJR
-- Goh V
-- Baker CR
-- Chang F
-- Chicklore S
-- Cominos M
-- Coombes A
-- Davies AR
-- George S
-- Gill-Barman B
-- Dunn JN
-- Gossage JA
-- Griffin N
-- Hill M
-- Hynes O
-- Iezzi C
-- Jacques A
-- Kelly M
-- Mahadeva U
-- Maisey N
-- McEwan R
-- Meenan J
-- Ngan S
-- Owczarczyk K
-- Qureshi A
-- Reyhani A
-- Subesinghe M
-- Tham G
-- Waters J
-- Zeki SS
+- "Sharkey AR"
+- "Sah B"
+- "Withey SJ"
+- "Bhuva S"
+- "Neji R"
+- "Jeljeli S"
+- "Green A"
+- "Cook GJR"
+- "Goh V"
+- "Baker CR"
+- "Chang F"
+- "Chicklore S"
+- "Cominos M"
+- "Coombes A"
+- "Davies AR"
+- "George S"
+- "Gill-Barman B"
+- "Dunn JN"
+- "Gossage JA"
+- "Griffin N"
+- "Hill M"
+- "Hynes O"
+- "Iezzi C"
+- "Jacques A"
+- "Kelly M"
+- "Mahadeva U"
+- "Maisey N"
+- "McEwan R"
+- "Meenan J"
+- "Ngan S"
+- "Owczarczyk K"
+- "Qureshi A"
+- "Reyhani A"
+- "Subesinghe M"
+- "Tham G"
+- "Waters J"
+- "Zeki SS"
 date: "2021-01-01T00:00:00Z"
 doi: "10.1186/s41824-021-00117-y"
 publication: "*European Journal of Hybrid Imaging*, 5(1)"
@@ -46,7 +46,8 @@ publication_types:
 - "2"
 abstract: ""
 featured: false
-tags: []
+tags:
+- "Other"
 url_pdf: ""
 url_source: "https://doi.org/10.1186/s41824-021-00117-y"
 ---

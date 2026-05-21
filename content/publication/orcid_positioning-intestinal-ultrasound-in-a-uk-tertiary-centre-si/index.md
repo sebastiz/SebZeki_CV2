@@ -1,14 +1,14 @@
 ---
 title: "Positioning intestinal ultrasound in a UK tertiary centre: Significant estimated clinical role and cost savings"
 authors:
-- Luber RP
-- Petri B
-- Meade S
-- Honap S
-- Zeki S
-- Gecse KB
-- Griffin N
-- Irving PM
+- "Luber RP"
+- "Petri B"
+- "Meade S"
+- "Honap S"
+- "Zeki S"
+- "Gecse KB"
+- "Griffin N"
+- "Irving PM"
 date: "2022-01-01T00:00:00Z"
 doi: "10.1136/flgastro-2022-102156"
 publication: "*Frontline Gastroenterology*, 14(1):52-58"
@@ -17,7 +17,8 @@ publication_types:
 - "2"
 abstract: ""
 featured: false
-tags: []
+tags:
+- "Endoscopy"
 url_pdf: ""
 url_source: "https://doi.org/10.1136/flgastro-2022-102156"
 ---

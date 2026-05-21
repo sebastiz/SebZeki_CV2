@@ -1,93 +1,93 @@
 ---
 title: "Machine learning to predict early recurrence after oesophageal cancer surgery"
 authors:
-- Rahman SA
-- Walker RC
-- Lloyd MA
-- Grace BL
-- van Boxel GI
-- Kingma BF
-- Ruurda JP
-- van Hillegersberg R
-- Harris S
-- Parsons S
-- Mercer S
-- Griffiths EA
-- O'Neill JR
-- Turkington R
-- Fitzgerald RC
-- Underwood TJ
-- Noorani A
-- Elliott RF
-- Edwards PAW
-- Grehan N
-- Nutzinger B
-- Crawte J
-- Chettouh H
-- Contino G
-- Li X
-- Gregson E
-- Zeki S
-- de la Rue R
-- Malhotra S
-- Tavaré S
-- Lynch AG
-- Smith ML
-- Davies J
-- Crichton C
-- Carroll N
-- Safranek P
-- Hindmarsh A
-- Sujendran V
-- Hayes SJ
-- Ang Y
-- Preston SR
-- Oakes S
-- Bagwan I
-- Save V
-- Skipworth RJE
-- Hupp TR
-- O'Neill JR
-- Tucker O
-- Beggs A
-- Taniere P
-- Puig S
-- Underwood TJ
-- Noble F
-- Byrne JP
-- Kelly JJ
-- Owsley J
-- Barr H
-- Shepherd N
-- Old O
-- Lagergren J
-- Gossage J
-- Chang ADF
-- Zylstra J
-- Goh V
-- Ciccarelli FD
-- Sanders G
-- Berrisford R
-- Harden C
-- Bunting D
-- Lewis M
-- Cheong E
-- Kumar B
-- Parsons SL
-- Soomro I
-- Kaye P
-- Saunders J
-- Lovat L
-- Haidry R
-- Eneh V
-- Igali L
-- Scott M
-- Sothi S
-- Suortamo S
-- Lishman S
-- Hanna GB
-- Peters CJ
-- Grabowska A
+- "Rahman SA"
+- "Walker RC"
+- "Lloyd MA"
+- "Grace BL"
+- "van Boxel GI"
+- "Kingma BF"
+- "Ruurda JP"
+- "van Hillegersberg R"
+- "Harris S"
+- "Parsons S"
+- "Mercer S"
+- "Griffiths EA"
+- "O'Neill JR"
+- "Turkington R"
+- "Fitzgerald RC"
+- "Underwood TJ"
+- "Noorani A"
+- "Elliott RF"
+- "Edwards PAW"
+- "Grehan N"
+- "Nutzinger B"
+- "Crawte J"
+- "Chettouh H"
+- "Contino G"
+- "Li X"
+- "Gregson E"
+- "Zeki S"
+- "de la Rue R"
+- "Malhotra S"
+- "Tavaré S"
+- "Lynch AG"
+- "Smith ML"
+- "Davies J"
+- "Crichton C"
+- "Carroll N"
+- "Safranek P"
+- "Hindmarsh A"
+- "Sujendran V"
+- "Hayes SJ"
+- "Ang Y"
+- "Preston SR"
+- "Oakes S"
+- "Bagwan I"
+- "Save V"
+- "Skipworth RJE"
+- "Hupp TR"
+- "O'Neill JR"
+- "Tucker O"
+- "Beggs A"
+- "Taniere P"
+- "Puig S"
+- "Underwood TJ"
+- "Noble F"
+- "Byrne JP"
+- "Kelly JJ"
+- "Owsley J"
+- "Barr H"
+- "Shepherd N"
+- "Old O"
+- "Lagergren J"
+- "Gossage J"
+- "Chang ADF"
+- "Zylstra J"
+- "Goh V"
+- "Ciccarelli FD"
+- "Sanders G"
+- "Berrisford R"
+- "Harden C"
+- "Bunting D"
+- "Lewis M"
+- "Cheong E"
+- "Kumar B"
+- "Parsons SL"
+- "Soomro I"
+- "Kaye P"
+- "Saunders J"
+- "Lovat L"
+- "Haidry R"
+- "Eneh V"
+- "Igali L"
+- "Scott M"
+- "Sothi S"
+- "Suortamo S"
+- "Lishman S"
+- "Hanna GB"
+- "Peters CJ"
+- "Grabowska A"
 date: "2020-01-01T00:00:00Z"
 doi: "10.1002/bjs.11461"
 publication: "*British Journal of Surgery*, 107(8):1042-1052"
@@ -96,7 +96,8 @@ publication_types:
 - "2"
 abstract: ""
 featured: false
-tags: []
+tags:
+- "Natural Language Processing"
 url_pdf: ""
 url_source: "https://doi.org/10.1002/bjs.11461"
 ---

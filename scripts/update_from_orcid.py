@@ -7,8 +7,8 @@ Full author lists are resolved in priority order:
   1. CrossRef (for any work with a DOI) — most complete
   2. ORCID full-work record (put-code endpoint) — fallback for non-DOI works
 
-Run manually:  python scripts/update_from_orcid.py
-Auto-run:      GitHub Actions (.github/workflows/update_orcid.yml) runs this daily.
+Abstracts (conference poster/oral codes), errata, and replies are excluded.
+Publications are classified into one of five categories via keyword matching.
 """
 
 import re
@@ -19,18 +19,74 @@ from pathlib import Path
 ORCID_ID   = "0000-0003-1673-2663"
 BASE_URL   = f"https://pub.orcid.org/v3.0/{ORCID_ID}"
 ORCID_HDR  = {"Accept": "application/json"}
-# CrossRef asks for a polite User-Agent with contact info
 CROSSREF_HDR = {
     "User-Agent": "SebZekiCV/1.0 (https://github.com/sebastiz/SebZeki_CV2; mailto:s.zeki@gstt.nhs.uk)"
 }
 
-REPO_ROOT     = Path(__file__).parent.parent
+REPO_ROOT      = Path(__file__).parent.parent
 FEATURED_COUNT = 6
 
+# ── Categories (tag written into each publication file) ──────────────────────
+CATEGORIES = [
+    "Natural Language Processing",
+    "Cancer Basic Science",
+    "Oesophageal Physiology",
+    "Endoscopy",
+    "Other",
+]
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
+# Keyword sets — checked against lowercase title.  First match wins.
+_NLP_KW = {
+    "natural language", "machine learning", "artificial intelligence",
+    "language model", "llm", "endominer", "argent", "synthetic report",
+    "entity relation", "information extract", "text extract", "text mining",
+    "automated.*algorithm", "open-ended text", "differential privacy",
+    "generation and evaluation", "structured extraction", "biomedical language",
+    "reference-free evaluation",
+}
+_CANCER_KW = {
+    "clonal", "genomic", "whole genome", "stem cell", "molecular marker",
+    "biomarker.*predict", "carcinogenesis", "field cancerization",
+    "transcriptomic", "copy number", "dna mutation", "ordering of mutation",
+    "preinvasive", "epithelial cell lineage", "precancerous niche",
+    "monoclonal", "clonal diaspora", "clonal selection", "clonal interaction",
+    "senescent barrett", "crypt dysplasia",
+}
+_PHYSIOLOGY_KW = {
+    "ph monitoring", "ph-impedance", "ph impedance", "impedance transit",
+    "manometry", r"\bgerd\b", r"\bgord\b", "reflux", "dysphagia",
+    "swallowing", "motility", "aperistalsis", "achalasia", "lyon",
+    "wireless ph", "oesophageal physiology", "intraoesophageal",
+    "oesophageal transit", "ph sensor", "bravo", "mad-reflux",
+    "oesophageal aperistalsis",
+}
+_ENDOSCOPY_KW = {
+    "endoscopic", "colonoscopy", "adenoma", r"\bpolyp\b", "radiofrequency ablation",
+    r"\brfa\b", "barrett.*surveillance", r"\bpoem\b", "haemostatic",
+    "mucosal resection", r"\besd\b", "intestinal ultrasound",
+    "endoscopic therapy", "transnasal endoscopy", "halo express",
+    "endoscopic resection", "trans-nasal",
+}
+
+# Abstract title patterns — conference poster/oral abstract codes
+_ABSTRACT_RE = re.compile(
+    r"^\s*(?:"
+    r"\d+\s"                           # "216 Feasibility …", "54 evaluation …"
+    r"|[A-Z]{1,4}-[A-Z]?\d+"          # PTH-024, OFR-3, P-OGC21
+    r"|[A-Z]{1,4}\d+"                 # P44, Mo1623, Su1136, Tu1116
+    r"|O\d+"                           # O26, O32
+    r")",
+    re.IGNORECASE,
+)
+
+# Titles that start with these strings are always excluded
+_EXCLUDE_PREFIXES = (
+    "erratum",
+    "reply",
+)
+
+
+# ── Helpers ──────────────────────────────────────────────────────────────────
 
 def slugify(text: str) -> str:
     text = text.lower()
@@ -51,7 +107,6 @@ def _zpad(val: str, width: int = 2) -> str:
 
 
 def _q(text: str) -> str:
-    """Escape for YAML double-quoted scalars."""
     return text.replace("\\", "\\\\").replace('"', '\\"')
 
 
@@ -70,24 +125,50 @@ def map_work_type(orcid_type: str) -> str:
     return mapping.get(orcid_type, "2")
 
 
-def format_authors(authors: list[str], max_before_et_al: int = 6) -> str:
-    """Return 'A, B, C et al.' style string."""
-    if not authors:
-        return "Zeki S"
-    if len(authors) <= max_before_et_al:
-        return ", ".join(authors)
-    return ", ".join(authors[:max_before_et_al]) + " et al."
+def is_abstract(title: str) -> bool:
+    """Return True if the title looks like a conference abstract."""
+    if not title:
+        return True
+    if _ABSTRACT_RE.match(title):
+        return True
+    low = title.lower().strip()
+    if any(low.startswith(p) for p in _EXCLUDE_PREFIXES):
+        return True
+    return False
 
 
-# ---------------------------------------------------------------------------
-# Author resolution
-# ---------------------------------------------------------------------------
+def _kw_match(title: str, kw_set: set) -> bool:
+    low = title.lower()
+    for kw in kw_set:
+        if re.search(kw, low):
+            return True
+    return False
+
+
+def categorize(title: str) -> str:
+    """Return one of the five category strings for a publication title."""
+    if _kw_match(title, _NLP_KW):
+        return "Natural Language Processing"
+    if _kw_match(title, _CANCER_KW):
+        return "Cancer Basic Science"
+    if _kw_match(title, _PHYSIOLOGY_KW):
+        return "Oesophageal Physiology"
+    if _kw_match(title, _ENDOSCOPY_KW):
+        return "Endoscopy"
+    return "Other"
+
+
+def _norm(title: str) -> str:
+    """Normalise a title for deduplication — strips punctuation and leading codes."""
+    t = re.sub(_ABSTRACT_RE, "", title)   # strip leading abstract code
+    t = re.sub(r"[^\w\s]", " ", t.lower())
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
+
+
+# ── CrossRef helpers ─────────────────────────────────────────────────────────
 
 def authors_from_crossref(doi: str) -> list[str]:
-    """
-    Query CrossRef for a DOI and return a list of 'Surname I' formatted authors.
-    Returns [] on any failure.
-    """
     if not doi:
         return []
     url = f"https://api.crossref.org/works/{doi.strip()}"
@@ -95,10 +176,9 @@ def authors_from_crossref(doi: str) -> list[str]:
         r = requests.get(url, headers=CROSSREF_HDR, timeout=15)
         if r.status_code != 200:
             return []
-        data = r.json().get("message", {})
-        raw_authors = data.get("author", [])
+        raw = r.json().get("message", {}).get("author", [])
         authors = []
-        for a in raw_authors:
+        for a in raw:
             family = a.get("family", "").strip()
             given  = a.get("given", "").strip()
             if family:
@@ -110,10 +190,6 @@ def authors_from_crossref(doi: str) -> list[str]:
 
 
 def authors_from_orcid_work(put_code: str) -> list[str]:
-    """
-    Fetch the full ORCID work record by put-code and extract contributors.
-    Returns [] on any failure.
-    """
     if not put_code:
         return []
     url = f"{BASE_URL}/work/{put_code}"
@@ -121,17 +197,13 @@ def authors_from_orcid_work(put_code: str) -> list[str]:
         r = requests.get(url, headers=ORCID_HDR, timeout=15)
         if r.status_code != 200:
             return []
-        data = r.json()
-        contributors = (
-            (data.get("contributors") or {}).get("contributor") or []
-        )
+        contributors = (r.json().get("contributors") or {}).get("contributor") or []
         authors = []
         for c in contributors:
             role = _str((c.get("contributor-attributes") or {}).get("contributor-role"))
             if role and role.upper() not in ("AUTHOR", ""):
-                continue  # skip editors etc.
-            cn = c.get("credit-name") or {}
-            name = _str(cn).strip()
+                continue
+            name = _str(c.get("credit-name") or {}).strip()
             if name:
                 authors.append(name)
         return authors
@@ -140,10 +212,6 @@ def authors_from_orcid_work(put_code: str) -> list[str]:
 
 
 def crossref_extra(doi: str) -> dict:
-    """
-    Fetch volume, issue, pages, and full journal name from CrossRef.
-    Returns a dict with keys: volume, issue, pages, journal (may be empty strings).
-    """
     result = {"volume": "", "issue": "", "pages": "", "journal": ""}
     if not doi:
         return result
@@ -153,9 +221,9 @@ def crossref_extra(doi: str) -> dict:
         if r.status_code != 200:
             return result
         msg = r.json().get("message", {})
-        result["volume"] = msg.get("volume", "") or ""
-        result["issue"]  = msg.get("issue",  "") or ""
-        result["pages"]  = msg.get("page",   "") or ""
+        result["volume"]  = msg.get("volume", "") or ""
+        result["issue"]   = msg.get("issue",  "") or ""
+        result["pages"]   = msg.get("page",   "") or ""
         titles = msg.get("container-title", [])
         result["journal"] = titles[0] if titles else ""
     except Exception:
@@ -163,19 +231,18 @@ def crossref_extra(doi: str) -> dict:
     return result
 
 
-# ---------------------------------------------------------------------------
-# ORCID works fetcher
-# ---------------------------------------------------------------------------
+# ── Fetchers ─────────────────────────────────────────────────────────────────
 
 def fetch_works() -> list[dict]:
-    """Return deduplicated works sorted newest-first, with full author lists."""
+    """Return deduplicated, non-abstract works sorted newest-first."""
     r = requests.get(f"{BASE_URL}/works", headers=ORCID_HDR, timeout=30)
     r.raise_for_status()
     data = r.json()
 
     works      = []
-    seen_titles: set[str] = set()
+    seen_norms: set[str] = set()
     total      = len(data.get("group", []))
+    skipped    = 0
 
     for idx, group in enumerate(data.get("group", []), 1):
         summaries = group.get("work-summary", [])
@@ -196,10 +263,17 @@ def fetch_works() -> list[dict]:
         if not title:
             continue
 
-        norm = re.sub(r"[^\w\s]", "", title.lower())
-        if norm in seen_titles:
+        # ── Skip abstracts and errata ──
+        if is_abstract(title):
+            skipped += 1
             continue
-        seen_titles.add(norm)
+
+        # ── Deduplicate on normalised title ──
+        norm = _norm(title)
+        if norm in seen_norms:
+            skipped += 1
+            continue
+        seen_norms.add(norm)
 
         # Date
         pub_date = best.get("publication-date") or {}
@@ -215,53 +289,48 @@ def fetch_works() -> list[dict]:
                 doi = (eid.get("external-id-value") or "").strip()
                 break
 
-        # Journal from summary (may be improved by CrossRef below)
         journal = _str(best.get("journal-title"))
 
-        # ---- Resolve full authors + extra metadata ----
+        # ── Resolve authors + CrossRef metadata ──
         authors = []
         volume = issue = pages = ""
 
         if doi:
             authors = authors_from_crossref(doi)
             extra   = crossref_extra(doi)
-            if not journal and extra["journal"]:
+            if extra["journal"]:
                 journal = extra["journal"]
-            elif extra["journal"]:
-                journal = extra["journal"]   # prefer CrossRef journal name
             volume = extra["volume"]
             issue  = extra["issue"]
             pages  = extra["pages"]
-            time.sleep(0.12)   # polite rate-limit (~8 req/s max)
+            time.sleep(0.12)
 
         if not authors:
             authors = authors_from_orcid_work(best_put_code)
             time.sleep(0.05)
 
         works.append({
-            "title":   title,
-            "date":    date_str,
-            "year":    year,
-            "journal": journal,
-            "doi":     doi,
-            "url":     f"https://doi.org/{doi}" if doi else "",
-            "type":    best.get("type", "JOURNAL_ARTICLE"),
-            "authors": authors,
-            "volume":  volume,
-            "issue":   issue,
-            "pages":   pages,
+            "title":    title,
+            "date":     date_str,
+            "year":     year,
+            "journal":  journal,
+            "doi":      doi,
+            "url":      f"https://doi.org/{doi}" if doi else "",
+            "type":     best.get("type", "JOURNAL_ARTICLE"),
+            "authors":  authors,
+            "volume":   volume,
+            "issue":    issue,
+            "pages":    pages,
+            "category": categorize(title),
         })
 
         if idx % 10 == 0:
-            print(f"      … processed {idx}/{total}")
+            print(f"      … processed {idx}/{total} ({skipped} skipped so far)")
 
     works.sort(key=lambda w: w["date"], reverse=True)
+    print(f"      Skipped {skipped} abstracts/duplicates/errata in total")
     return works
 
-
-# ---------------------------------------------------------------------------
-# ORCID funding fetcher
-# ---------------------------------------------------------------------------
 
 def fetch_fundings() -> list[dict]:
     r = requests.get(f"{BASE_URL}/fundings", headers=ORCID_HDR, timeout=30)
@@ -274,24 +343,17 @@ def fetch_fundings() -> list[dict]:
         if not summaries:
             continue
         s = summaries[0]
-
         title = _str(((s.get("title") or {}).get("title") or {}))
         org   = _str((s.get("organization") or {}).get("name"))
-
         start = s.get("start-date") or {}
         end   = s.get("end-date")   or {}
-
-        sy = _str(start.get("year"));  sm = _str(start.get("month")) or "01"
-        ey = _str(end.get("year"));    em = _str(end.get("month"))   or "01"
-
-        date_start = f"{sy}-{_zpad(sm)}-01" if sy else ""
-        date_end   = f"{ey}-{_zpad(em)}-01" if ey else ""
-
+        sy = _str(start.get("year")); sm = _str(start.get("month")) or "01"
+        ey = _str(end.get("year"));   em = _str(end.get("month"))   or "01"
         fundings.append({
             "title":        title,
             "organization": org,
-            "date_start":   date_start,
-            "date_end":     date_end,
+            "date_start":   f"{sy}-{_zpad(sm)}-01" if sy else "",
+            "date_end":     f"{ey}-{_zpad(em)}-01" if ey else "",
             "type":         (s.get("type") or "Grant").replace("_", " ").title(),
         })
 
@@ -299,9 +361,7 @@ def fetch_fundings() -> list[dict]:
     return fundings
 
 
-# ---------------------------------------------------------------------------
-# Writers
-# ---------------------------------------------------------------------------
+# ── Writers ───────────────────────────────────────────────────────────────────
 
 def create_publication_file(work: dict, featured: bool = False) -> None:
     slug    = f"orcid_{slugify(work['title'])}"
@@ -309,12 +369,9 @@ def create_publication_file(work: dict, featured: bool = False) -> None:
     pub_dir.mkdir(parents=True, exist_ok=True)
 
     pub_type = map_work_type(work["type"])
+    authors  = work.get("authors") or ["Sebastian Zeki"]
+    authors_yaml = "\n".join(f"- \"{_q(a)}\"" for a in authors)
 
-    # Build authors YAML list
-    authors = work.get("authors") or ["Sebastian Zeki"]
-    authors_yaml = "\n".join(f"- {_q(a)}" for a in authors)
-
-    # Build citation string for display (volume/issue/pages)
     journal = work["journal"]
     vol_str = ""
     if work.get("volume"):
@@ -325,6 +382,7 @@ def create_publication_file(work: dict, featured: bool = False) -> None:
             vol_str += f":{work['pages']}"
 
     publication_str = f"*{_q(journal)}*{_q(vol_str)}" if journal else ""
+    category        = work.get("category", "Other")
 
     content = f"""---
 title: "{_q(work['title'])}"
@@ -338,7 +396,8 @@ publication_types:
 - "{pub_type}"
 abstract: ""
 featured: {str(featured).lower()}
-tags: []
+tags:
+- "{_q(category)}"
 url_pdf: ""
 url_source: "{work['url']}"
 ---
@@ -380,17 +439,29 @@ def update_funding_widget(fundings: list) -> None:
     print(f"  Wrote {path.relative_to(REPO_ROOT)}")
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
+# ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     print("=== ORCID → Hugo Academic updater ===")
-    print("    (fetching full author lists from CrossRef — this takes ~2 min)")
+    print("    (fetching full author lists from CrossRef — takes ~2 min)")
 
     print("\n[1/2] Fetching works + resolving authors…")
     works = fetch_works()
-    print(f"      {len(works)} unique works found")
+    print(f"      {len(works)} publications kept after filtering")
+
+    # Print category breakdown
+    from collections import Counter
+    cats = Counter(w["category"] for w in works)
+    for cat, n in sorted(cats.items()):
+        print(f"        {cat}: {n}")
+
+    # Remove old orcid_ publication folders before writing fresh set
+    pub_root = REPO_ROOT / "content" / "publication"
+    for old in pub_root.glob("orcid_*"):
+        if old.is_dir():
+            for f in old.iterdir():
+                f.unlink()
+            old.rmdir()
 
     featured_so_far = 0
     for work in works:

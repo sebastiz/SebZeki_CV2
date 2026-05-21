@@ -1,10 +1,10 @@
 ---
 title: "The Multichannel Intraoesophageal Impedance Transit Concept"
 authors:
-- Miah, Ismail
-- Wong, Terry
-- Zeki, Sebastian
-- Jafari, Jafar
+- "Miah, Ismail"
+- "Wong, Terry"
+- "Zeki, Sebastian"
+- "Jafari, Jafar"
 date: "2024-01-01T00:00:00Z"
 doi: ""
 publication: "*Cureus*"
@@ -13,7 +13,8 @@ publication_types:
 - "2"
 abstract: ""
 featured: false
-tags: []
+tags:
+- "Oesophageal Physiology"
 url_pdf: ""
 url_source: ""
 ---
