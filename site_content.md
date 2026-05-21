@@ -39,7 +39,7 @@ URL: http://gastrods.co.uk/
 ## Consultant Gastroenterologist | Guy's & St Thomas' NHS Trust | 2015-04-01 -
 URL: https://www.guysandstthomas.nhs.uk/our-services/consultant-profiles/gastroenterology/sebastian-zeki.aspx
 
-## Clinical Lecturer | Cambridge University: MRC Hutchison | 2013-06-01 - 2015-04-01
+## NIHR Clinical Lecturer | Cambridge University: MRC Hutchison | 2013-06-01 - 2015-04-01
 URL: http://cambridge.academia.edu/SZeki
 
 ## PhD Student | Queen Mary University of London | 2010-01-01 - 2013-06-01
@@ -48,6 +48,10 @@ URL: http://www.researchpublications.qmul.ac.uk/publications/staff/27307.html
 ## Gastroenterology Registrar | North West Thames Training Rotation | 2006-06-01 - 2016-01-01
 
 ## Postgraduate Internal Medicine Training | London | 2001-06-01 - 2006-06-01
+
+## University College London Medical School | London | 1998 - 2001
+
+## Gonville and Caius College Cambridge | London | 1995 - 1998
 
 
 # Skills
