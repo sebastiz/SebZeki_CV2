@@ -103,7 +103,9 @@ Webinar covering evidence-based guidance for IBS diagnosis and treatment, with a
 -  Invited speaker, British Voice Association Voice Clinics Forum. Topic: laryngopharyngeal reflux / persistent throat symptoms. Guy’s Hospital, London. 6 February 2026. “Reflux and the voice- an evidence based approach”
 
 
-# Educational RoleI contribute across the KCL–GSTT academic pathway: undergraduate, postgraduate, and faculty development.
+# Educational Role
+
+I contribute across the KCL–GSTT academic pathway: undergraduate, postgraduate, and faculty development.
 
 ## Undergraduate (KCL MBBS).  
 - Gastroenterology Small-Group Teaching Block (2016 to present), 
