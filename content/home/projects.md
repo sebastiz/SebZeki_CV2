@@ -27,9 +27,6 @@ An educational resource for gastroenterology data science, covering R, machine l
 A free online resource for gastroenterology teaching aimed at medical students and junior doctors.
 [Visit site](http://gastroenterologybook.com/)
 
-## Health Foundation Grant — Improving Lesion Recognition
-Using routinely collected endoscopic and pathology data to improve lesion recognition quality metrics across endoscopy units.
-
 ## MiFlo
 Research project exploring minimally invasive flow measurements in gastrointestinal physiology.
 

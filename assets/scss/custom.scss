@@ -366,7 +366,24 @@ h3.article-title a:hover {
 }
 
 /* =========================================================
-   12. CONTACT SECTION
+   12. SOFTWARE / PROJECTS SECTION — make links stand out
+   ========================================================= */
+
+#projects .article-style a,
+#projects [class*="col"] a {
+  color: #1a3a5c;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#projects .article-style a:hover,
+#projects [class*="col"] a:hover {
+  color: #2a6496;
+}
+
+/* =========================================================
+   13. CONTACT SECTION
    ========================================================= */
 
 #contact .contact-widget a {

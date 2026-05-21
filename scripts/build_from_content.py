@@ -542,28 +542,52 @@ def generate_cv_html(about: dict, experience: list[dict],
     else:
         exp_html = ""
 
-    # ---- Publication entry helper ----
+    # ---- Publication entry helpers ----
+    def _author_str(p: dict, truncate: int = 6) -> str:
+        raw = p.get("authors", [])
+        if len(raw) > truncate:
+            parts = raw[:truncate]
+            suffix = " et al."
+        else:
+            parts = raw
+            suffix = ""
+        return ", ".join(
+            f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
+            for a in parts
+        ) + suffix
+
     def _pub_entry(p: dict) -> str:
+        """Compact entry used for Featured Publications."""
         year = p["date"][:4] if p["date"] else ""
         pub_display = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', _h(p["publication"]))
         doi_link = (f'<a href="{_h(p["url"])}" target="_blank">{_h(p["title"])}</a>'
                     if p["url"] else _h(p["title"]))
-        raw_authors = p.get("authors", [])
-        if len(raw_authors) > 6:
-            author_str = ", ".join(
-                f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
-                for a in raw_authors[:6]
-            ) + " et al."
-        else:
-            author_str = ", ".join(
-                f"<strong>{_h(a)}</strong>" if "zeki" in a.lower() else _h(a)
-                for a in raw_authors
-            )
         return f"""
         <div class="pub-entry">
           <div class="pub-title">{doi_link}</div>
-          <div class="pub-authors">{author_str}</div>
+          <div class="pub-authors">{_author_str(p)}</div>
           <div class="pub-meta">{pub_display}{('. ' + year) if year and year not in p['publication'] else ''}</div>
+        </div>"""
+
+    def _pub_full_ref(p: dict) -> str:
+        """Full academic reference entry for All Publications section."""
+        year = p["date"][:4] if p["date"] else ""
+        pub_display = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', _h(p["publication"]))
+        title_text = _h(p["title"])
+        doi_url = _h(p["url"])
+        if doi_url:
+            source_link = f' <a href="{doi_url}" target="_blank" style="color:#1a237e; font-size:8.5pt;">[link]</a>'
+        else:
+            source_link = ""
+        # Build full reference: Authors. Title. Journal. Year.
+        ref = (f'{_author_str(p, truncate=999)}. '
+               f'<em>{title_text}</em>. '
+               f'{pub_display}'
+               f'{(". " + year) if year and year not in p["publication"] else "."}'
+               f'{source_link}')
+        return f"""
+        <div class="pub-entry" style="border-left:3px solid #c5cae9; padding-left:0.8rem; margin-bottom:0.6rem;">
+          <div style="font-size:9.5pt; line-height:1.5; color:#222;">{ref}</div>
         </div>"""
 
     # ---- Featured Publications ----
@@ -596,7 +620,7 @@ def generate_cv_html(about: dict, experience: list[dict],
     for cat in category_order:
         cat_pubs = sorted(cat_map.get(cat, []), key=lambda p: p["date"], reverse=True)
         if cat_pubs:
-            items = "".join(_pub_entry(p) for p in cat_pubs)
+            items = "".join(_pub_full_ref(p) for p in cat_pubs)
             all_pubs_html += f"""
     <div class="cv-section cv-section-category">
       <h2>{_h(cat)}</h2>
