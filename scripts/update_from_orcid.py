@@ -333,64 +333,41 @@ def fetch_s2_citation_count(doi: str) -> int | None:
 
 
 def write_metrics_widget(metrics: dict) -> None:
-    """Write a home widget showing citation metrics bar."""
+    """Update the about.html template with fresh citation metrics."""
     h      = metrics.get("hIndex")
     cites  = metrics.get("citationCount")
     papers = metrics.get("paperCount")
 
     if h is None and cites is None:
-        return  # API unavailable — leave existing widget untouched
+        return  # API unavailable — leave existing template untouched
 
     from datetime import date
     today = date.today().strftime("%-d %B %Y")
 
-    def _stat(label, value, icon):
-        return f"""<div class="metric-stat">
-    <span class="metric-icon">{icon}</span>
-    <span class="metric-value">{value}</span>
-    <span class="metric-label">{label}</span>
-  </div>"""
+    about_path = REPO_ROOT / "layouts" / "partials" / "widgets" / "about.html"
+    if not about_path.exists():
+        return
 
-    stats_html = ""
-    if h is not None:
-        stats_html += _stat("h-index", h, "📊")
-    if cites is not None:
-        stats_html += _stat("Citations", f"{cites:,}", "📖")
-    if papers is not None:
-        stats_html += _stat("Papers indexed", papers, "📄")
+    text = about_path.read_text(encoding="utf-8")
 
-    content = f"""+++
-widget = "blank"
-headless = true
-active = true
-weight = 15
+    # Replace the three metric values using regex
+    def _replace_metric(label: str, value) -> None:
+        nonlocal text
+        # Match the value span immediately before the label span for this metric
+        pattern = (
+            r'(<div class="profile-metric">\s*'
+            r'<span class="profile-metric-value">)[^<]*(</span>\s*'
+            r'<span class="profile-metric-label">' + re.escape(label) + r'</span>)'
+        )
+        replacement = rf'\g<1>{value}\2'
+        text = re.sub(pattern, replacement, text, flags=re.DOTALL)
 
-title = ""
-subtitle = ""
+    _replace_metric("h-index", h)
+    _replace_metric("Citations", f"{cites:,}" if cites else cites)
+    _replace_metric("Papers", papers)
 
-[design]
-  columns = "1"
-
-[design.background]
-  color = "#1a3a5c"
-
-[advanced]
- css_style = ""
- css_class = "metrics-bar"
-+++
-
-<div class="metrics-bar-inner">
-  {stats_html}
-  <div class="metric-source">
-    <a href="https://www.semanticscholar.org/author/{S2_AUTHOR_ID}" target="_blank" rel="noopener">
-      Semantic Scholar
-    </a> &middot; updated {today}
-  </div>
-</div>
-"""
-    path = REPO_ROOT / "content" / "home" / "metrics.md"
-    path.write_text(content, encoding="utf-8")
-    print(f"  Wrote {path.relative_to(REPO_ROOT)}")
+    about_path.write_text(text, encoding="utf-8")
+    print(f"  Updated about.html metrics: h={h}, citations={cites}, papers={papers} ({today})")
 
 
 def crossref_search_by_title(title: str) -> dict:

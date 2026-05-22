@@ -44,61 +44,51 @@ a:hover, a:focus {
 }
 
 /* =========================================================
-   2b. CITATION METRICS BAR
+   2b. INLINE CITATION METRICS (under profile photo)
    ========================================================= */
 
-.metrics-bar-inner {
+.profile-metrics {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 0.6rem 1rem;
+  gap: 1.2rem;
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.5rem;
+  border-top: 1px solid rgba(26, 58, 92, 0.12);
+  border-bottom: 1px solid rgba(26, 58, 92, 0.12);
 }
 
-.metric-stat {
+.profile-metric {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
 }
 
-.metric-icon {
-  font-size: 1.4rem;
-  line-height: 1;
-}
-
-.metric-value {
+.profile-metric-value {
   font-family: 'Lora', Georgia, serif;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #fff;
+  color: #1a3a5c;
   line-height: 1.1;
 }
 
-.metric-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+.profile-metric-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
+  color: #6c757d;
+  margin-top: 0.1rem;
 }
 
-.metric-source {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.5);
-  align-self: flex-end;
-  padding-bottom: 0.2rem;
+.profile-metrics-source {
+  text-align: center;
+  font-size: 0.65rem;
+  color: #aaa;
+  margin-top: 0.3rem;
 }
 
-.metric-source a {
-  color: rgba(255,255,255,0.6) !important;
+.profile-metrics-source a {
+  color: #aaa !important;
   text-decoration: underline;
-}
-
-/* Override home-section padding for metrics bar — keep it slim */
-#metrics .home-section,
-section#metrics {
-  padding: 0 !important;
 }
 
 /* =========================================================
