@@ -333,41 +333,34 @@ def fetch_s2_citation_count(doi: str) -> int | None:
 
 
 def write_metrics_widget(metrics: dict) -> None:
-    """Update the about.html template with fresh citation metrics."""
+    """Update the allpubs_heading.md widget with fresh citation metrics."""
     h      = metrics.get("hIndex")
     cites  = metrics.get("citationCount")
     papers = metrics.get("paperCount")
 
     if h is None and cites is None:
-        return  # API unavailable — leave existing template untouched
+        return  # API unavailable — leave existing file untouched
 
     from datetime import date
     today = date.today().strftime("%-d %B %Y")
 
-    about_path = REPO_ROOT / "layouts" / "partials" / "widgets" / "about.html"
-    if not about_path.exists():
+    path = REPO_ROOT / "content" / "home" / "allpubs_heading.md"
+    if not path.exists():
         return
 
-    text = about_path.read_text(encoding="utf-8")
+    text = path.read_text(encoding="utf-8")
 
-    # Replace the three metric values using regex
-    def _replace_metric(label: str, value) -> None:
+    def _replace_val(label: str, value) -> None:
         nonlocal text
-        # Match the value span immediately before the label span for this metric
-        pattern = (
-            r'(<div class="profile-metric">\s*'
-            r'<span class="profile-metric-value">)[^<]*(</span>\s*'
-            r'<span class="profile-metric-label">' + re.escape(label) + r'</span>)'
-        )
-        replacement = rf'\g<1>{value}\2'
-        text = re.sub(pattern, replacement, text, flags=re.DOTALL)
+        pattern = r'(<strong>)[^<]*(</strong>\s*' + re.escape(label) + r')'
+        text = re.sub(pattern, rf'\g<1>{value}\2', text)
 
-    _replace_metric("h-index", h)
-    _replace_metric("Citations", f"{cites:,}" if cites else cites)
-    _replace_metric("Papers", papers)
+    _replace_val("h-index", h)
+    _replace_val(f"citations", f"{cites:,}" if cites else cites)
+    _replace_val("papers indexed", papers)
 
-    about_path.write_text(text, encoding="utf-8")
-    print(f"  Updated about.html metrics: h={h}, citations={cites}, papers={papers} ({today})")
+    path.write_text(text, encoding="utf-8")
+    print(f"  Updated allpubs_heading.md metrics: h={h}, citations={cites}, papers={papers} ({today})")
 
 
 def crossref_search_by_title(title: str) -> dict:

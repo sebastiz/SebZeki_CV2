@@ -44,49 +44,31 @@ a:hover, a:focus {
 }
 
 /* =========================================================
-   2b. INLINE CITATION METRICS (under profile photo)
+   2b. CITATION METRICS — inline under All Publications heading
    ========================================================= */
 
-.profile-metrics {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-top: 0.9rem;
-  padding: 0.6rem 0.5rem;
-  border-top: 1px solid rgba(26, 58, 92, 0.12);
-  border-bottom: 1px solid rgba(26, 58, 92, 0.12);
+.allpubs-metrics {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 0.2rem;
 }
 
-.profile-metric {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.profile-metric-value {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 1.2rem;
-  font-weight: 700;
+.allpubs-metric strong {
   color: #1a3a5c;
-  line-height: 1.1;
+  font-weight: 700;
 }
 
-.profile-metric-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #6c757d;
-  margin-top: 0.1rem;
+.allpubs-metric-sep {
+  margin: 0 0.4rem;
+  color: #ccc;
 }
 
-.profile-metrics-source {
-  text-align: center;
-  font-size: 0.65rem;
-  color: #aaa;
-  margin-top: 0.3rem;
+.allpubs-metric-source {
+  margin-left: 0.6rem;
+  font-size: 0.72rem;
 }
 
-.profile-metrics-source a {
+.allpubs-metric-source a {
   color: #aaa !important;
   text-decoration: underline;
 }
