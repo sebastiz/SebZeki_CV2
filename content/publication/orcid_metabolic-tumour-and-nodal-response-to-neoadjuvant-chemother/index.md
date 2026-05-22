@@ -46,3 +46,5 @@ tags:
 url_pdf: ""
 url_source: "https://doi.org/10.1007/s00330-023-09482-7"
 ---
+
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1007/s00330-023-09482-7"></div>

@@ -17,3 +17,5 @@ tags:
 url_pdf: ""
 url_source: "https://doi.org/10.1007/978-3-319-41388-4_12"
 ---
+
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1007/978-3-319-41388-4_12"></div>

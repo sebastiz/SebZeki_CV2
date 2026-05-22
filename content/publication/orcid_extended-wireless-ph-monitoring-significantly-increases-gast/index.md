@@ -26,3 +26,5 @@ tags:
 url_pdf: ""
 url_source: "https://doi.org/10.5056/jnm22130"
 ---
+
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.5056/jnm22130"></div>

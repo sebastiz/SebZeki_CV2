@@ -52,3 +52,5 @@ tags:
 url_pdf: ""
 url_source: "https://doi.org/10.1016/j.ejca.2021.12.021"
 ---
+
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1016/j.ejca.2021.12.021"></div>

@@ -16,3 +16,5 @@ tags:
 url_pdf: ""
 url_source: "https://doi.org/10.7861/clinmedicine.14-6-s78"
 ---
+
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.7861/clinmedicine.14-6-s78"></div>

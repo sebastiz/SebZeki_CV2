@@ -35,3 +35,5 @@ tags:
 url_pdf: ""
 url_source: "https://doi.org/10.1038/s41586-026-10157-8"
 ---
+
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1038/s41586-026-10157-8"></div>

@@ -18,3 +18,5 @@ tags:
 url_pdf: ""
 url_source: "https://doi.org/10.3748/wjg.15.877"
 ---
+
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.3748/wjg.15.877"></div>
