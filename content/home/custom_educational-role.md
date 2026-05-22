@@ -36,7 +36,7 @@ I contribute across the KCL–GSTT academic pathway: undergraduate, postgraduate
 - Current primary PhD Supervisor for a second PhD : PhD supervision via the DRIVE Health programme (Agathe Zecevic “Development and deployment of a single unified natural language model for the supervised and automated prediction of follow up for precancerous GI conditions.”) (DRIVE- Health Programme)- Topol Digital Fellow
  
 ## Educational innovation. 
-- Designed an “Introduction to Clinical NLP for Gastroenterologists” workshop (hands-on notebooks using de-identified endoscopy text) now adopted by <N> deanery study days; satisfaction 4.<x>/5. 
+- Designed an “Introduction to Clinical NLP for Gastroenterologists” workshop (hands-on notebooks using de-identified endoscopy text).
 - Website for NLP in gastroenterology
 
 

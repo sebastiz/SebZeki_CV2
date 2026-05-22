@@ -27,6 +27,8 @@
       {{ else if $avatar }}
       {{ $avatar_image := $avatar.Fill "270x270 Center" }}
       <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}">
+      {{ else }}
+      <img class="avatar avatar-circle" src="/img/avatar.jpg" alt="{{$person_page.Title}}">
       {{ end }}
 
       <div class="portrait-title">

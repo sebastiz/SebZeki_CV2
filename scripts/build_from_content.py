@@ -1066,8 +1066,8 @@ def write_menus(custom_sections: list[tuple[str, str]]) -> None:
     """
     # Fixed entries — name, url anchor, weight
     fixed = [
-        ("Home",         "#about",          10),
-        ("Experience",   "#experience",     20),
+        ("Home",          "#about",          10),
+        ("Experience",    "#experience",     20),
         ("Publications", "#featured",       30),
         ("Funding",      "#accomplishments", 40),
         ("Talks",        "#talks",          50),
