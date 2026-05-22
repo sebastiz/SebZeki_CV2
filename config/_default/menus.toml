@@ -45,3 +45,8 @@
   name = "All Papers"
   url = "#allpubs_heading"
   weight = 190
+
+[[main]]
+  name = "My Practice"
+  url = "/practice/"
+  weight = 195

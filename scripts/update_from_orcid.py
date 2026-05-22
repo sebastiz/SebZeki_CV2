@@ -292,6 +292,107 @@ def crossref_extra(doi: str) -> dict:
     return result
 
 
+S2_AUTHOR_ID = "49975042"  # Sebastian Zeki on Semantic Scholar
+S2_HDR = {"User-Agent": "SebZekiCV/1.0 (mailto:s.zeki@gstt.nhs.uk)"}
+
+
+def fetch_s2_author_metrics() -> dict:
+    """Return h-index, citationCount, paperCount from Semantic Scholar."""
+    result = {"hIndex": None, "citationCount": None, "paperCount": None}
+    try:
+        r = requests.get(
+            f"https://api.semanticscholar.org/graph/v1/author/{S2_AUTHOR_ID}",
+            params={"fields": "hIndex,citationCount,paperCount"},
+            headers=S2_HDR, timeout=15
+        )
+        if r.status_code == 200:
+            data = r.json()
+            result["hIndex"]       = data.get("hIndex")
+            result["citationCount"] = data.get("citationCount")
+            result["paperCount"]   = data.get("paperCount")
+    except Exception:
+        pass
+    return result
+
+
+def fetch_s2_citation_count(doi: str) -> int | None:
+    """Return citation count for a paper by DOI from Semantic Scholar."""
+    if not doi:
+        return None
+    try:
+        r = requests.get(
+            f"https://api.semanticscholar.org/graph/v1/paper/DOI:{doi.strip()}",
+            params={"fields": "citationCount"},
+            headers=S2_HDR, timeout=10
+        )
+        if r.status_code == 200:
+            return r.json().get("citationCount")
+    except Exception:
+        pass
+    return None
+
+
+def write_metrics_widget(metrics: dict) -> None:
+    """Write a home widget showing citation metrics bar."""
+    h      = metrics.get("hIndex")
+    cites  = metrics.get("citationCount")
+    papers = metrics.get("paperCount")
+
+    if h is None and cites is None:
+        return  # API unavailable — leave existing widget untouched
+
+    from datetime import date
+    today = date.today().strftime("%-d %B %Y")
+
+    def _stat(label, value, icon):
+        return f"""<div class="metric-stat">
+    <span class="metric-icon">{icon}</span>
+    <span class="metric-value">{value}</span>
+    <span class="metric-label">{label}</span>
+  </div>"""
+
+    stats_html = ""
+    if h is not None:
+        stats_html += _stat("h-index", h, "📊")
+    if cites is not None:
+        stats_html += _stat("Citations", f"{cites:,}", "📖")
+    if papers is not None:
+        stats_html += _stat("Papers indexed", papers, "📄")
+
+    content = f"""+++
+widget = "blank"
+headless = true
+active = true
+weight = 15
+
+title = ""
+subtitle = ""
+
+[design]
+  columns = "1"
+
+[design.background]
+  color = "#1a3a5c"
+
+[advanced]
+ css_style = ""
+ css_class = "metrics-bar"
++++
+
+<div class="metrics-bar-inner">
+  {stats_html}
+  <div class="metric-source">
+    <a href="https://www.semanticscholar.org/author/{S2_AUTHOR_ID}" target="_blank" rel="noopener">
+      Semantic Scholar
+    </a> &middot; updated {today}
+  </div>
+</div>
+"""
+    path = REPO_ROOT / "content" / "home" / "metrics.md"
+    path.write_text(content, encoding="utf-8")
+    print(f"  Wrote {path.relative_to(REPO_ROOT)}")
+
+
 def crossref_search_by_title(title: str) -> dict:
     """Fallback: search CrossRef by title when a DOI resolves but has no journal name.
     Returns best match journal, canonical DOI, volume, issue, pages."""
@@ -412,19 +513,26 @@ def fetch_works() -> list[dict]:
             authors = authors_from_orcid_work(best_put_code)
             time.sleep(0.05)
 
+        # Semantic Scholar citation count (best-effort, rate-limited)
+        citation_count = None
+        if doi:
+            citation_count = fetch_s2_citation_count(doi)
+            time.sleep(0.4)  # respect S2 rate limit (100 req/5 min public)
+
         works.append({
-            "title":    title,
-            "date":     date_str,
-            "year":     year,
-            "journal":  journal,
-            "doi":      doi,
-            "url":      f"https://doi.org/{doi}" if doi else "",
-            "type":     best.get("type", "JOURNAL_ARTICLE"),
-            "authors":  authors,
-            "volume":   volume,
-            "issue":    issue,
-            "pages":    pages,
-            "category": categorize(title),
+            "title":          title,
+            "date":           date_str,
+            "year":           year,
+            "journal":        journal,
+            "doi":            doi,
+            "url":            f"https://doi.org/{doi}" if doi else "",
+            "type":           best.get("type", "JOURNAL_ARTICLE"),
+            "authors":        authors,
+            "volume":         volume,
+            "issue":          issue,
+            "pages":          pages,
+            "category":       categorize(title),
+            "citation_count": citation_count,
         })
 
         if idx % 10 == 0:
@@ -486,13 +594,30 @@ def create_publication_file(work: dict, featured: bool = False) -> None:
 
     publication_str = f"*{_q(journal)}*{_q(vol_str)}" if journal else ""
     category        = work.get("category", "Other")
+    citation_count  = work.get("citation_count", "")
+    doi             = work["doi"]
+
+    # Build content body: Altmetric badge + citation count
+    body_parts = []
+    if doi:
+        body_parts.append(
+            f'<div class="altmetric-embed" data-badge-type="donut" '
+            f'data-badge-popover="right" data-doi="{doi}"></div>'
+        )
+    if citation_count != "" and citation_count is not None:
+        body_parts.append(
+            f'<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">'
+            f'📖 Cited {citation_count} time{"s" if citation_count != 1 else ""} '
+            f'(Semantic Scholar)</p>'
+        )
+    body = "\n".join(body_parts)
 
     content = f"""---
 title: "{_q(work['title'])}"
 authors:
 {authors_yaml}
 date: "{work['date']}T00:00:00Z"
-doi: "{work['doi']}"
+doi: "{doi}"
 publication: "{publication_str}"
 publication_short: ""
 publication_types:
@@ -504,6 +629,8 @@ tags:
 url_pdf: ""
 url_source: "{work['url']}"
 ---
+
+{body}
 """
     (pub_dir / "index.md").write_text(content, encoding="utf-8")
 
@@ -579,6 +706,14 @@ def main():
     fundings = fetch_fundings()
     print(f"      {len(fundings)} funding entries found")
     update_funding_widget(fundings)
+
+    print("\n[3/3] Fetching author metrics from Semantic Scholar…")
+    metrics = fetch_s2_author_metrics()
+    if metrics.get("hIndex") is not None:
+        print(f"      h-index={metrics['hIndex']}, citations={metrics['citationCount']}, papers={metrics['paperCount']}")
+        write_metrics_widget(metrics)
+    else:
+        print("      Semantic Scholar unavailable — skipping metrics widget")
 
     print("\nDone.")
 

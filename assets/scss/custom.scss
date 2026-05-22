@@ -44,6 +44,64 @@ a:hover, a:focus {
 }
 
 /* =========================================================
+   2b. CITATION METRICS BAR
+   ========================================================= */
+
+.metrics-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0.6rem 1rem;
+}
+
+.metric-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.metric-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.metric-value {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.metric-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+
+.metric-source {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  align-self: flex-end;
+  padding-bottom: 0.2rem;
+}
+
+.metric-source a {
+  color: rgba(255,255,255,0.6) !important;
+  text-decoration: underline;
+}
+
+/* Override home-section padding for metrics bar — keep it slim */
+#metrics .home-section,
+section#metrics {
+  padding: 0 !important;
+}
+
+/* =========================================================
    3. NAVIGATION BAR
    ========================================================= */
 
