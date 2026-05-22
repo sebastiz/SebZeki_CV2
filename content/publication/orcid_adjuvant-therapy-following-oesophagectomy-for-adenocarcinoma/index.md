@@ -42,8 +42,8 @@ authors:
 - "Dunn, J.M."
 - "Zeki, S.S."
 date: "2020-01-01T00:00:00Z"
-doi: "10.1002/bjs.11864"
-publication: "*British Journal of Surgery*"
+doi: "10.1016/j.soc.2004.06.008"
+publication: "*Surgical Oncology Clinics of North America*, 13(4):555-566"
 publication_short: ""
 publication_types:
 - "2"
@@ -52,5 +52,5 @@ featured: false
 tags:
 - "Cancer Clinical"
 url_pdf: ""
-url_source: "https://doi.org/10.1002/bjs.11864"
+url_source: "https://doi.org/10.1016/j.soc.2004.06.008"
 ---

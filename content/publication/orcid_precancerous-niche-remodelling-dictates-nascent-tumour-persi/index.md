@@ -24,8 +24,8 @@ authors:
 - "MP Alcolea"
 date: "2026-01-30T00:00:00Z"
 doi: "10.1038/s41586-026-10157-8"
-publication: "*Nature*"
-publication_short: "*Nature*"
+publication: "*Nature*, 653(8113):242-253"
+publication_short: ""
 publication_types:
 - "2"
 abstract: ""
