@@ -21,3 +21,4 @@ url_source: "https://doi.org/10.1086/597258"
 ---
 
 <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1086/597258"></div>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 112 times (Semantic Scholar)</p>

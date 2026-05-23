@@ -19,3 +19,4 @@ url_source: "https://doi.org/10.1038/nrgastro.2010.211"
 ---
 
 <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1038/nrgastro.2010.211"></div>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 160 times (Semantic Scholar)</p>

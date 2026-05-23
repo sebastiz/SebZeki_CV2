@@ -29,3 +29,4 @@ url_source: "https://doi.org/10.14309/ajg.0000000000002173"
 ---
 
 <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.14309/ajg.0000000000002173"></div>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 47 times (Semantic Scholar)</p>
