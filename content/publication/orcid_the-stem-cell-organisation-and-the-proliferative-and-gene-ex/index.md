@@ -36,4 +36,4 @@ url_source: "https://doi.org/10.1136/gutjnl-2013-306508"
 ---
 
 <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1136/gutjnl-2013-306508"></div>
-<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 78 times (Semantic Scholar)</p>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 79 times (Semantic Scholar)</p>
