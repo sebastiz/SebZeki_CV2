@@ -1,12 +1,12 @@
 ---
 title: "Endoscopic management of dysplasia and early oesophageal cancer"
 authors:
-- "Zeki S"
-- "Bergman J"
-- "Dunn J"
+- "Zeki, S.S."
+- "Bergman, J.J."
+- "Dunn, J.M."
 date: "2018-01-01T00:00:00Z"
 doi: "10.1016/j.bpg.2018.11.003"
-publication: "*Best Practice &amp; Research Clinical Gastroenterology*, 36-37:27-36"
+publication: "*Best Practice and Research: Clinical Gastroenterology*"
 publication_short: ""
 publication_types:
 - "2"

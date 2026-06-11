@@ -1,11 +1,11 @@
 ---
 title: "Targeting care in Barrett's oesophagus"
 authors:
-- "Zeki S"
-- "Fitzgerald RC"
+- "Zeki, S."
+- "Fitzgerald, R.C."
 date: "2014-01-01T00:00:00Z"
 doi: "10.7861/clinmedicine.14-6-s78"
-publication: "*Clinical Medicine*, 14(6):s78-s83"
+publication: "*Clinical medicine (London, England)*"
 publication_short: ""
 publication_types:
 - "2"

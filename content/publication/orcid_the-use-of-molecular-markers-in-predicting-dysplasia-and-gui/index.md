@@ -1,11 +1,11 @@
 ---
 title: "The use of molecular markers in predicting dysplasia and guiding treatment"
 authors:
-- "Zeki S"
-- "Fitzgerald RC"
+- "Zeki, S."
+- "Fitzgerald, R.C."
 date: "2015-01-01T00:00:00Z"
 doi: "10.1016/j.bpg.2014.11.003"
-publication: "*Best Practice &amp; Research Clinical Gastroenterology*, 29(1):113-124"
+publication: "*Best Practice and Research: Clinical Gastroenterology*"
 publication_short: ""
 publication_types:
 - "2"
