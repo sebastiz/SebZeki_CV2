@@ -1,7 +1,7 @@
 ---
 title: "The Illustrated MRCP PACES Primer"
 authors:
-- "Sebastian Zeki"
+- "Zeki S"
 date: "2022-02-17T00:00:00Z"
 doi: "10.1201/9780429091254"
 publication: ""

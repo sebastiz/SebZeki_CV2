@@ -23,8 +23,8 @@ authors:
 - "BD Simons"
 - "MP Alcolea"
 date: "2026-01-30T00:00:00Z"
-doi: "10.17863/cam.125963"
-publication: "*Springer Science and Business Media LLC*"
+doi: "10.1038/s41586-026-10157-8"
+publication: "*Nature*, 653(8113):242-253"
 publication_short: ""
 publication_types:
 - "2"
@@ -33,7 +33,8 @@ featured: true
 tags:
 - "Cancer Basic Science"
 url_pdf: ""
-url_source: "https://doi.org/10.17863/cam.125963"
+url_source: "https://doi.org/10.1038/s41586-026-10157-8"
 ---
 
-<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.17863/cam.125963"></div>
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1038/s41586-026-10157-8"></div>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 4 times (Semantic Scholar)</p>
