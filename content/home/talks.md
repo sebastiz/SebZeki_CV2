@@ -15,9 +15,7 @@ subtitle = ""
  css_class = ""
 +++
 
-## IBS for General Practice — How to Approach, Help and Treat
-Webinar covering evidence-based guidance for IBS diagnosis and treatment, with approaches for empowering patients.
-
+- IBS for General Practice — How to Approach, Help and Treat. Webinar covering evidence-based guidance for IBS diagnosis and treatment, with approaches for empowering patients.
 - Invited speaker, Royal College Physicians “Artificial intelligence in gastroenterology  Vision 2020” Royal College of Physician.
 - Invited speaker, King’s Health Partners Academic Surgical Grand Round / ALRSG-BI webinar. “Intelligent physiology: a roadmap to using concurrent physiology as a surgical guide.” 25 March 2021.
 - Invited faculty/chair, London International Upper GI Symposium. Chair, Oesophageal Disorders session. 26 February 2021.
