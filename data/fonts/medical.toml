@@ -1,11 +1,11 @@
 # Font metadata
 name = "Medical"
 
-# Serif heading, clean sans body — standard in medical publishing
-heading_font = "Lora"
-body_font    = "Source Sans Pro"
-nav_font     = "Source Sans Pro"
-mono_font    = "Ubuntu Mono"
+# Sharp, journal-grade serif headings + clean modern sans body
+heading_font = "Source Serif 4"
+body_font    = "Inter"
+nav_font     = "Inter"
+mono_font    = "JetBrains Mono"
 
 # Google Fonts URL
-google_fonts = "family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&family=Ubuntu+Mono&display=swap"
+google_fonts = "family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"

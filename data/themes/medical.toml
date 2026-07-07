@@ -5,14 +5,14 @@ name = "Medical"
 light = true
 
 # Deep navy — professional, trustworthy, medical
-primary = "#1a3a5c"
+primary = "#1e3a5f"
 
 # Navbar — dark navy with white text
-menu_primary = "#1a3a5c"
-menu_text = "rgba(255,255,255,0.85)"
+menu_primary = "#1e3a5f"
+menu_text = "rgba(255,255,255,0.82)"
 menu_text_active = "#ffffff"
 menu_title = "#ffffff"
 
-# Alternating sections: crisp white / very light blue-grey
+# Alternating sections: crisp white / very light cool grey
 home_section_odd  = "rgb(255, 255, 255)"
-home_section_even = "rgb(246, 248, 251)"
+home_section_even = "rgb(247, 249, 251)"
