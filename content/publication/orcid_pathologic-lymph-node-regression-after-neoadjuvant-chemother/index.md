@@ -71,4 +71,3 @@ url_source: "https://doi.org/10.1200/JCO.23.00139"
 ---
 
 <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1200/JCO.23.00139"></div>
-<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 24 times (Semantic Scholar)</p>
