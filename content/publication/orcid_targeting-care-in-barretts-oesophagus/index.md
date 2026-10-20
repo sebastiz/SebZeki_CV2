@@ -18,3 +18,4 @@ url_source: "https://doi.org/10.7861/clinmedicine.14-6-s78"
 ---
 
 <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.7861/clinmedicine.14-6-s78"></div>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 13 times (Semantic Scholar)</p>
