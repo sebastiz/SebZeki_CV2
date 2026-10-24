@@ -19,7 +19,7 @@ publication_short: ""
 publication_types:
 - "2"
 abstract: ""
-featured: true
+featured: false
 tags:
 - "Eosinophilic Oesophagitis"
 url_pdf: ""
@@ -27,3 +27,4 @@ url_source: "https://doi.org/10.14309/ajg.0000000000003046"
 ---
 
 <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.14309/ajg.0000000000003046"></div>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 6 times (Semantic Scholar)</p>
