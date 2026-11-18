@@ -24,7 +24,7 @@ authors:
 - "Alcolea MP"
 date: "2026-01-30T00:00:00Z"
 doi: "10.17863/cam.125963"
-publication: "*Springer Science and Business Media LLC*, 653(8113):242-253"
+publication: "*Nature*, 653(8113):242-253"
 publication_short: ""
 publication_types:
 - "2"
