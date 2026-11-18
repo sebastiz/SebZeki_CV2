@@ -9,11 +9,9 @@ Dr Sebastian Zeki is a consultant gastroenterologist at St Thomas' Hospital in L
 - Endoscopic therapy
 - Oesophageal and stomach cancers/Barrett's oesophagus
 - Oesophageal physiology
-- Heartburn; chest pain; indigestion; bloating; spasm; dyspepsia; irritable bowel syndrome; swallowing disorders; hoarse voice; chronic cough and throat clearing
 - Eosinophilic oesophagitis
 - High quality endoscopy
 - Machine learning/R/Natural language programming
-- Genomics
 
 **Education:**
 - PhD - Genomics of Barrett's related malignancy | University of London | 2013
