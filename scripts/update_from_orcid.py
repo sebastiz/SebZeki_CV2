@@ -677,9 +677,11 @@ def fetch_works() -> list[dict]:
 
         if cr:
             work["doi"] = cr["doi"]
-            for k in ("journal", "volume", "issue", "pages", "publisher"):
+            for k in ("journal", "volume", "issue", "pages"):
                 if cr[k]:
                     work[k] = cr[k]
+            if cr["cr_type"] in ("book", "monograph", "edited-book"):
+                work["publisher"] = cr["publisher"]   # shown in place of a journal
             work["authors"] = cr["authors"]
             if _date_precision(cr["date"]) > _date_precision(work["date"]):
                 work["date"] = cr["date"]
@@ -734,7 +736,7 @@ def fetch_works() -> list[dict]:
             "title": rec["title"], "date": rec["date"] or "2000-01-01",
             "year": (rec["date"] or "2000")[:4], "journal": rec["journal"],
             "doi": rec["doi"], "authors": rec["authors"], "volume": rec["volume"],
-            "issue": rec["issue"], "pages": rec["pages"], "publisher": rec["publisher"],
+            "issue": rec["issue"], "pages": rec["pages"], "publisher": "",
             "type": "JOURNAL_ARTICLE", "citation_count": None, "citation_source": "",
             "url": f"https://doi.org/{rec['doi']}", "category": categorize(rec["title"]),
             "_oa_citations": oa["citations"] if oa else None,
