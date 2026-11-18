@@ -1,0 +1,50 @@
+---
+title: "Impact of incremental circumferential resection margin distance on overall survival and recurrence in oesophageal adenocarcinoma"
+authors:
+- "Knight WRC"
+- "Zylstra J"
+- "Wulaningsih W"
+- "Van Hemelrijck M"
+- "Landau D"
+- "Maisey N"
+- "Gaya A"
+- "Baker CR"
+- "Gossage JA"
+- "Largergren J"
+- "Davies AR"
+- "the Guy's and St Thomas' Oesophago‐Gastric Research Group"
+- "Kelly M"
+- "Hynes O"
+- "Tham G"
+- "Iezzi C"
+- "Cowie A"
+- "Ngan S"
+- "Qureshi A"
+- "Green M"
+- "Griffin N"
+- "Jacques A"
+- "Goh V"
+- "Deere H"
+- "Chang F"
+- "Mahadeva U"
+- "Gill‐Barman B"
+- "George S"
+- "Dunn J"
+- "Zeki S"
+- "Meenan J"
+date: "2018-04-23T00:00:00Z"
+doi: "10.1002/bjs5.65"
+publication: "*BJS Open*, 2(4):229-237"
+publication_short: ""
+publication_types:
+- "2"
+abstract: ""
+featured: false
+tags:
+- "Cancer Clinical"
+url_pdf: ""
+url_source: "https://doi.org/10.1002/bjs5.65"
+---
+
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1002/bjs5.65"></div>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 14 times (Semantic Scholar)</p>

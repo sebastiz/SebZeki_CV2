@@ -1,5 +1,5 @@
 ---
-title: "Validating Impedance/pH Sensors for Measuring Oesophageal Transit: A Study Based on Dysphagia and Barium Swallow"
+title: "Validating Impedance/pH Sensors for Measuring Oesophageal Transit: A Study Based on Dysphagia and Barium Swallow"
 authors:
 - "Miah I"
 - "Wong T"
@@ -12,7 +12,7 @@ publication_short: ""
 publication_types:
 - "2"
 abstract: ""
-featured: true
+featured: false
 tags:
 - "Oesophageal Physiology"
 url_pdf: ""

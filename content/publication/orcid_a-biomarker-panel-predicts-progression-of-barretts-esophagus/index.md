@@ -16,7 +16,7 @@ authors:
 - "Shaheen NJ"
 - "Bergman JJGHM"
 - "Fitzgerald RC"
-date: "2019-01-01T00:00:00Z"
+date: "2018-11-28T00:00:00Z"
 doi: "10.1093/dote/doy102"
 publication: "*Diseases of the Esophagus*, 32(1)"
 publication_short: ""

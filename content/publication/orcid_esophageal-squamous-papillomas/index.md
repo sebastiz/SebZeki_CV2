@@ -7,7 +7,7 @@ authors:
 - "Zeki S"
 date: "2026-11-02T00:00:00Z"
 doi: "10.1093/dote/doag127"
-publication: "*Diseases of the Esophagus*, 39(6)"
+publication: "*Diseases of the Esophagus*, 39(6):doag127"
 publication_short: ""
 publication_types:
 - "2"

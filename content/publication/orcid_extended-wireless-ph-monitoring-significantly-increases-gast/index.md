@@ -13,7 +13,7 @@ authors:
 - "Sui G"
 - "Jafari J"
 - "Wong T"
-date: "2023-01-01T00:00:00Z"
+date: "2023-07-30T00:00:00Z"
 doi: "10.5056/jnm22130"
 publication: "*Journal of Neurogastroenterology and Motility*, 29(3):335-342"
 publication_short: ""

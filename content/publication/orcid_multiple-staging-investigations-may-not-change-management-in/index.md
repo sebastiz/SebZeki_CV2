@@ -14,9 +14,9 @@ authors:
 - "Zeki S"
 - "Dunn J"
 - "Davies A"
-date: "2023-01-01T00:00:00Z"
+date: "2023-09-30T00:00:00Z"
 doi: "10.1093/dote/doad020"
-publication: "*Diseases of the Esophagus*, 36(10)"
+publication: "*Diseases of the Esophagus*, 36(10):doad020"
 publication_short: ""
 publication_types:
 - "2"

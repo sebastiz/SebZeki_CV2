@@ -11,7 +11,7 @@ authors:
 - "Wright NA"
 - "Lovat LB"
 - "McDonald SA"
-date: "2013-01-01T00:00:00Z"
+date: "2013-08-13T00:00:00Z"
 doi: "10.1038/ajg.2013.238"
 publication: "*American Journal of Gastroenterology*, 108(10):1584-1592"
 publication_short: ""

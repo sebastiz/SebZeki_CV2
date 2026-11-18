@@ -5,7 +5,7 @@ authors:
 - "Catnach S"
 - "King A"
 - "Hallan R"
-date: "2009-01-01T00:00:00Z"
+date: "2009-02-21T00:00:00Z"
 doi: "10.3748/wjg.15.877"
 publication: "*World Journal of Gastroenterology*, 15(7):877"
 publication_short: ""

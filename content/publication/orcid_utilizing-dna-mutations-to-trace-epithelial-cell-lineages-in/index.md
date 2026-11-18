@@ -4,9 +4,9 @@ authors:
 - "Zeki S"
 - "Graham TA"
 - "McDonald SAC"
-date: "2012-01-01T00:00:00Z"
+date: "2012-07-10T00:00:00Z"
 doi: "10.1007/978-1-61779-980-8_22"
-publication: "*Methods in Molecular Biology*"
+publication: "*Methods in Molecular Biology*, 916:289-301"
 publication_short: ""
 publication_types:
 - "5"

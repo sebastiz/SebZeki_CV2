@@ -8,7 +8,7 @@ authors:
 - "Odze RD"
 - "Rodriguez‐Justo M"
 - "Zeki S"
-date: "2013-01-01T00:00:00Z"
+date: "2013-08-06T00:00:00Z"
 doi: "10.1002/path.4211"
 publication: "*The Journal of Pathology*, 231(1):98-104"
 publication_short: ""

@@ -12,7 +12,7 @@ authors:
 - "Green M"
 - "de Bortoli N"
 - "Zeki S"
-date: "2024-01-01T00:00:00Z"
+date: "2024-08-20T00:00:00Z"
 doi: "10.14309/ajg.0000000000003046"
 publication: "*American Journal of Gastroenterology*, 120(2):469-472"
 publication_short: ""

@@ -11,7 +11,7 @@ authors:
 - "Wong T"
 - "Zeki S"
 - "Dunn J"
-date: "2022-01-01T00:00:00Z"
+date: "2022-05-31T00:00:00Z"
 doi: "10.1136/flgastro-2022-102129"
 publication: "*Frontline Gastroenterology*, 13(e1):e65-e71"
 publication_short: ""

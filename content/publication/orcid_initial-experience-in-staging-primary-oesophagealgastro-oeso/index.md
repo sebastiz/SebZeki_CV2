@@ -2,7 +2,7 @@
 title: "Initial experience in staging primary oesophageal/gastro-oesophageal cancer with 18F-FDG PET/MRI"
 authors:
 - "Sharkey AR"
-- "Sah B"
+- "Sah BR"
 - "Withey SJ"
 - "Bhuva S"
 - "Neji R"
@@ -10,6 +10,7 @@ authors:
 - "Green A"
 - "Cook GJR"
 - "Goh V"
+- "On behalf of the Guy’s & St Thomas’ Oesophago-Gastric Research Group"
 - "Baker CR"
 - "Chang F"
 - "Chicklore S"
@@ -38,9 +39,9 @@ authors:
 - "Tham G"
 - "Waters J"
 - "Zeki SS"
-date: "2021-01-01T00:00:00Z"
+date: "2021-12-13T00:00:00Z"
 doi: "10.1186/s41824-021-00117-y"
-publication: "*European Journal of Hybrid Imaging*, 5(1)"
+publication: "*European Journal of Hybrid Imaging*, 5(1):23"
 publication_short: ""
 publication_types:
 - "2"

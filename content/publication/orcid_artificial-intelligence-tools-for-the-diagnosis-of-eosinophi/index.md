@@ -16,14 +16,14 @@ authors:
 - "de Bortoli N"
 - "Savarino EV"
 - "Zeki S"
-date: "2024-01-01T00:00:00Z"
+date: "2023-12-27T00:00:00Z"
 doi: "10.1016/j.jaip.2023.12.031"
 publication: "*The Journal of Allergy and Clinical Immunology: In Practice*, 12(4):1008-1016.e1"
 publication_short: ""
 publication_types:
 - "2"
 abstract: ""
-featured: true
+featured: false
 tags:
 - "Eosinophilic Oesophagitis"
 url_pdf: ""

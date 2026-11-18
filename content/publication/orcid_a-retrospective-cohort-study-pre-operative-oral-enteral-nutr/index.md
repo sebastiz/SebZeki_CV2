@@ -21,7 +21,7 @@ authors:
 - "Sanderson JD"
 - "Lomer M"
 - "Irving PM"
-date: "2022-01-01T00:00:00Z"
+date: "2022-06-20T00:00:00Z"
 doi: "10.1111/apt.17055"
 publication: "*Alimentary Pharmacology &amp; Therapeutics*, 56(4):646-663"
 publication_short: ""

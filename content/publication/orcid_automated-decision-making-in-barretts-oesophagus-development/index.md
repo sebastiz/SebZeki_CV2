@@ -12,14 +12,14 @@ authors:
 - "YoonusNizar Z"
 - "Roberts A"
 - "Zeki SS"
-date: "2024-01-01T00:00:00Z"
+date: "2024-11-07T00:00:00Z"
 doi: "10.1038/s41746-024-01302-6"
-publication: "*npj Digital Medicine*, 7(1)"
+publication: "*npj Digital Medicine*, 7(1):312"
 publication_short: ""
 publication_types:
 - "2"
 abstract: ""
-featured: true
+featured: false
 tags:
 - "Natural Language Processing"
 url_pdf: ""

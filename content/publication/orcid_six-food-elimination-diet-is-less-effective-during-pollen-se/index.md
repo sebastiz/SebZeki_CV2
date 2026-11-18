@@ -11,7 +11,7 @@ authors:
 - "Wong T"
 - "de Bortoli N"
 - "Zeki S"
-date: "2023-01-01T00:00:00Z"
+date: "2023-06-13T00:00:00Z"
 doi: "10.14309/ajg.0000000000002357"
 publication: "*American Journal of Gastroenterology*, 118(11):1957-1962"
 publication_short: ""

@@ -21,7 +21,7 @@ authors:
 - "Jansen M"
 - "Wright NA"
 - "McDonald SAC"
-date: "2014-01-01T00:00:00Z"
+date: "2014-02-18T00:00:00Z"
 doi: "10.1136/gutjnl-2013-306508"
 publication: "*Gut*, 63(12):1854-1863"
 publication_short: ""

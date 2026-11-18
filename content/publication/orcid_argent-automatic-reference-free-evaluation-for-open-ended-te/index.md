@@ -1,10 +1,10 @@
 ---
 title: "ARGENT: Automatic Reference-free Evaluation for Open-Ended Text Generation without Source Inputs"
 authors:
-- "Zhang, Xinyue"
-- "Zecevic, Agathe"
-- "Zeki, Sebastian"
-- "Roberts, Angus"
+- "Zhang X"
+- "Zecevic A"
+- "Zeki S"
+- "Roberts A"
 date: "2025-01-01T00:00:00Z"
 doi: ""
 publication: "*Proceedings of the Fourth Workshop on Generation, Evaluation and Metrics (GEM$^2$)*"

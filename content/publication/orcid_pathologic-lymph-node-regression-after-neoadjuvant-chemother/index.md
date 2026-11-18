@@ -5,7 +5,7 @@ authors:
 - "Green M"
 - "Santaolalla A"
 - "Deere H"
-- "Evans RP"
+- "Evans RPT"
 - "Elshafie M"
 - "Lavery A"
 - "McManus DT"
@@ -34,6 +34,7 @@ authors:
 - "Fitzgerald RC"
 - "Cunningham D"
 - "Davies AR"
+- "on behalf of The Oesophageal Cancer Clinical and Molecular Stratification (OCCAMS) study group, The Guy's and St Thomas' Oesophago-gastric Research Group, and The PROGRESS study group"
 - "Puig S"
 - "Chaudry A"
 - "Jacques A"
@@ -56,8 +57,8 @@ authors:
 - "Knight WRC"
 - "Dunn JM"
 - "Zeki SS"
-date: "2023-01-01T00:00:00Z"
-doi: "10.1200/JCO.23.00139"
+date: "2023-07-27T00:00:00Z"
+doi: "10.1200/jco.23.00139"
 publication: "*Journal of Clinical Oncology*, 41(28):4522-4534"
 publication_short: ""
 publication_types:
@@ -67,8 +68,8 @@ featured: false
 tags:
 - "Cancer Clinical"
 url_pdf: ""
-url_source: "https://doi.org/10.1200/JCO.23.00139"
+url_source: "https://doi.org/10.1200/jco.23.00139"
 ---
 
-<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1200/JCO.23.00139"></div>
+<div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.1200/jco.23.00139"></div>
 <p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 26 times (Semantic Scholar)</p>

@@ -1,8 +1,8 @@
 ---
-title: "Clonal Interactions in Barrett�s Carcinogenesis."
+title: "Clonal Interactions in Barrett’s Carcinogenesis."
 authors:
-- "Sebastian Zeki"
-date: "2013-01-01T00:00:00Z"
+- "Zeki SS"
+date: "2013-09-01T00:00:00Z"
 doi: ""
 publication: ""
 publication_short: ""
@@ -16,4 +16,4 @@ url_pdf: ""
 url_source: ""
 ---
 
-
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 0 times (OpenAlex)</p>

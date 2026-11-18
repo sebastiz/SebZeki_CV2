@@ -5,7 +5,7 @@ authors:
 - "Culkin A"
 - "Gabe SM"
 - "Nightingale JM"
-date: "2011-01-01T00:00:00Z"
+date: "2011-01-22T00:00:00Z"
 doi: "10.1016/j.clnu.2010.12.001"
 publication: "*Clinical Nutrition*, 30(3):365-368"
 publication_short: ""

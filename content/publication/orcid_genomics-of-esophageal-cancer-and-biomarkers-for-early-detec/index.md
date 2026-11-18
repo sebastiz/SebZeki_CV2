@@ -4,9 +4,9 @@ authors:
 - "Pusung M"
 - "Zeki S"
 - "Fitzgerald R"
-date: "2016-01-01T00:00:00Z"
+date: "2016-08-30T00:00:00Z"
 doi: "10.1007/978-3-319-41388-4_12"
-publication: "*Advances in Experimental Medicine and Biology*"
+publication: "*Advances in Experimental Medicine and Biology*, 908:237-263"
 publication_short: ""
 publication_types:
 - "5"

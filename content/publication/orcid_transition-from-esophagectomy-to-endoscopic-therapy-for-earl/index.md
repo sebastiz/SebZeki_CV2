@@ -14,9 +14,9 @@ authors:
 - "Zeki SS"
 - "Gossage JA"
 - "Davies AR"
-date: "2022-01-01T00:00:00Z"
+date: "2022-03-12T00:00:00Z"
 doi: "10.1093/dote/doab047"
-publication: "*Diseases of the Esophagus*, 35(3)"
+publication: "*Diseases of the Esophagus*, 35(3):doab047"
 publication_short: ""
 publication_types:
 - "2"

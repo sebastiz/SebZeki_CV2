@@ -16,7 +16,7 @@ authors:
 - "Welsh KI"
 - "Taylor-Robinson SD"
 - "Orchard TR"
-date: "2009-01-01T00:00:00Z"
+date: "2009-04-28T00:00:00Z"
 doi: "10.1038/ajg.2009.175"
 publication: "*The American Journal of Gastroenterology*, 104(6):1435-1444"
 publication_short: ""

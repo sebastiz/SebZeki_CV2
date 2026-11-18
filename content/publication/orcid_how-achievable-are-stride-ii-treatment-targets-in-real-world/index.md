@@ -12,7 +12,7 @@ authors:
 - "Mawdsley J"
 - "Irving PM"
 - "Samaan MA"
-date: "2023-01-01T00:00:00Z"
+date: "2022-12-07T00:00:00Z"
 doi: "10.1136/flgastro-2022-102309"
 publication: "*Frontline Gastroenterology*, 14(4):312-318"
 publication_short: ""

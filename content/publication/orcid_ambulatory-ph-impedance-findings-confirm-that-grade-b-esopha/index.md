@@ -14,7 +14,7 @@ authors:
 - "Bellini M"
 - "Savarino EV"
 - "de Bortoli N"
-date: "2023-01-01T00:00:00Z"
+date: "2023-01-12T00:00:00Z"
 doi: "10.14309/ajg.0000000000002173"
 publication: "*American Journal of Gastroenterology*, 118(5):794-801"
 publication_short: ""

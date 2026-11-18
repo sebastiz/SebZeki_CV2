@@ -1,7 +1,9 @@
 ---
 title: "A deceptive magnetic resonance cholangiopancreatogram?"
 authors:
-- "Sebastian Zeki"
+- "Jordan AN"
+- "Kodati S"
+- "Zeki SS"
 date: "2010-01-01T00:00:00Z"
 doi: ""
 publication: "*Grand Rounds*"
@@ -16,4 +18,4 @@ url_pdf: ""
 url_source: ""
 ---
 
-
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 0 times (OpenAlex)</p>

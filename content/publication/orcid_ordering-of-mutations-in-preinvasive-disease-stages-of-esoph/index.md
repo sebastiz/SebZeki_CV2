@@ -1,6 +1,7 @@
 ---
 title: "Ordering of mutations in preinvasive disease stages of esophageal carcinogenesis"
 authors:
+- "the OCCAMS Consortium"
 - "Weaver JMJ"
 - "Ross-Innes CS"
 - "Shannon N"
@@ -8,7 +9,7 @@ authors:
 - "Forshew T"
 - "Barbera M"
 - "Murtaza M"
-- "Ong CJ"
+- "Ong CAJ"
 - "Lao-Sirieix P"
 - "Dunning MJ"
 - "Smith L"
@@ -29,7 +30,7 @@ authors:
 - "Rosenfeld N"
 - "Tavaré S"
 - "Fitzgerald RC"
-date: "2014-01-01T00:00:00Z"
+date: "2014-06-22T00:00:00Z"
 doi: "10.1038/ng.3013"
 publication: "*Nature Genetics*, 46(8):837-843"
 publication_short: ""

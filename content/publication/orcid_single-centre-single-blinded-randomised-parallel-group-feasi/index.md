@@ -15,7 +15,7 @@ authors:
 - "Edwards RT"
 - "Drakatos P"
 - "Steier J"
-date: "2023-01-01T00:00:00Z"
+date: "2023-08-24T00:00:00Z"
 doi: "10.1136/bmjopen-2023-076661"
 publication: "*BMJ Open*, 13(8):e076661"
 publication_short: ""
