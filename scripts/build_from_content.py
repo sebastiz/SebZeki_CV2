@@ -1022,6 +1022,14 @@ subtitle = ""
 </div>
 """
     heading_path = REPO / "content" / "home" / "allpubs_heading.md"
+    # Keep the live metrics written by update_from_orcid.py — the numbers
+    # above are only a first-run placeholder and must not overwrite them.
+    if heading_path.exists():
+        current = heading_path.read_text(encoding="utf-8")
+        m = re.search(r'<div class="allpubs-metrics">.*?</div>', current, re.DOTALL)
+        if m:
+            heading_widget = re.sub(r'<div class="allpubs-metrics">.*?</div>',
+                                    lambda _: m.group(0), heading_widget, flags=re.DOTALL)
     heading_path.write_text(heading_widget, encoding="utf-8")
     print(f"  Wrote {heading_path.relative_to(REPO)}")
 

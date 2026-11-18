@@ -1,0 +1,13 @@
+{
+  "_help": "Manual fixes applied after the ORCID/CrossRef/OpenAlex lookups. Key = paper title (case and punctuation don't matter). Fields: doi, title, journal, volume, issue, pages, date (YYYY-MM-DD), authors (list), category, exclude (true to hide a paper).",
+  "_add_dois_help": "DOIs of papers that aren't on ORCID but should be listed.",
+  "_add_dois": [
+    "10.1002/bjs5.65"
+  ],
+  "A comparative analysis of whole genome sequencing of esophageal adenocarcinoma pre-and post-chemotherapy": {
+    "doi": "10.1101/gr.214296.116"
+  },
+  "Transcriptomic profiling reveals three molecular phenotypes of adenocarcinoma at the gastroesophageal junction": {
+    "doi": "10.1002/ijc.32384"
+  }
+}

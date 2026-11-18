@@ -6,6 +6,17 @@ on:
     - cron: "0 3 * * *"
   # Allow a manual trigger from the Actions tab
   workflow_dispatch:
+  # Re-run straight away when the scripts or overrides change
+  push:
+    branches: [master]
+    paths:
+      - "scripts/**"
+      - "site_content.md"
+      - ".github/workflows/update_orcid.yml"
+
+concurrency:
+  group: orcid-update
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -28,12 +39,15 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Build from site_content.md
-        run: python scripts/build_from_content.py
-
+      # Fetch fresh data first, so the CV page built below uses today's data
       - name: Run ORCID update script
         run: python scripts/update_from_orcid.py
 
+      - name: Build from site_content.md
+        run: python scripts/build_from_content.py
+
+      # Commits pushed with GITHUB_TOKEN don't re-trigger this workflow,
+      # but Netlify still deploys them (no [skip ci] in the message).
       - name: Commit and push if anything changed
         run: |
           git config user.name  "github-actions[bot]"
@@ -43,5 +57,6 @@ jobs:
             echo "Nothing changed — skipping commit."
           else
             git commit -m "chore: auto-update publications and funding from ORCID"
+            git pull --rebase origin master
             git push
           fi
