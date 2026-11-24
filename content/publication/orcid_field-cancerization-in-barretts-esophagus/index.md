@@ -18,4 +18,4 @@ url_pdf: ""
 url_source: ""
 ---
 
-<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 12 times (OpenAlex)</p>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 13 times (OpenAlex)</p>
