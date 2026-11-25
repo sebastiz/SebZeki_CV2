@@ -20,4 +20,4 @@ url_source: "https://doi.org/10.18653/v1/2024.bionlp-1.2"
 ---
 
 <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="10.18653/v1/2024.bionlp-1.2"></div>
-<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 7 times (OpenAlex)</p>
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 5 times (Semantic Scholar)</p>

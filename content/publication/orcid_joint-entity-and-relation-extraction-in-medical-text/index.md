@@ -3,8 +3,8 @@ title: "Joint Entity and Relation Extraction in Medical Text"
 authors:
 - "Zhang LX"
 - "Roberts A"
-- "Zeki S"
-date: "2023-01-01T00:00:00Z"
+- "Zeki SS"
+date: "2023-09-10T00:00:00Z"
 doi: ""
 publication: "*CEUR Workshop Proceedings*"
 publication_short: ""
@@ -18,4 +18,4 @@ url_pdf: ""
 url_source: ""
 ---
 
-
+<p style="font-size:0.85rem;color:#666;margin-top:0.5rem;">📖 Cited 0 times (OpenAlex)</p>
